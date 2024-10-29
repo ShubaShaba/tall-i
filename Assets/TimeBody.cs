@@ -34,7 +34,7 @@ public class TimeBody : MonoBehaviour
     void Update()
     {
         if (manager != null){
-            if (manager.visible){
+            if (manager.IsVisible()){
                 if (Input.GetKeyDown(KeyCode.Alpha1)){
                     StartRewiding();
                     isFreezing = false;

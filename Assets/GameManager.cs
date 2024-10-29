@@ -6,34 +6,17 @@ public class GameManager : MonoBehaviour
 {
     public GameObject target;
     public Camera cam;
-    public bool visible;
 
-    private bool IsVisible(Camera c, GameObject target)
+    public bool IsVisible()
     {
-        var planes = GeometryUtility.CalculateFrustumPlanes(c);
-        var point = target.transform.position;
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
+        Vector3 point = target.transform.position;
 
-        foreach (var plane in planes)
+        foreach (Plane plane in planes)
         {
-            if (plane.GetDistanceToPoint(point)< 0)
-            {
+            if (plane.GetDistanceToPoint(point) < 0)
                 return false;
-            }
         }
         return true;
     }
-
-    private void Update ()
-    {
-        
-
-        var targetRender = target.GetComponent<Renderer>();
-        if (IsVisible(cam,target))
-        {
-            visible = true;
-        }
-        else
-        {
-            visible = false;
-        }
-    }}
+}
