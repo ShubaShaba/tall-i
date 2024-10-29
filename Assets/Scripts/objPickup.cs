@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class objPickup : MonoBehaviour
 {
-    public GameObject crosshair1, crosshair2;
     public Transform objTransform, cameraTrans;
     public bool interactable, pickedup;
     public Rigidbody objRigidbody;
@@ -13,29 +12,17 @@ public class objPickup : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("MainCamera"))
-        {
-            crosshair1.SetActive(false);
-            crosshair2.SetActive(true);
             interactable = true;
-        }
     }
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("MainCamera"))
         {
-            if(pickedup == false)
-            {
-                crosshair1.SetActive(true);
-                crosshair2.SetActive(false);
-                interactable = false;
-            }
+            interactable = false;
             if (pickedup == true)
             {
                 objTransform.parent = null;
                 objRigidbody.useGravity = true;
-                crosshair1.SetActive(true);
-                crosshair2.SetActive(false);
-                interactable = false;
                 pickedup = false;
             }
         }
@@ -56,7 +43,7 @@ public class objPickup : MonoBehaviour
                 objRigidbody.useGravity = true;
                 pickedup = false;
             }
-            if(pickedup == true)
+            if (pickedup == true)
             {
                 if (Input.GetMouseButtonDown(1))
                 {
