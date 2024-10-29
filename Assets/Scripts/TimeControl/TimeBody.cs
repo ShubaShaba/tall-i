@@ -8,63 +8,47 @@ public class TimeBody : MonoBehaviour
     public bool isRewinding = false;
     public bool isFreezing = false;
     List<PointInTime> pointsInTime;
-    private GameManager manager;
 
     Rigidbody rb;
+
+    private bool isFocusedOn = false;
 
     void Start()
     {
         pointsInTime = new List<PointInTime>();
         rb = GetComponent<Rigidbody>();
-        GameObject managerObject = GameObject.Find("manager");
-        if (managerObject != null)
-        {
-            manager = managerObject.GetComponent<GameManager>();
-            if (manager == null)
-            {
-                Debug.LogError("GameManager component not found on 'manager' GameObject.");
-            }
-        }
-        else
-        {
-            Debug.LogError("'manager' GameObject not found in the scene.");
-        }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (manager != null)
+        if (isFocusedOn)
         {
-            if (manager.IsVisible())
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    StartRewiding();
-                    isFreezing = false;
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    StopRewiding();
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
-                    StartFreezing();
-                    isRewinding = false;
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha4))
-                {
-                    StopFreezing();
-                }
-            }
-            else
-            {
-                StopFreezing();
+                StartRewiding();
                 isFreezing = false;
-                isRewinding = false;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
                 StopRewiding();
             }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                StartFreezing();
+                isRewinding = false;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                StopFreezing();
+            }
+        }
+        else
+        {
+            StopFreezing();
+            isFreezing = false;
+            isRewinding = false;
+            StopRewiding();
         }
     }
 
@@ -120,23 +104,18 @@ public class TimeBody : MonoBehaviour
         {
             StopRewiding();
         }
-
     }
 
     public void StartRewiding()
     {
         isRewinding = true;
         rb.isKinematic = true;
-
-
     }
 
     public void StopRewiding()
     {
         isRewinding = false;
         rb.isKinematic = false;
-
-
     }
 
     public void StartFreezing()
@@ -149,7 +128,13 @@ public class TimeBody : MonoBehaviour
     {
         isFreezing = false;
         rb.isKinematic = false;
+    }
 
+    public void Focus() {
+        isFocusedOn = true;
+    }
 
+    public void UnFocus() {
+        isFocusedOn = false;
     }
 }
