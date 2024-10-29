@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class objPickup : MonoBehaviour
+public class ObjPickup : MonoBehaviour
 {
-    public Transform objTransform, cameraTrans;
-    public bool interactable, pickedup;
-    public Rigidbody objRigidbody;
-    public float throwAmount;
+    [SerializeField] private Transform cameraTrans;
+    [SerializeField] private float throwAmount;
+    private bool interactable, pickedup;
+    private Rigidbody objRigidbody;
+
+    void Start() {
+        objRigidbody = GetComponent<Rigidbody>();
+    }
 
     void OnTriggerStay(Collider other)
     {
@@ -19,9 +23,9 @@ public class objPickup : MonoBehaviour
         if (other.CompareTag("MainCamera"))
         {
             interactable = false;
-            if (pickedup == true)
+            if (pickedup)
             {
-                objTransform.parent = null;
+                transform.parent = null;
                 objRigidbody.useGravity = true;
                 pickedup = false;
             }
@@ -29,17 +33,17 @@ public class objPickup : MonoBehaviour
     }
     void Update()
     {
-        if (interactable == true)
+        if (interactable)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                objTransform.parent = cameraTrans;
+                transform.parent = cameraTrans;
                 objRigidbody.useGravity = false;
                 pickedup = true;
             }
             if (Input.GetMouseButtonUp(0))
             {
-                objTransform.parent = null;
+                transform.parent = null;
                 objRigidbody.useGravity = true;
                 pickedup = false;
             }
@@ -47,7 +51,7 @@ public class objPickup : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(1))
                 {
-                    objTransform.parent = null;
+                    transform.parent = null;
                     objRigidbody.useGravity = true;
                     objRigidbody.velocity = cameraTrans.forward * throwAmount * Time.deltaTime;
                     pickedup = false;
