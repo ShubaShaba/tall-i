@@ -23,6 +23,8 @@ public class CarriableTimeObj : MonoBehaviour, TimeBody
     public void UnFocus()
     {
         isFocusedOn = false;
+        StopFreezing();
+        StopRewiding();
     }
 
     public void StartRewinding()
@@ -38,21 +40,6 @@ public class CarriableTimeObj : MonoBehaviour, TimeBody
 
         previousState = currentState;
         currentState = state;
-    }
-
-    private void HandleTime()
-    {
-        switch (currentState)
-        {
-            case TimeBodyStates.Natural:
-                Record();
-                break;
-            case TimeBodyStates.Rewinding:
-                Rewind();
-                break;
-            default:
-                break;
-        }
     }
 
     private void Record()
@@ -95,54 +82,75 @@ public class CarriableTimeObj : MonoBehaviour, TimeBody
     private void StopFreezing()
     {
         rb.constraints = 0;
-        if (previousState == TimeBodyStates.Rewinding) {
+        if (previousState == TimeBodyStates.Rewinding)
+        {
             StartRewinding();
-        } else {
+        }
+        else
+        {
             StopRewiding();
         }
     }
-    
+
+    private void HandleTime()
+    {
+        switch (currentState)
+        {
+            case TimeBodyStates.Natural:
+                Record();
+                break;
+            case TimeBodyStates.Rewinding:
+                Rewind();
+                break;
+            default:
+                break;
+        }
+    }
+
+    // CONTROL SCHEMA:
+    private void RewindAction(InputAction.CallbackContext context)
+    {
+        if (!isFocusedOn)
+            return;
+        StartRewinding();
+    }
+
+    private void CancelRewindAction(InputAction.CallbackContext context)
+    {
+        if (!isFocusedOn)
+            return;
+        StopRewiding();
+    }
+
+    private void StopTimeAction(InputAction.CallbackContext context)
+    {
+        if (!isFocusedOn)
+            return;
+        StartFreezing();
+    }
+
+    private void ResumeTimeAction(InputAction.CallbackContext context)
+    {
+        if (!isFocusedOn)
+            return;
+        StopFreezing();
+    }
+
+    // START-UPDATE methods
+
     private void Start()
     {
         currentState = TimeBodyStates.Natural;
         pointsInTime = new List<PointInTime>();
         rb = GetComponent<Rigidbody>();
+        controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
+        controlManager.AddPlayersAction(PlayersActionType.CancelRewind, CancelRewindAction);
+        controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
+        controlManager.AddPlayersAction(PlayersActionType.ResumeTime, ResumeTimeAction);
     }
-    
-    // private void Update()
-    // {
-    // }
 
-    // Update is called once per frame
     void Update()
     {
         HandleTime();
-
-        if (isFocusedOn)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                StartRewinding();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                StopRewiding();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                StartFreezing();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                StopFreezing();
-            }
-
-            Debug.Log(currentState);
-        }
-        else
-        {
-            StopFreezing();
-            StopRewiding();
-        }
     }
 }

@@ -1,7 +1,11 @@
 public enum PlayersActionType
 {
     Jump,
-    Focus,
     Throw,
-    Pickup
+    Pickup,
+    Focus,
+    Rewind,
+    CancelRewind,
+    StopTime,
+    ResumeTime
 }

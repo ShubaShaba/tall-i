@@ -283,8 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab627f34a0cb74531b6c618bb2cfb6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
-  isFreezing: 0
+  controlManager: {fileID: 1928338603}
 --- !u!1 &476192828
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,8 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab627f34a0cb74531b6c618bb2cfb6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
-  isFreezing: 0
+  controlManager: {fileID: 1928338603}
 --- !u!54 &1643961981
 Rigidbody:
   m_ObjectHideFlags: 0
