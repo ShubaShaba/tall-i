@@ -1,13 +1,15 @@
-
 using UnityEngine;
 
-public class PointInTime
+public struct PointInTime
 {
-    public Vector3 position;
-    public Quaternion rotation;
+    public Vector3 position { get; }
+    public Quaternion rotation { get; }
 
-    public PointInTime (Vector3 _position, Quaternion _rotation){
+    public PointInTime(Vector3 _position, Quaternion _rotation)
+    {
         position = _position;
         rotation = _rotation;
     }
+
+    public override string ToString() => $"({position}, {rotation})";
 }
