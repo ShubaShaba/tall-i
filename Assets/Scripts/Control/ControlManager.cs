@@ -39,6 +39,9 @@ public class ControlManager : MonoBehaviour
             case PlayersActionType.Jump:
                 playerActions.Jump.performed += action;
                 break;
+            case PlayersActionType.Focus:
+                playerActions.Focus.performed += action;
+                break;
             default:
                 break;
         }

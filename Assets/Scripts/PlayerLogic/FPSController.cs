@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class SC_FPSController : MonoBehaviour
+public class FPSController : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private ControlManager controlManager;

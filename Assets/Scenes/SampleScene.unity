@@ -458,7 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fPcamera: {fileID: 963194227}
   maxFocusDistance: 100
-  currentFocus: {fileID: 0}
+  controlManager: {fileID: 1928338603}
 --- !u!1 &605807098
 GameObject:
   m_ObjectHideFlags: 0
