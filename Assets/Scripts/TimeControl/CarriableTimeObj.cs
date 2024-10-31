@@ -11,11 +11,14 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     private TimeBodyStates previousState;
     private List<PointInTime> pointsInTime;
 
+    private TimeBendingVisual visuals;
+
     private bool isFocusedOn = false;
 
     public void Focus()
     {
         isFocusedOn = true;
+        visuals.FocusAnimation();
     }
 
     public void UnFocus()
@@ -23,18 +26,21 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         isFocusedOn = false;
         StopFreezing();
         StopRewiding();
+        visuals.CancelEverything();
     }
 
     public void StartRewinding()
     {
         SetState(TimeBodyStates.Rewinding);
         rb.isKinematic = true;
+        rb.constraints = 0;
     }
 
     public void StopRewiding()
     {
         SetState(TimeBodyStates.Natural);
         rb.isKinematic = false;
+        rb.constraints = 0;
     }
 
     public void StartFreezing()
@@ -68,6 +74,21 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
         previousState = currentState;
         currentState = state;
+
+        switch (currentState) {
+            case TimeBodyStates.Natural:
+                visuals.CancelEverything();
+                if (isFocusedOn) visuals.FocusAnimation();
+                break;
+            case TimeBodyStates.Stoped:
+                visuals.FreezeAnimation();
+                break;
+            case TimeBodyStates.Rewinding:
+                visuals.RewindAnimation();
+                break;
+            default:
+                break;
+        }
     }
 
     private void Record()
@@ -113,6 +134,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     {
         currentState = TimeBodyStates.Natural;
         pointsInTime = new List<PointInTime>();
+        visuals = GetComponent<TimeBendingVisual>();
     }
 
     void Update()
