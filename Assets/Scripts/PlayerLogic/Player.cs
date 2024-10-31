@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Camera fPcamera;
     [SerializeField] private float maxFocusDistance = 100;
     [SerializeField] private float maxPickingDistance = 2;
+    [SerializeField] private float throwForce = 10;
 
     [SerializeField] private ControlManager controlManager;
     [SerializeField] private Transform mountingPoint;
@@ -31,6 +32,13 @@ public class Player : MonoBehaviour
             currentPicked?.Throw(0);
             currentPicked = carriableObj;
             currentPicked.Pickup(mountingPoint);
+        }
+    }
+
+    private void ThrowObj(InputAction.CallbackContext context) {
+        if (currentPicked != null) {
+            currentPicked.Throw(throwForce);
+            currentPicked = null;
         }
     }
 
@@ -65,6 +73,7 @@ public class Player : MonoBehaviour
     private void Start () {
         controlManager.AddPlayersAction(PlayersActionType.Focus, FocusOnObject);
         controlManager.AddPlayersAction(PlayersActionType.Pickup, PickupObj);
+        controlManager.AddPlayersAction(PlayersActionType.Throw, ThrowObj);
         controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
         controlManager.AddPlayersAction(PlayersActionType.CancelRewind, CancelRewindAction);
         controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);

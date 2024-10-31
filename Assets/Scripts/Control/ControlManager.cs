@@ -61,6 +61,9 @@ public class ControlManager : MonoBehaviour
             case PlayersActionType.Pickup:
                 playerActions.Pickup.performed += action;
                 break;
+            case PlayersActionType.Throw:
+                playerActions.Throw.performed += action;
+                break;
             default:
                 break;
         }
