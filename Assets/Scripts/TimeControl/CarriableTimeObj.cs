@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CarriableTimeObj : MonoBehaviour, ITimeBody
+public class CarriableTimeObj : CarriableBase, ITimeBody
 {
     [SerializeField] private ControlManager controlManager;
     private TimeBodyStates currentState;
     private TimeBodyStates previousState;
     private List<PointInTime> pointsInTime;
-
-    private Rigidbody rb;
 
     private bool isFocusedOn = false;
 
@@ -31,6 +29,10 @@ public class CarriableTimeObj : MonoBehaviour, ITimeBody
     {
         SetState(TimeBodyStates.Rewinding);
         rb.isKinematic = true;
+    }
+
+    public override bool CanPick() {
+        return currentState == TimeBodyStates.Natural;
     }
 
     private void SetState(TimeBodyStates state)
@@ -142,7 +144,6 @@ public class CarriableTimeObj : MonoBehaviour, ITimeBody
     {
         currentState = TimeBodyStates.Natural;
         pointsInTime = new List<PointInTime>();
-        rb = GetComponent<Rigidbody>();
         controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
         controlManager.AddPlayersAction(PlayersActionType.CancelRewind, CancelRewindAction);
         controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);

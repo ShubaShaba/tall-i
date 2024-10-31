@@ -5,17 +5,18 @@ using UnityEngine;
 /*
     Base class for all pickable objects
 */
-public class ObjPickup : MonoBehaviour, ICarriable
+public class CarriableBase : MonoBehaviour, ICarriable
 {
-    [SerializeField] private Transform cameraTrans;
-    private bool pickedup;
-    private Rigidbody rb;
+    protected Rigidbody rb;
 
-    void Start() {
+    private void Awake()
+    {
         rb = GetComponent<Rigidbody>();
+        Debug.Log(rb);
     }
 
-    private void TogglePhysics(bool enable) {
+    private void TogglePhysics(bool enable)
+    {
         rb.isKinematic = !enable;
         rb.detectCollisions = enable;
         rb.freezeRotation = !enable;
@@ -23,6 +24,8 @@ public class ObjPickup : MonoBehaviour, ICarriable
 
     public void Pickup(Transform parent)
     {
+        if (!CanPick()) return;
+
         transform.parent = parent;
         transform.position = parent.position;
         transform.localRotation = Quaternion.identity;
@@ -33,10 +36,10 @@ public class ObjPickup : MonoBehaviour, ICarriable
     {
         transform.parent = null;
         TogglePhysics(true);
-        rb.velocity = cameraTrans.forward * magnitude;
+        rb.velocity = transform.forward * magnitude;
     }
 
-    public bool canPick()
+    public virtual bool CanPick()
     {
         return true;
     }

@@ -71,6 +71,7 @@ public class FPSController : MonoBehaviour
     private void HandleRotation() {
         // Get input data
         // Vector2 mouseMovement = controlManager.GetMouseMovement();
+        // TODO: fix unity's new input system
         Vector2 mouseMovement = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         // Player and Camera rotation

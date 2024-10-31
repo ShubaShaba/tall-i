@@ -6,5 +6,5 @@ public interface ICarriable
 {
     public void Pickup(Transform parent);
     public void Throw(float magnitude);
-    public bool canPick();
+    public bool CanPick();
 }
