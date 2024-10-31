@@ -31,6 +31,32 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         rb.isKinematic = true;
     }
 
+    public void StopRewiding()
+    {
+        SetState(TimeBodyStates.Natural);
+        rb.isKinematic = false;
+    }
+
+    public void StartFreezing()
+    {
+        SetState(TimeBodyStates.Stoped);
+        rb.isKinematic = true;
+        rb.constraints = RigidbodyConstraints.FreezePosition;
+    }
+
+    public void StopFreezing()
+    {
+        rb.constraints = 0;
+        if (previousState == TimeBodyStates.Rewinding)
+        {
+            StartRewinding();
+        }
+        else
+        {
+            StopRewiding();
+        }
+    }
+
     public override bool CanPick() {
         return currentState == TimeBodyStates.Natural;
     }
@@ -68,32 +94,6 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         }
     }
 
-    private void StopRewiding()
-    {
-        SetState(TimeBodyStates.Natural);
-        rb.isKinematic = false;
-    }
-
-    private void StartFreezing()
-    {
-        SetState(TimeBodyStates.Stoped);
-        rb.isKinematic = true;
-        rb.constraints = RigidbodyConstraints.FreezePosition;
-    }
-
-    private void StopFreezing()
-    {
-        rb.constraints = 0;
-        if (previousState == TimeBodyStates.Rewinding)
-        {
-            StartRewinding();
-        }
-        else
-        {
-            StopRewiding();
-        }
-    }
-
     private void HandleTime()
     {
         switch (currentState)
@@ -109,45 +109,10 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         }
     }
 
-    // CONTROL SCHEMA:
-    private void RewindAction(InputAction.CallbackContext context)
-    {
-        if (!isFocusedOn)
-            return;
-        StartRewinding();
-    }
-
-    private void CancelRewindAction(InputAction.CallbackContext context)
-    {
-        if (!isFocusedOn)
-            return;
-        StopRewiding();
-    }
-
-    private void StopTimeAction(InputAction.CallbackContext context)
-    {
-        if (!isFocusedOn)
-            return;
-        StartFreezing();
-    }
-
-    private void ResumeTimeAction(InputAction.CallbackContext context)
-    {
-        if (!isFocusedOn)
-            return;
-        StopFreezing();
-    }
-
-    // START-UPDATE methods
-
     private void Start()
     {
         currentState = TimeBodyStates.Natural;
         pointsInTime = new List<PointInTime>();
-        controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
-        controlManager.AddPlayersAction(PlayersActionType.CancelRewind, CancelRewindAction);
-        controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
-        controlManager.AddPlayersAction(PlayersActionType.ResumeTime, ResumeTimeAction);
     }
 
     void Update()

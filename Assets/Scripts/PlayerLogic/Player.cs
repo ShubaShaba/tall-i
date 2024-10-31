@@ -42,9 +42,33 @@ public class Player : MonoBehaviour
         currentFocus = timeBendableObject;
     }
 
+    private void RewindAction(InputAction.CallbackContext context)
+    {
+        currentFocus.StartRewinding();
+    }
+
+    private void CancelRewindAction(InputAction.CallbackContext context)
+    {
+        currentFocus.StopRewiding();
+    }
+
+    private void StopTimeAction(InputAction.CallbackContext context)
+    {
+        currentFocus.StartFreezing();
+    }
+
+    private void ResumeTimeAction(InputAction.CallbackContext context)
+    {
+        currentFocus.StopFreezing();
+    }
+
     private void Start () {
         controlManager.AddPlayersAction(PlayersActionType.Focus, FocusOnObject);
         controlManager.AddPlayersAction(PlayersActionType.Pickup, PickupObj);
+        controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
+        controlManager.AddPlayersAction(PlayersActionType.CancelRewind, CancelRewindAction);
+        controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
+        controlManager.AddPlayersAction(PlayersActionType.ResumeTime, ResumeTimeAction);
     }
 
     private void Update () {
