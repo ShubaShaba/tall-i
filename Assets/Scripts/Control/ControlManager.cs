@@ -28,6 +28,10 @@ public class ControlManager : MonoBehaviour
     //     return new Vector2(playerActions.CameraX.ReadValue<float>(), playerActions.CameraY.ReadValue<float>()).normalized;
     // }
 
+    public bool PlayerIsHoldingLeftMouse() {
+        return playerActions.Pickup.ReadValue<float>() >= 1.0;
+    }
+
     public bool PlayerIsRunning () {
         return playerActions.Sprint.ReadValue<float>() >= 1.0;
     }
@@ -53,6 +57,9 @@ public class ControlManager : MonoBehaviour
                 break;
             case PlayersActionType.ResumeTime:
                 playerActions.ResumeTime.performed += action;
+                break;
+            case PlayersActionType.Pickup:
+                playerActions.Pickup.performed += action;
                 break;
             default:
                 break;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface TimeBody
+public interface ITimeBody
 {
     public void Focus();
     public void UnFocus();

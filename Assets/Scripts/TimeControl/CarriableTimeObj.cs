@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CarriableTimeObj : MonoBehaviour, TimeBody
+public class CarriableTimeObj : MonoBehaviour, ITimeBody
 {
     [SerializeField] private ControlManager controlManager;
     private TimeBodyStates currentState;

@@ -98,6 +98,24 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pickup"",
+                    ""type"": ""Value"",
+                    ""id"": ""0c54761b-4cf6-4cf8-8854-df31cb595021"",
+                    ""expectedControlType"": ""Digital"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""144ce08c-fad9-483c-b879-aa3abb934d8a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -232,6 +250,28 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
                     ""action"": ""ResumeTime"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1881d5e1-f73f-4837-a933-5dfb21f225a4"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pickup"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e206806a-b70a-4189-ad5f-85205577973d"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -248,6 +288,8 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         m_Player_CancelRewind = m_Player.FindAction("CancelRewind", throwIfNotFound: true);
         m_Player_StopTime = m_Player.FindAction("StopTime", throwIfNotFound: true);
         m_Player_ResumeTime = m_Player.FindAction("ResumeTime", throwIfNotFound: true);
+        m_Player_Pickup = m_Player.FindAction("Pickup", throwIfNotFound: true);
+        m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -317,6 +359,8 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_CancelRewind;
     private readonly InputAction m_Player_StopTime;
     private readonly InputAction m_Player_ResumeTime;
+    private readonly InputAction m_Player_Pickup;
+    private readonly InputAction m_Player_Throw;
     public struct PlayerActions
     {
         private @PlayersControl m_Wrapper;
@@ -329,6 +373,8 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         public InputAction @CancelRewind => m_Wrapper.m_Player_CancelRewind;
         public InputAction @StopTime => m_Wrapper.m_Player_StopTime;
         public InputAction @ResumeTime => m_Wrapper.m_Player_ResumeTime;
+        public InputAction @Pickup => m_Wrapper.m_Player_Pickup;
+        public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -362,6 +408,12 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
             @ResumeTime.started += instance.OnResumeTime;
             @ResumeTime.performed += instance.OnResumeTime;
             @ResumeTime.canceled += instance.OnResumeTime;
+            @Pickup.started += instance.OnPickup;
+            @Pickup.performed += instance.OnPickup;
+            @Pickup.canceled += instance.OnPickup;
+            @Throw.started += instance.OnThrow;
+            @Throw.performed += instance.OnThrow;
+            @Throw.canceled += instance.OnThrow;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -390,6 +442,12 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
             @ResumeTime.started -= instance.OnResumeTime;
             @ResumeTime.performed -= instance.OnResumeTime;
             @ResumeTime.canceled -= instance.OnResumeTime;
+            @Pickup.started -= instance.OnPickup;
+            @Pickup.performed -= instance.OnPickup;
+            @Pickup.canceled -= instance.OnPickup;
+            @Throw.started -= instance.OnThrow;
+            @Throw.performed -= instance.OnThrow;
+            @Throw.canceled -= instance.OnThrow;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -417,5 +475,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         void OnCancelRewind(InputAction.CallbackContext context);
         void OnStopTime(InputAction.CallbackContext context);
         void OnResumeTime(InputAction.CallbackContext context);
+        void OnPickup(InputAction.CallbackContext context);
+        void OnThrow(InputAction.CallbackContext context);
     }
 }
