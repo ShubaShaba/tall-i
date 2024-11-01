@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ICarrier
 {
-    
+
     [SerializeField] private Camera fPcamera;
     [SerializeField] private float maxFocusDistance = 100;
     [SerializeField] private float maxPickingDistance = 2;
@@ -26,20 +26,19 @@ public class Player : MonoBehaviour
         return default;
     }
 
-    private void PickupObj(InputAction.CallbackContext context) {
+    private void PickupObj(InputAction.CallbackContext context)
+    {
         ICarriable carriableObj = GetObjectReference<ICarriable>(maxPickingDistance);
-        if (carriableObj != null) {
+        if (carriableObj != null)
+        {
             currentPicked?.Throw(0);
-            currentPicked = carriableObj;
-            currentPicked.Pickup(mountingPoint);
+            carriableObj.Pickup(this);
         }
     }
 
-    private void ThrowObj(InputAction.CallbackContext context) {
-        if (currentPicked != null) {
-            currentPicked.Throw(throwForce);
-            currentPicked = null;
-        }
+    private void ThrowObj(InputAction.CallbackContext context)
+    {
+        currentPicked?.Throw(throwForce);
     }
 
     private void FocusOnObject(InputAction.CallbackContext context)
@@ -60,7 +59,8 @@ public class Player : MonoBehaviour
         currentFocus?.ToggleFreeze();
     }
 
-    private void Start () {
+    private void Start()
+    {
         controlManager.AddPlayersAction(PlayersActionType.Focus, FocusOnObject);
         controlManager.AddPlayersAction(PlayersActionType.Pickup, PickupObj);
         controlManager.AddPlayersAction(PlayersActionType.Throw, ThrowObj);
@@ -68,10 +68,26 @@ public class Player : MonoBehaviour
         controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
     }
 
-    private void Update () {
-        if (!controlManager.PlayerIsHoldingLeftMouse()) {
+    private void Update()
+    {
+        if (!controlManager.PlayerIsHoldingLeftMouse())
+        {
             currentPicked?.Throw(0);
-            currentPicked = null; 
         }
+    }
+
+    public void AddCarriable(ICarriable obj)
+    {
+        currentPicked = obj;
+    }
+
+    public void RemoveCarriable(ICarriable obj)
+    {
+        currentPicked = null;
+    }
+
+    public Transform GetMountingPointTransform()
+    {
+        return mountingPoint;
     }
 }

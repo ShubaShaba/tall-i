@@ -39,6 +39,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
     public void ToggleRewind()
     {
+        Throw(0);
         if (timeBendingController.GetCurrentState() == TimeBodyStates.Rewinding)
         {
             CancelTimeTimeBendingAction();
@@ -50,6 +51,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
     public void ToggleFreeze()
     {
+        Throw(0);
         if (timeBendingController.GetCurrentState() == TimeBodyStates.Stoped)
         {
             CancelTimeTimeBendingAction();

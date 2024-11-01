@@ -7,12 +7,12 @@ using UnityEngine;
 */
 public class CarriableBase : MonoBehaviour, ICarriable
 {
+    private ICarrier carrier;
     protected Rigidbody rb;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        Debug.Log(rb);
     }
 
     private void TogglePhysics(bool enable)
@@ -22,18 +22,24 @@ public class CarriableBase : MonoBehaviour, ICarriable
         rb.freezeRotation = !enable;
     }
 
-    public void Pickup(Transform parent)
+    public void Pickup(ICarrier parent)
     {
         if (!CanPick()) return;
 
-        transform.parent = parent;
-        transform.position = parent.position;
+        carrier = parent;
+        carrier.AddCarriable(this);
+        transform.parent = carrier.GetMountingPointTransform();
+        transform.position = carrier.GetMountingPointTransform().position;
         transform.localRotation = Quaternion.identity;
         TogglePhysics(false);
     }
 
     public void Throw(float magnitude)
     {
+        if (carrier == null) return;
+        
+        carrier.RemoveCarriable(this);
+        carrier = null;
         transform.parent = null;
         TogglePhysics(true);
         rb.velocity = transform.forward * magnitude;
@@ -42,5 +48,9 @@ public class CarriableBase : MonoBehaviour, ICarriable
     public virtual bool CanPick()
     {
         return true;
+    }
+
+    public bool IsPicked() {
+        return carrier != null;
     }
 }
