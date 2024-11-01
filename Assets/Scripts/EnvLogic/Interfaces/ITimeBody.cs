@@ -7,8 +7,7 @@ public interface ITimeBody
     public void Focus();
     public void UnFocus();
     public void StartRewinding();
-    public void StopRewiding();
     public void StartFreezing();
-    public void StopFreezing();
+    public void CancelTimeTimeBendingAction();
     
 }

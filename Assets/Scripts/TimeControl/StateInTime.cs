@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public struct PointInTime
+public struct StateInTime
 {
     public Vector3 position { get; }
     public Quaternion rotation { get; }
 
-    public PointInTime(Vector3 _position, Quaternion _rotation)
+    public StateInTime(Vector3 _position, Quaternion _rotation)
     {
         position = _position;
         rotation = _rotation;

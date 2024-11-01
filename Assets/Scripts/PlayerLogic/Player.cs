@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
 
     private void CancelRewindAction(InputAction.CallbackContext context)
     {
-        currentFocus.StopRewiding();
+        currentFocus.CancelTimeTimeBendingAction();
     }
 
     private void StopTimeAction(InputAction.CallbackContext context)
@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
 
     private void ResumeTimeAction(InputAction.CallbackContext context)
     {
-        currentFocus.StopFreezing();
+        currentFocus.CancelTimeTimeBendingAction();
     }
 
     private void Start () {

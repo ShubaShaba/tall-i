@@ -64,8 +64,6 @@ public class ControlManager : MonoBehaviour
             case PlayersActionType.Throw:
                 playerActions.Throw.performed += action;
                 break;
-            default:
-                break;
         }
     }
 }
