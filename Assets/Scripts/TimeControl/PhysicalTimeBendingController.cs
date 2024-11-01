@@ -14,6 +14,8 @@ public class PhysicalTimeBendingController
     private Rigidbody rigidbodyRef;
     private float rememberTime;
 
+    private int rewindIndex = 0;
+
     public PhysicalTimeBendingController(float givenRememberTime, Transform givenTransformRef, Rigidbody givenRigidbodyRef)
     {
         statesInTime = new List<StateInTime>();
@@ -24,8 +26,10 @@ public class PhysicalTimeBendingController
         rigidbodyRef = givenRigidbodyRef;
 
         AddOnEnterAction(TimeBodyStates.Rewinding, onEnterRewind);
+        AddOnEnterAction(TimeBodyStates.ReverseRewinding, onEnterRewind);
         AddOnEnterAction(TimeBodyStates.Stoped, onEnterFreeze);
         AddOnExitAction(TimeBodyStates.Rewinding, OnExitRewind);
+        AddOnExitAction(TimeBodyStates.ReverseRewinding, OnExitRewind);
         AddOnExitAction(TimeBodyStates.Stoped, OnExitFreeze);
     }
 
@@ -89,10 +93,20 @@ public class PhysicalTimeBendingController
         switch (currentState)
         {
             case TimeBodyStates.Natural:
-                Record();
+                if (rewindIndex > 0)
+                {
+                    SetState(TimeBodyStates.ReverseRewinding);
+                }
+                else
+                {
+                    Record();
+                }
                 break;
             case TimeBodyStates.Rewinding:
                 Rewind();
+                break;
+            case TimeBodyStates.ReverseRewinding:
+                ReverseRewind();
                 break;
             default:
                 break;
@@ -122,18 +136,40 @@ public class PhysicalTimeBendingController
 
     private void Rewind()
     {
-        if (statesInTime.Count > 0)
+        if (rewindIndex < statesInTime.Count)
         {
-            StateInTime stateInTime = statesInTime[0];
-            statesInTime.RemoveAt(0);
+            StateInTime stateInTime = statesInTime[rewindIndex];
 
             rigidbodyRef.MovePosition(stateInTime.position + (-stateInTime.linearVelocity) * Time.fixedDeltaTime);
             Quaternion deltaRotation = Quaternion.Euler((-stateInTime.angularVelocity) * Time.fixedDeltaTime);
             rigidbodyRef.MoveRotation(stateInTime.rotation * deltaRotation);
+
+            rewindIndex++;
+        }
+        else
+        {
+            statesInTime.Clear();
+            rewindIndex = 0;
+            SetState(TimeBodyStates.Natural);
+        }
+    }
+
+    private void ReverseRewind()
+    {
+        if (rewindIndex > 0)
+        {
+            StateInTime stateInTime = statesInTime[rewindIndex];
+
+            rigidbodyRef.MovePosition(stateInTime.position + stateInTime.linearVelocity * Time.fixedDeltaTime);
+            Quaternion deltaRotation = Quaternion.Euler(stateInTime.angularVelocity * Time.fixedDeltaTime);
+            rigidbodyRef.MoveRotation(stateInTime.rotation * deltaRotation);
+
+            rewindIndex--;
         }
         else
         {
             SetState(TimeBodyStates.Natural);
+
         }
     }
 
