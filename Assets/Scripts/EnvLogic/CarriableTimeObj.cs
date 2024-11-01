@@ -79,28 +79,20 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
     private void onEnterRewind()
     {
-        rb.isKinematic = true;
         visuals.RewindAnimation();
     }
 
     private void onEnterFreeze()
     {
-        rb.isKinematic = true;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
         visuals.FreezeAnimation();
     }
 
     private void OnExitRewind()
     {
-        rb.isKinematic = false;
-        timeBendingController.setPreviousPhysicalState();
         visuals.FocusAnimation();
     }
     private void OnExitFreeze()
     {
-        rb.isKinematic = false;
-        rb.constraints = 0;
-        timeBendingController.setPreviousPhysicalState();
         visuals.FocusAnimation();
     }
 }

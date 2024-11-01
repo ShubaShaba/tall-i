@@ -7,8 +7,8 @@ public class PhysicalTimeBendingController
 {
     private TimeBodyStates currentState;
     private TimeBodyStates previousState;
-    private Dictionary<TimeBodyStates, Action> onEnterActions;
-    private Dictionary<TimeBodyStates, Action> onExitActions;
+    private Dictionary<TimeBodyStates, List<Action>> onEnterActions;
+    private Dictionary<TimeBodyStates, List<Action>> onExitActions;
     private List<StateInTime> statesInTime;
     private Transform transformRef;
     private Rigidbody rigidbodyRef;
@@ -17,21 +17,40 @@ public class PhysicalTimeBendingController
     public PhysicalTimeBendingController(float givenRememberTime, Transform givenTransformRef, Rigidbody givenRigidbodyRef)
     {
         statesInTime = new List<StateInTime>();
-        onExitActions = new Dictionary<TimeBodyStates, Action>();
-        onEnterActions = new Dictionary<TimeBodyStates, Action>();
+        onExitActions = new Dictionary<TimeBodyStates, List<Action>>();
+        onEnterActions = new Dictionary<TimeBodyStates, List<Action>>();
         rememberTime = givenRememberTime;
         transformRef = givenTransformRef;
         rigidbodyRef = givenRigidbodyRef;
+
+        AddOnEnterAction(TimeBodyStates.Rewinding, onEnterRewind);
+        AddOnEnterAction(TimeBodyStates.Stoped, onEnterFreeze);
+        AddOnExitAction(TimeBodyStates.Rewinding, OnExitRewind);
+        AddOnExitAction(TimeBodyStates.Stoped, OnExitFreeze);
     }
 
     public void AddOnExitAction(TimeBodyStates state, Action action)
     {
-        onExitActions.Add(state, action);
+        if (onExitActions.ContainsKey(state))
+        {
+            onExitActions[state].Add(action);
+        }
+        else
+        {
+            onExitActions.Add(state, new List<Action>() { action });
+        }
     }
 
     public void AddOnEnterAction(TimeBodyStates state, Action action)
     {
-        onEnterActions.Add(state, action);
+        if (onEnterActions.ContainsKey(state))
+        {
+            onEnterActions[state].Add(action);
+        }
+        else
+        {
+            onEnterActions.Add(state, new List<Action>() { action });
+        }
     }
 
     public void SetState(TimeBodyStates state)
@@ -41,7 +60,8 @@ public class PhysicalTimeBendingController
 
         if (onExitActions.ContainsKey(currentState))
         {
-            onExitActions[currentState]();
+            foreach (Action action in onExitActions[currentState])
+                action();
         }
 
         previousState = currentState;
@@ -49,7 +69,8 @@ public class PhysicalTimeBendingController
 
         if (onEnterActions.ContainsKey(currentState))
         {
-            onEnterActions[currentState]();
+            foreach (Action action in onEnterActions[currentState])
+                action();
         }
     }
 
@@ -78,7 +99,7 @@ public class PhysicalTimeBendingController
         }
     }
 
-    public void setPreviousPhysicalState()
+    private void SetPreviousPhysicalState()
     {
         if (statesInTime.Count > 0)
         {
@@ -114,5 +135,28 @@ public class PhysicalTimeBendingController
         {
             SetState(TimeBodyStates.Natural);
         }
+    }
+
+    private void onEnterRewind()
+    {
+        rigidbodyRef.isKinematic = true;
+    }
+
+    private void onEnterFreeze()
+    {
+        rigidbodyRef.isKinematic = true;
+        rigidbodyRef.constraints = RigidbodyConstraints.FreezeRotation;
+    }
+
+    private void OnExitRewind()
+    {
+        rigidbodyRef.isKinematic = false;
+        SetPreviousPhysicalState();
+    }
+    private void OnExitFreeze()
+    {
+        rigidbodyRef.isKinematic = false;
+        rigidbodyRef.constraints = 0;
+        SetPreviousPhysicalState();
     }
 }
