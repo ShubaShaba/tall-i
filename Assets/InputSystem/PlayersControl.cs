@@ -73,27 +73,9 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""CancelRewind"",
-                    ""type"": ""Button"",
-                    ""id"": ""e81bc7cc-f790-4a24-9f5d-3c98e1b225c7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""StopTime"",
                     ""type"": ""Button"",
                     ""id"": ""3d6675af-8b86-431d-a4f7-2364ca0630a7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ResumeTime"",
-                    ""type"": ""Button"",
-                    ""id"": ""c00d663b-539d-43da-a148-e0a76dfe1877"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -220,34 +202,12 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""cedb3c34-6478-46b4-9806-bb9dd6b833d9"",
+                    ""id"": ""77a4bf3a-d777-4026-abab-5d9130d9bac6"",
                     ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CancelRewind"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""77a4bf3a-d777-4026-abab-5d9130d9bac6"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
                     ""action"": ""StopTime"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""208db5f7-f25d-4116-8648-b18074e68620"",
-                    ""path"": ""<Keyboard>/4"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ResumeTime"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -285,9 +245,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Focus = m_Player.FindAction("Focus", throwIfNotFound: true);
         m_Player_RewindTime = m_Player.FindAction("RewindTime", throwIfNotFound: true);
-        m_Player_CancelRewind = m_Player.FindAction("CancelRewind", throwIfNotFound: true);
         m_Player_StopTime = m_Player.FindAction("StopTime", throwIfNotFound: true);
-        m_Player_ResumeTime = m_Player.FindAction("ResumeTime", throwIfNotFound: true);
         m_Player_Pickup = m_Player.FindAction("Pickup", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
     }
@@ -356,9 +314,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Focus;
     private readonly InputAction m_Player_RewindTime;
-    private readonly InputAction m_Player_CancelRewind;
     private readonly InputAction m_Player_StopTime;
-    private readonly InputAction m_Player_ResumeTime;
     private readonly InputAction m_Player_Pickup;
     private readonly InputAction m_Player_Throw;
     public struct PlayerActions
@@ -370,9 +326,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Focus => m_Wrapper.m_Player_Focus;
         public InputAction @RewindTime => m_Wrapper.m_Player_RewindTime;
-        public InputAction @CancelRewind => m_Wrapper.m_Player_CancelRewind;
         public InputAction @StopTime => m_Wrapper.m_Player_StopTime;
-        public InputAction @ResumeTime => m_Wrapper.m_Player_ResumeTime;
         public InputAction @Pickup => m_Wrapper.m_Player_Pickup;
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -399,15 +353,9 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
             @RewindTime.started += instance.OnRewindTime;
             @RewindTime.performed += instance.OnRewindTime;
             @RewindTime.canceled += instance.OnRewindTime;
-            @CancelRewind.started += instance.OnCancelRewind;
-            @CancelRewind.performed += instance.OnCancelRewind;
-            @CancelRewind.canceled += instance.OnCancelRewind;
             @StopTime.started += instance.OnStopTime;
             @StopTime.performed += instance.OnStopTime;
             @StopTime.canceled += instance.OnStopTime;
-            @ResumeTime.started += instance.OnResumeTime;
-            @ResumeTime.performed += instance.OnResumeTime;
-            @ResumeTime.canceled += instance.OnResumeTime;
             @Pickup.started += instance.OnPickup;
             @Pickup.performed += instance.OnPickup;
             @Pickup.canceled += instance.OnPickup;
@@ -433,15 +381,9 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
             @RewindTime.started -= instance.OnRewindTime;
             @RewindTime.performed -= instance.OnRewindTime;
             @RewindTime.canceled -= instance.OnRewindTime;
-            @CancelRewind.started -= instance.OnCancelRewind;
-            @CancelRewind.performed -= instance.OnCancelRewind;
-            @CancelRewind.canceled -= instance.OnCancelRewind;
             @StopTime.started -= instance.OnStopTime;
             @StopTime.performed -= instance.OnStopTime;
             @StopTime.canceled -= instance.OnStopTime;
-            @ResumeTime.started -= instance.OnResumeTime;
-            @ResumeTime.performed -= instance.OnResumeTime;
-            @ResumeTime.canceled -= instance.OnResumeTime;
             @Pickup.started -= instance.OnPickup;
             @Pickup.performed -= instance.OnPickup;
             @Pickup.canceled -= instance.OnPickup;
@@ -472,9 +414,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnFocus(InputAction.CallbackContext context);
         void OnRewindTime(InputAction.CallbackContext context);
-        void OnCancelRewind(InputAction.CallbackContext context);
         void OnStopTime(InputAction.CallbackContext context);
-        void OnResumeTime(InputAction.CallbackContext context);
         void OnPickup(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
     }

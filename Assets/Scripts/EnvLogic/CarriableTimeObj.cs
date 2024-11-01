@@ -7,8 +7,24 @@ using UnityEngine.InputSystem;
 public class CarriableTimeObj : CarriableBase, ITimeBody
 {
     [SerializeField] private ControlManager controlManager;
+    [SerializeField] private float rewindTimeTime = 5;
     private TimeBendingVisual visuals;
     private TimeBendingController timeBendingController;
+
+    private void Start()
+    {
+        visuals = GetComponent<TimeBendingVisual>();
+        timeBendingController = new TimeBendingController(rewindTimeTime, transform, rb);
+        timeBendingController.AddOnEnterAction(TimeBodyStates.Rewinding, onEnterRewind);
+        timeBendingController.AddOnEnterAction(TimeBodyStates.Stoped, onEnterFreeze);
+        timeBendingController.AddOnExitAction(TimeBodyStates.Rewinding, OnExitRewind);
+        timeBendingController.AddOnExitAction(TimeBodyStates.Stoped, OnExitFreeze);
+    }
+
+    void FixedUpdate()
+    {
+        timeBendingController.HandleTime();
+    }
 
     public void Focus()
     {
@@ -21,28 +37,25 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         visuals.CancelEverything();
     }
 
-    public void StartRewinding()
+    public void ToggleRewind()
     {
+        if (timeBendingController.GetCurrentState() == TimeBodyStates.Rewinding)
+        {
+            CancelTimeTimeBendingAction();
+            return;
+        }
         timeBendingController.SetState(TimeBodyStates.Rewinding);
     }
 
 
-    public void StartFreezing()
+    public void ToggleFreeze()
     {
+        if (timeBendingController.GetCurrentState() == TimeBodyStates.Stoped)
+        {
+            CancelTimeTimeBendingAction();
+            return;
+        }
         timeBendingController.SetState(TimeBodyStates.Stoped);
-    }
-
-    public void CancelTimeTimeBendingAction()
-    {
-        if (timeBendingController.GetPreviousState() == TimeBodyStates.Rewinding && timeBendingController.GetCurrentState() == TimeBodyStates.Stoped)
-        {
-            Debug.Log("AAAAAAAAAAAAA");
-            timeBendingController.SetState(TimeBodyStates.Rewinding);
-        }
-        else
-        {
-            timeBendingController.SetState(TimeBodyStates.Natural);
-        }
     }
 
     public override bool CanPick()
@@ -50,14 +63,16 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         return timeBendingController.GetCurrentState() == TimeBodyStates.Natural;
     }
 
-    private void Start()
+    private void CancelTimeTimeBendingAction()
     {
-        visuals = GetComponent<TimeBendingVisual>();
-        timeBendingController = new TimeBendingController(5, transform, rb);
-        timeBendingController.AddOnEnterAction(TimeBodyStates.Rewinding, onEnterRewind);
-        timeBendingController.AddOnEnterAction(TimeBodyStates.Stoped, onEnterFreeze);
-        timeBendingController.AddOnExitAction(TimeBodyStates.Rewinding, OnExitRewind);
-        timeBendingController.AddOnExitAction(TimeBodyStates.Stoped, OnExitFreeze);
+        if (timeBendingController.GetPreviousState() == TimeBodyStates.Rewinding && timeBendingController.GetCurrentState() == TimeBodyStates.Stoped)
+        {
+            timeBendingController.SetState(TimeBodyStates.Rewinding);
+        }
+        else
+        {
+            timeBendingController.SetState(TimeBodyStates.Natural);
+        }
     }
 
     private void onEnterRewind()
@@ -83,10 +98,5 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         rb.isKinematic = false;
         rb.constraints = 0;
         visuals.FocusAnimation();
-    }
-
-    void FixedUpdate()
-    {
-        timeBendingController.HandleTime();
     }
 }

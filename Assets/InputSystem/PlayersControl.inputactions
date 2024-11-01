@@ -51,27 +51,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "CancelRewind",
-                    "type": "Button",
-                    "id": "e81bc7cc-f790-4a24-9f5d-3c98e1b225c7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "StopTime",
                     "type": "Button",
                     "id": "3d6675af-8b86-431d-a4f7-2364ca0630a7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ResumeTime",
-                    "type": "Button",
-                    "id": "c00d663b-539d-43da-a148-e0a76dfe1877",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -198,34 +180,12 @@
                 },
                 {
                     "name": "",
-                    "id": "cedb3c34-6478-46b4-9806-bb9dd6b833d9",
+                    "id": "77a4bf3a-d777-4026-abab-5d9130d9bac6",
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "CancelRewind",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "77a4bf3a-d777-4026-abab-5d9130d9bac6",
-                    "path": "<Keyboard>/3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
                     "action": "StopTime",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "208db5f7-f25d-4116-8648-b18074e68620",
-                    "path": "<Keyboard>/4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ResumeTime",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

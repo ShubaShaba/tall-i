@@ -52,22 +52,12 @@ public class Player : MonoBehaviour
 
     private void RewindAction(InputAction.CallbackContext context)
     {
-        currentFocus.StartRewinding();
-    }
-
-    private void CancelRewindAction(InputAction.CallbackContext context)
-    {
-        currentFocus.CancelTimeTimeBendingAction();
+        currentFocus?.ToggleRewind();
     }
 
     private void StopTimeAction(InputAction.CallbackContext context)
     {
-        currentFocus.StartFreezing();
-    }
-
-    private void ResumeTimeAction(InputAction.CallbackContext context)
-    {
-        currentFocus.CancelTimeTimeBendingAction();
+        currentFocus?.ToggleFreeze();
     }
 
     private void Start () {
@@ -75,9 +65,7 @@ public class Player : MonoBehaviour
         controlManager.AddPlayersAction(PlayersActionType.Pickup, PickupObj);
         controlManager.AddPlayersAction(PlayersActionType.Throw, ThrowObj);
         controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
-        controlManager.AddPlayersAction(PlayersActionType.CancelRewind, CancelRewindAction);
         controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
-        controlManager.AddPlayersAction(PlayersActionType.ResumeTime, ResumeTimeAction);
     }
 
     private void Update () {

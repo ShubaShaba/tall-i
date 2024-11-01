@@ -49,14 +49,8 @@ public class ControlManager : MonoBehaviour
             case PlayersActionType.Rewind:
                 playerActions.RewindTime.performed += action;
                 break;
-            case PlayersActionType.CancelRewind:
-                playerActions.CancelRewind.performed += action;
-                break;
             case PlayersActionType.StopTime:
                 playerActions.StopTime.performed += action;
-                break;
-            case PlayersActionType.ResumeTime:
-                playerActions.ResumeTime.performed += action;
                 break;
             case PlayersActionType.Pickup:
                 playerActions.Pickup.performed += action;
