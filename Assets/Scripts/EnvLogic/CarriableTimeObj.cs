@@ -9,12 +9,12 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     [SerializeField] private ControlManager controlManager;
     [SerializeField] private float rewindTimeTime = 5;
     private TimeBendingVisual visuals;
-    private TimeBendingController timeBendingController;
+    private PhysicalTimeBendingController timeBendingController;
 
     private void Start()
     {
         visuals = GetComponent<TimeBendingVisual>();
-        timeBendingController = new TimeBendingController(rewindTimeTime, transform, rb);
+        timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb);
         timeBendingController.AddOnEnterAction(TimeBodyStates.Rewinding, onEnterRewind);
         timeBendingController.AddOnEnterAction(TimeBodyStates.Stoped, onEnterFreeze);
         timeBendingController.AddOnExitAction(TimeBodyStates.Rewinding, OnExitRewind);
@@ -91,12 +91,14 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     private void OnExitRewind()
     {
         rb.isKinematic = false;
+        timeBendingController.setPreviousPhysicalState();
         visuals.FocusAnimation();
     }
     private void OnExitFreeze()
     {
         rb.isKinematic = false;
         rb.constraints = 0;
+        timeBendingController.setPreviousPhysicalState();
         visuals.FocusAnimation();
     }
 }

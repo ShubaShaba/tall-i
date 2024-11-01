@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeBendingController
+public class PhysicalTimeBendingController
 {
     private TimeBodyStates currentState;
     private TimeBodyStates previousState;
@@ -14,7 +14,7 @@ public class TimeBendingController
     private Rigidbody rigidbodyRef;
     private float rememberTime;
 
-    public TimeBendingController(float givenRememberTime, Transform givenTransformRef, Rigidbody givenRigidbodyRef)
+    public PhysicalTimeBendingController(float givenRememberTime, Transform givenTransformRef, Rigidbody givenRigidbodyRef)
     {
         statesInTime = new List<StateInTime>();
         onExitActions = new Dictionary<TimeBodyStates, Action>();
@@ -43,7 +43,7 @@ public class TimeBendingController
         {
             onExitActions[currentState]();
         }
-        
+
         previousState = currentState;
         currentState = state;
 
@@ -78,13 +78,25 @@ public class TimeBendingController
         }
     }
 
+    public void setPreviousPhysicalState()
+    {
+        if (statesInTime.Count > 0)
+        {
+            rigidbodyRef.velocity = statesInTime[0].linearVelocity;
+            rigidbodyRef.angularVelocity = statesInTime[0].angularVelocity;
+        }
+    }
+
     private void Record()
     {
         if (statesInTime.Count > Mathf.Round(rememberTime / Time.fixedDeltaTime))
         {
             statesInTime.RemoveAt(statesInTime.Count - 1);
         }
-        statesInTime.Insert(0, new StateInTime(transformRef.position, transformRef.rotation));
+        statesInTime.Insert(0, new StateInTime(
+            transformRef.position, transformRef.rotation,
+            rigidbodyRef.velocity, rigidbodyRef.angularVelocity
+        ));
     }
 
     private void Rewind()
@@ -93,8 +105,10 @@ public class TimeBendingController
         {
             StateInTime stateInTime = statesInTime[0];
             statesInTime.RemoveAt(0);
-            transformRef.position = stateInTime.position;
-            transformRef.rotation = stateInTime.rotation;
+
+            rigidbodyRef.MovePosition(stateInTime.position + (-stateInTime.linearVelocity) * Time.fixedDeltaTime);
+            Quaternion deltaRotation = Quaternion.Euler((-stateInTime.angularVelocity) * Time.fixedDeltaTime);
+            rigidbodyRef.MoveRotation(stateInTime.rotation * deltaRotation);
         }
         else
         {
