@@ -13,18 +13,20 @@ public class PhysicalTimeBendingController
     private Transform transformRef;
     private Rigidbody rigidbodyRef;
     private float rememberTime;
+    private int slowDownC;
 
     private int rewindIndex = 0;
     private int slowDownIndex = 0;
 
-    public PhysicalTimeBendingController(float givenRememberTime, Transform givenTransformRef, Rigidbody givenRigidbodyRef)
+    public PhysicalTimeBendingController(float _rememberTime, Transform _transformRef, Rigidbody _rigidbodyRef, int _slowDownC = 1)
     {
         statesInTime = new List<StateInTime>();
         onExitActions = new Dictionary<TimeBodyStates, List<Action>>();
         onEnterActions = new Dictionary<TimeBodyStates, List<Action>>();
-        rememberTime = givenRememberTime;
-        transformRef = givenTransformRef;
-        rigidbodyRef = givenRigidbodyRef;
+        rememberTime = _rememberTime;
+        transformRef = _transformRef;
+        rigidbodyRef = _rigidbodyRef;
+        slowDownC = _slowDownC;
 
         AddOnEnterAction(TimeBodyStates.Rewinding, onEnterRewind);
         AddOnEnterAction(TimeBodyStates.ReverseRewinding, onEnterRewind);
@@ -32,6 +34,13 @@ public class PhysicalTimeBendingController
         AddOnExitAction(TimeBodyStates.Rewinding, OnExitRewind);
         AddOnExitAction(TimeBodyStates.ReverseRewinding, OnExitRewind);
         AddOnExitAction(TimeBodyStates.Stoped, OnExitFreeze);
+        
+        AddOnEnterAction(TimeBodyStates.ControlledRewinding, onEnterRewind);
+        AddOnEnterAction(TimeBodyStates.ControlledReverseRewinding, onEnterRewind);
+        AddOnEnterAction(TimeBodyStates.ControlledStoped, onEnterFreeze);
+        AddOnExitAction(TimeBodyStates.ControlledRewinding, OnExitRewind);
+        AddOnExitAction(TimeBodyStates.ControlledReverseRewinding, OnExitRewind);
+        AddOnExitAction(TimeBodyStates.ControlledStoped, OnExitFreeze);
     }
 
     public void AddOnExitAction(TimeBodyStates state, Action action)
@@ -108,6 +117,12 @@ public class PhysicalTimeBendingController
                 break;
             case TimeBodyStates.ReverseRewinding:
                 ReverseRewind();
+                break;
+            case TimeBodyStates.ControlledRewinding:
+                Rewind(slowDownC);
+                break;
+            case TimeBodyStates.ControlledReverseRewinding:
+                ReverseRewind(slowDownC);
                 break;
             default:
                 break;

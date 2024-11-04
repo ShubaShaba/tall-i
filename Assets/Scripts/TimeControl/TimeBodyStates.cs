@@ -4,5 +4,7 @@ public enum TimeBodyStates
     Rewinding,
     ReverseRewinding,
     Stoped,
-    Controlled
+    ControlledStoped,
+    ControlledRewinding,
+    ControlledReverseRewinding
 }
