@@ -21,9 +21,10 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
         foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
         {
             if (state != TimeBodyStates.Natural) {
-                timeBendingController.AddDuringStateActionFixedUpdate(state, DuringAnyTimeState);
-                timeBendingController.AddOnEnterAction(state, OnAnyStateEnter);
+                timeBendingController.AddDuringStateActionFixedUpdate(state, DuringAnyTimeStateExceptNatural);
+                timeBendingController.AddOnEnterAction(state, OnAnyStateEnterExceptNatural);
             }
+            timeBendingController.AddOnEnterAction(state, OnAnyStateEnter);
             timeBendingController.AddOnExitAction(state, OnAnyStateExit);
         }
     }
@@ -74,14 +75,19 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
         physicalTimeObjBase.ToggleState(TimeBodyStates.Rewinding);
     }
 
-    private void DuringAnyTimeState()
+    private void DuringAnyTimeStateExceptNatural()
     {
         UpdateTarget();
     }
 
-    private void OnAnyStateEnter()
+    private void OnAnyStateEnterExceptNatural()
     {
         StopCycling();
+    }
+
+    private void OnAnyStateEnter()
+    {
+        rb.isKinematic = true;
     }
 
     private void OnAnyStateExit()
