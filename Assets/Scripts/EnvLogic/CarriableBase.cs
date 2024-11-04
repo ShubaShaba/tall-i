@@ -37,7 +37,7 @@ public class CarriableBase : MonoBehaviour, ICarriable
     public void Throw(float magnitude)
     {
         if (carrier == null) return;
-        
+
         carrier.RemoveCarriable(this);
         carrier = null;
         transform.parent = null;
@@ -50,7 +50,8 @@ public class CarriableBase : MonoBehaviour, ICarriable
         return true;
     }
 
-    public bool IsPicked() {
+    public bool IsPicked()
+    {
         return carrier != null;
     }
 }

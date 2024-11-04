@@ -11,5 +11,5 @@ public interface ITimeBody
     public void ToggleManualControl();
     public void ManualBackward();
     public void ManualForward();
-    public bool IsInManualMode();    
+    public bool IsInManualMode();
 }

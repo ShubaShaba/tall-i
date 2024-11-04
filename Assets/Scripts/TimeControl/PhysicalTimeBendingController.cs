@@ -34,7 +34,7 @@ public class PhysicalTimeBendingController
         AddOnExitAction(TimeBodyStates.Rewinding, OnExitRewind);
         AddOnExitAction(TimeBodyStates.ReverseRewinding, OnExitRewind);
         AddOnExitAction(TimeBodyStates.Stoped, OnExitFreeze);
-        
+
         AddOnEnterAction(TimeBodyStates.ControlledRewinding, onEnterRewind);
         AddOnEnterAction(TimeBodyStates.ControlledReverseRewinding, onEnterRewind);
         AddOnEnterAction(TimeBodyStates.ControlledStoped, onEnterFreeze);
