@@ -56,7 +56,6 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         timeBendingController.SetState(TimeBodyStates.Rewinding);
     }
 
-
     public void ToggleFreeze()
     {
         Throw(0);
@@ -93,7 +92,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
     public bool IsInManualMode()
     {
-        return 
+        return
             timeBendingController.GetCurrentState() == TimeBodyStates.ControlledRewinding ||
             timeBendingController.GetCurrentState() == TimeBodyStates.ControlledReverseRewinding;
     }
