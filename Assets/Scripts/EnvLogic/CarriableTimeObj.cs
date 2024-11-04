@@ -11,12 +11,13 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     [SerializeField] private int slowDownCoefficient = 2;
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
+    private PhysicalTimeObj physicalTimeObjBase;
 
     private void Start()
     {
         visuals = GetComponent<TimeBendingVisual>();
         timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
-        visuals.InitializeVisuals(timeBendingController);
+        physicalTimeObjBase = new PhysicalTimeObj(visuals, timeBendingController);
     }
 
     void FixedUpdate()
@@ -26,81 +27,49 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
     public void Focus()
     {
-        visuals.FocusAnimation();
+        physicalTimeObjBase.Focus();
     }
 
     public void UnFocus()
     {
-        CancelTimeTimeBendingAction();
-        visuals.CancelEverything();
+        physicalTimeObjBase.UnFocus();
     }
 
     public void ToggleRewind()
     {
         Throw(0);
-        if (timeBendingController.GetCurrentState() == TimeBodyStates.Rewinding)
-        {
-            CancelTimeTimeBendingAction();
-            return;
-        }
-        timeBendingController.SetState(TimeBodyStates.Rewinding);
+        physicalTimeObjBase.ToggleState(TimeBodyStates.Rewinding);
     }
 
     public void ToggleFreeze()
     {
         Throw(0);
-        if (timeBendingController.GetCurrentState() == TimeBodyStates.Stoped)
-        {
-            CancelTimeTimeBendingAction();
-            return;
-        }
-        timeBendingController.SetState(TimeBodyStates.Stoped);
+        physicalTimeObjBase.ToggleState(TimeBodyStates.Stoped);
     }
 
     public void ToggleManualControl()
     {
         Throw(0);
-        if (timeBendingController.GetCurrentState() == TimeBodyStates.ControlledStoped)
-        {
-            CancelTimeTimeBendingAction();
-            return;
-        }
-        timeBendingController.SetState(TimeBodyStates.ControlledStoped);
+        physicalTimeObjBase.ToggleState(TimeBodyStates.ControlledStoped);
     }
 
     public void ManualBackward()
     {
-        if (!(timeBendingController.GetCurrentState() == TimeBodyStates.ControlledStoped)) return;
-        timeBendingController.SetState(TimeBodyStates.ControlledRewinding);
+        physicalTimeObjBase.ManualBackward();
     }
 
     public void ManualForward()
     {
-        if (!(timeBendingController.GetCurrentState() == TimeBodyStates.ControlledStoped)) return;
-        timeBendingController.SetState(TimeBodyStates.ControlledReverseRewinding);
+        physicalTimeObjBase.ManualForward();
     }
 
     public bool IsInManualMode()
     {
-        return
-            timeBendingController.GetCurrentState() == TimeBodyStates.ControlledRewinding ||
-            timeBendingController.GetCurrentState() == TimeBodyStates.ControlledReverseRewinding;
+        return physicalTimeObjBase.IsInManualMode();
     }
 
     protected override void OnPickup()
     {
         timeBendingController.ForceQuite();
-    }
-
-    private void CancelTimeTimeBendingAction()
-    {
-        if (timeBendingController.GetPreviousState() == TimeBodyStates.Rewinding && timeBendingController.GetCurrentState() == TimeBodyStates.Stoped)
-        {
-            timeBendingController.SetState(TimeBodyStates.Rewinding);
-        }
-        else
-        {
-            timeBendingController.SetState(TimeBodyStates.Natural);
-        }
     }
 }

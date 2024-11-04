@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class NonCarriableTimeObj : MonoBehaviour, ITimeBody
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private ControlManager controlManager;
+    [SerializeField] private float rewindTimeTime = 15;
+    [SerializeField] private int slowDownCoefficient = 2;
+    private TimeBendingVisual visuals;
+    private PhysicalTimeBendingController timeBendingController;
+    private Rigidbody rb;
+    private PhysicalTimeObj physicalTimeObjBase;
+
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        visuals = GetComponent<TimeBendingVisual>();
+        timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
+        physicalTimeObjBase = new PhysicalTimeObj(visuals, timeBendingController);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        
+        timeBendingController.HandleTime();
     }
-    
+
     public void Focus()
     {
-        // throw new System.NotImplementedException();
+        physicalTimeObjBase.Focus();
     }
 
     public void UnFocus()
     {
-        throw new System.NotImplementedException();
+        physicalTimeObjBase.UnFocus();
     }
 
     public bool IsInManualMode()
