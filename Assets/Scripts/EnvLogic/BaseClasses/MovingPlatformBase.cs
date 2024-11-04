@@ -8,8 +8,8 @@ public class MovingPlatformBase : MonoBehaviour
 {
     [SerializeField] private List<float> speed;
     [SerializeField] private List<Transform> path;
-    [SerializeField] private Vector3 carryDetectionOffset;
-    [SerializeField] private Vector3 carryDetectionSize;
+    [SerializeField] protected Vector3 carryDetectionOffset;
+    [SerializeField] protected Vector3 carryDetectionSize;
     protected Rigidbody rb;
     private int currentTarget = 0;
     private bool isForwardDirection = true;
@@ -19,7 +19,7 @@ public class MovingPlatformBase : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        lastFramePos = transform.position;
+        lastFramePos = rb.position;
         carryDetectionOffset = new Vector3(0, 0.5f, 0);
         carryDetectionSize = new Vector3(2.5f, 0.25f, 2.5f);
     }
@@ -38,18 +38,18 @@ public class MovingPlatformBase : MonoBehaviour
     {
         if (isMoving)
         {
-            float step = speed[currentTarget] * Time.fixedDeltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, path[currentTarget].position, step);
-            UpdateTarget();
+            Vector3 direction = (path[currentTarget].position - rb.position).normalized;
+            rb.MovePosition(rb.position + direction * speed[currentTarget] * Time.fixedDeltaTime);
         }
 
+        UpdateTarget();
         CarryObjects();
-        lastFramePos = transform.position;
+        lastFramePos = rb.position;
     }
 
     protected void UpdateTarget()
     {
-        if (Vector3.Distance(transform.position, path[currentTarget].position) < 0.001f)
+        if (Vector3.Distance(rb.position, path[currentTarget].position) < speed[currentTarget] * Time.fixedDeltaTime)
         {
             currentTarget = currentTarget + (isForwardDirection ? 1 : -1);
             if (currentTarget >= path.Count || currentTarget < 0)
@@ -60,19 +60,15 @@ public class MovingPlatformBase : MonoBehaviour
         }
     }
 
-    protected void CarryObjects()
+    private void CarryObjects()
     {
-        Collider[] hitColliders = Physics.OverlapBox(transform.position + carryDetectionOffset, carryDetectionSize, Quaternion.identity);
+        Collider[] hitColliders = Physics.OverlapBox(rb.position + carryDetectionOffset, carryDetectionSize, Quaternion.identity);
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            if (hitColliders[i].TryGetComponent<Rigidbody>(out Rigidbody childNodeRb))
-            {
-                childNodeRb.MovePosition(childNodeRb.position + (transform.position - lastFramePos));
-            }
-            else if (hitColliders[i].TryGetComponent<Transform>(out Transform childNodeTr))
-            {
-                childNodeTr.position = childNodeTr.position + (transform.position - lastFramePos);
-            }
+            if (hitColliders[i] == GetComponent<Collider>()) continue;
+
+            if (hitColliders[i].TryGetComponent<Transform>(out Transform childNodeTr) && !hitColliders[i].TryGetComponent<Rigidbody>(out Rigidbody childNodeRb))
+                childNodeTr.position = childNodeTr.position + (rb.position - lastFramePos);
         }
     }
 }

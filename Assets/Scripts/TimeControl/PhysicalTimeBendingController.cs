@@ -80,6 +80,10 @@ public class PhysicalTimeBendingController : StateMachine
         SetState(TimeBodyStates.Natural);
     }
 
+    public StateInTime GetCurrentStateInTime() {
+        return statesInTime[rewindIndex];
+    }
+
     private void SetPreviousPhysicalState()
     {
         if (statesInTime.Count > 0)

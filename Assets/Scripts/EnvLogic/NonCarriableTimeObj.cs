@@ -20,8 +20,8 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
 
         foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
         {
-            if (state != TimeBodyStates.Natural) {
-                timeBendingController.AddDuringStateActionFixedUpdate(state, DuringAnyTimeStateExceptNatural);
+            if (state != TimeBodyStates.Natural)
+            {
                 timeBendingController.AddOnEnterAction(state, OnAnyStateEnterExceptNatural);
             }
             timeBendingController.AddOnEnterAction(state, OnAnyStateEnter);
@@ -31,8 +31,8 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
 
     void FixedUpdate()
     {
-        MoveInFixedUpdate();
         timeBendingController.HandleTime();
+        MoveInFixedUpdate();
     }
 
     public void Focus()
@@ -73,11 +73,6 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
     public void ToggleRewind()
     {
         physicalTimeObjBase.ToggleState(TimeBodyStates.Rewinding);
-    }
-
-    private void DuringAnyTimeStateExceptNatural()
-    {
-        UpdateTarget();
     }
 
     private void OnAnyStateEnterExceptNatural()
