@@ -16,9 +16,8 @@ public class PhysicalTimeBendingController : StateMachine
 
     public PhysicalTimeBendingController(float _rememberTime, Transform _transformRef, Rigidbody _rigidbodyRef, int _slowDownC = 1)
     {
+        Init();
         statesInTime = new List<StateInTime>();
-        onExitActions = new Dictionary<TimeBodyStates, List<Action>>();
-        onEnterActions = new Dictionary<TimeBodyStates, List<Action>>();
         rememberTime = _rememberTime;
         transformRef = _transformRef;
         rigidbodyRef = _rigidbodyRef;
@@ -68,6 +67,7 @@ public class PhysicalTimeBendingController : StateMachine
             default:
                 break;
         }
+        ExecuteActions(duringStateActions);
     }
 
     public void ForceQuite()

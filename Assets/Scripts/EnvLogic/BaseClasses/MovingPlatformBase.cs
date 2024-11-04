@@ -10,6 +10,7 @@ public class MovingPlatformBase : MonoBehaviour
     [SerializeField] private List<Transform> path;
     [SerializeField] private Vector3 carryDetectionOffset;
     [SerializeField] private Vector3 carryDetectionSize;
+    protected Rigidbody rb;
     private int currentTarget = 0;
     private bool isForwardDirection = true;
     private bool isMoving = true;
@@ -17,22 +18,10 @@ public class MovingPlatformBase : MonoBehaviour
 
     void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         lastFramePos = transform.position;
         carryDetectionOffset = new Vector3(0, 0.5f, 0);
         carryDetectionSize = new Vector3(2.5f, 0.25f, 2.5f);
-    }
-
-    void FixedUpdate()
-    {
-        if (isMoving)
-        {
-            float step = speed[currentTarget] * Time.fixedDeltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, path[currentTarget].position, step);
-            UpdateTarget();
-        }
-
-        CarryObjects();
-        lastFramePos = transform.position;
     }
 
     public void StartCycling()
@@ -45,7 +34,20 @@ public class MovingPlatformBase : MonoBehaviour
         isMoving = false;
     }
 
-    private void UpdateTarget()
+    protected void MoveInFixedUpdate()
+    {
+        if (isMoving)
+        {
+            float step = speed[currentTarget] * Time.fixedDeltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, path[currentTarget].position, step);
+            UpdateTarget();
+        }
+
+        CarryObjects();
+        lastFramePos = transform.position;
+    }
+
+    protected void UpdateTarget()
     {
         if (Vector3.Distance(transform.position, path[currentTarget].position) < 0.001f)
         {
@@ -58,7 +60,7 @@ public class MovingPlatformBase : MonoBehaviour
         }
     }
 
-    private void CarryObjects()
+    protected void CarryObjects()
     {
         Collider[] hitColliders = Physics.OverlapBox(transform.position + carryDetectionOffset, carryDetectionSize, Quaternion.identity);
         for (int i = 0; i < hitColliders.Length; i++)
