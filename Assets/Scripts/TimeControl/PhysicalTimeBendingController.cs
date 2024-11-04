@@ -155,7 +155,7 @@ public class PhysicalTimeBendingController : StateMachine
     private void onEnterFreeze()
     {
         rigidbodyRef.isKinematic = true;
-        rigidbodyRef.constraints = RigidbodyConstraints.FreezeRotation;
+        rigidbodyRef.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     private void OnExitRewind()
