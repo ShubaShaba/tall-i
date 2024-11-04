@@ -3,12 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhysicalTimeBendingController
+public class PhysicalTimeBendingController : StateMachine
 {
-    private TimeBodyStates currentState;
-    private TimeBodyStates previousState;
-    private Dictionary<TimeBodyStates, List<Action>> onEnterActions;
-    private Dictionary<TimeBodyStates, List<Action>> onExitActions;
     private List<StateInTime> statesInTime;
     private Transform transformRef;
     private Rigidbody rigidbodyRef;
@@ -41,61 +37,6 @@ public class PhysicalTimeBendingController
         AddOnExitAction(TimeBodyStates.ControlledRewinding, OnExitRewind);
         AddOnExitAction(TimeBodyStates.ControlledReverseRewinding, OnExitRewind);
         AddOnExitAction(TimeBodyStates.ControlledStoped, OnExitFreeze);
-    }
-
-    public void AddOnExitAction(TimeBodyStates state, Action action)
-    {
-        if (onExitActions.ContainsKey(state))
-        {
-            onExitActions[state].Add(action);
-        }
-        else
-        {
-            onExitActions.Add(state, new List<Action>() { action });
-        }
-    }
-
-    public void AddOnEnterAction(TimeBodyStates state, Action action)
-    {
-        if (onEnterActions.ContainsKey(state))
-        {
-            onEnterActions[state].Add(action);
-        }
-        else
-        {
-            onEnterActions.Add(state, new List<Action>() { action });
-        }
-    }
-
-    public void SetState(TimeBodyStates state)
-    {
-        if (state == currentState)
-            return;
-
-        if (onExitActions.ContainsKey(currentState))
-        {
-            foreach (Action action in onExitActions[currentState])
-                action();
-        }
-
-        previousState = currentState;
-        currentState = state;
-
-        if (onEnterActions.ContainsKey(currentState))
-        {
-            foreach (Action action in onEnterActions[currentState])
-                action();
-        }
-    }
-
-    public TimeBodyStates GetCurrentState()
-    {
-        return currentState;
-    }
-
-    public TimeBodyStates GetPreviousState()
-    {
-        return previousState;
     }
 
     public void HandleTime()

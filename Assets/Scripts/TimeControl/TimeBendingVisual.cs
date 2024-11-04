@@ -15,7 +15,7 @@ public class TimeBendingVisual : MonoBehaviour
         CancelEverything();
     }
 
-    public void InitializeVisuals(PhysicalTimeBendingController _timeBendingController)
+    public void InitializeVisuals(StateMachine _timeBendingController)
     {
         _timeBendingController.AddOnEnterAction(TimeBodyStates.Rewinding, RewindAnimation);
         _timeBendingController.AddOnEnterAction(TimeBodyStates.Stoped, FreezeAnimation);
