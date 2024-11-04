@@ -16,17 +16,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     {
         visuals = GetComponent<TimeBendingVisual>();
         timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
-        timeBendingController.AddOnEnterAction(TimeBodyStates.Rewinding, onEnterRewind);
-        timeBendingController.AddOnEnterAction(TimeBodyStates.Stoped, onEnterFreeze);
-        timeBendingController.AddOnExitAction(TimeBodyStates.Rewinding, OnExit);
-        timeBendingController.AddOnExitAction(TimeBodyStates.Stoped, OnExit);
-
-        timeBendingController.AddOnEnterAction(TimeBodyStates.ControlledRewinding, onEnterControlledRewind);
-        timeBendingController.AddOnEnterAction(TimeBodyStates.ControlledReverseRewinding, onEnterControlledRewind);
-        timeBendingController.AddOnEnterAction(TimeBodyStates.ControlledStoped, onEnterControlledFreeze);
-        timeBendingController.AddOnExitAction(TimeBodyStates.ControlledStoped, OnExit);
-        timeBendingController.AddOnExitAction(TimeBodyStates.ControlledRewinding, OnExit);
-        timeBendingController.AddOnExitAction(TimeBodyStates.ControlledReverseRewinding, OnExit);
+        visuals.InitializeVisuals(timeBendingController);
     }
 
     void FixedUpdate()
@@ -97,9 +87,9 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
             timeBendingController.GetCurrentState() == TimeBodyStates.ControlledReverseRewinding;
     }
 
-    public override bool CanPick()
+    protected override void OnPickup()
     {
-        return timeBendingController.GetCurrentState() == TimeBodyStates.Natural;
+        timeBendingController.ForceQuite();
     }
 
     private void CancelTimeTimeBendingAction()
@@ -112,30 +102,5 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         {
             timeBendingController.SetState(TimeBodyStates.Natural);
         }
-    }
-
-    private void onEnterRewind()
-    {
-        visuals.RewindAnimation();
-    }
-
-    private void onEnterFreeze()
-    {
-        visuals.FreezeAnimation();
-    }
-
-    private void onEnterControlledRewind()
-    {
-        visuals.ControlledRewindAnimation();
-    }
-
-    private void onEnterControlledFreeze()
-    {
-        visuals.ControlledFreezeAnimation();
-    }
-
-    private void OnExit()
-    {
-        visuals.FocusAnimation();
     }
 }

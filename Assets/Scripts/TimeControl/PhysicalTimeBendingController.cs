@@ -129,6 +129,16 @@ public class PhysicalTimeBendingController
         }
     }
 
+    public void ForceQuite()
+    {
+        for (int i = 0; i < rewindIndex; i++)
+        {
+            statesInTime.RemoveAt(0);
+        }
+        rewindIndex = 0;
+        SetState(TimeBodyStates.Natural);
+    }
+
     private void SetPreviousPhysicalState()
     {
         if (statesInTime.Count > 0)

@@ -24,6 +24,7 @@ public class CarriableBase : MonoBehaviour, ICarriable
 
     public void Pickup(ICarrier parent)
     {
+        OnPickup();
         if (!CanPick()) return;
 
         carrier = parent;
@@ -49,6 +50,8 @@ public class CarriableBase : MonoBehaviour, ICarriable
     {
         return true;
     }
+
+    protected virtual void OnPickup() { }
 
     public bool IsPicked()
     {

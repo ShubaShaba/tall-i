@@ -10,10 +10,24 @@ public class TimeBendingVisual : MonoBehaviour
     [SerializeField] private ParticleSystem controlledFreeze;
     [SerializeField] private ParticleSystem controlledRewiding;
 
-
     private void Awake()
     {
         CancelEverything();
+    }
+
+    public void InitializeVisuals(PhysicalTimeBendingController _timeBendingController)
+    {
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.Rewinding, RewindAnimation);
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.Stoped, FreezeAnimation);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.Rewinding, FocusAnimation);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.Stoped, FocusAnimation);
+
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.ControlledRewinding, ControlledRewindAnimation);
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.ControlledReverseRewinding, ControlledRewindAnimation);
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.ControlledStoped, ControlledFreezeAnimation);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.ControlledStoped, FocusAnimation);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.ControlledRewinding, FocusAnimation);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.ControlledReverseRewinding, FocusAnimation);
     }
 
     public void CancelEverything()
