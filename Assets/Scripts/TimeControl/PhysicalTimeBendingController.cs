@@ -15,6 +15,7 @@ public class PhysicalTimeBendingController
     private float rememberTime;
 
     private int rewindIndex = 0;
+    private int slowDownIndex = 0;
 
     public PhysicalTimeBendingController(float givenRememberTime, Transform givenTransformRef, Rigidbody givenRigidbodyRef)
     {
@@ -134,17 +135,21 @@ public class PhysicalTimeBendingController
         ));
     }
 
-    private void Rewind()
+    private void Rewind(int slowDownCoefficient = 1)
     {
         if (rewindIndex < statesInTime.Count)
         {
             StateInTime stateInTime = statesInTime[rewindIndex];
+            Vector3 direction = stateInTime.position - transformRef.position;
+            rigidbodyRef.MovePosition(transformRef.position + (direction / slowDownCoefficient * (slowDownIndex + 1)));
+            rigidbodyRef.MoveRotation(Quaternion.Slerp(transformRef.rotation, stateInTime.rotation, 1f / slowDownCoefficient));
 
-            rigidbodyRef.MovePosition(stateInTime.position + (-stateInTime.linearVelocity) * Time.fixedDeltaTime);
-            Quaternion deltaRotation = Quaternion.Euler((-stateInTime.angularVelocity) * Time.fixedDeltaTime);
-            rigidbodyRef.MoveRotation(stateInTime.rotation * deltaRotation);
-
-            rewindIndex++;
+            slowDownIndex++;
+            if (slowDownIndex >= slowDownCoefficient)
+            {
+                rewindIndex++;
+                slowDownIndex = 0;
+            }
         }
         else
         {
@@ -154,22 +159,25 @@ public class PhysicalTimeBendingController
         }
     }
 
-    private void ReverseRewind()
+    private void ReverseRewind(int slowDownCoefficient = 1)
     {
         if (rewindIndex > 0)
         {
             StateInTime stateInTime = statesInTime[rewindIndex];
+            Vector3 direction = stateInTime.position - transformRef.position;
+            rigidbodyRef.MovePosition(transformRef.position + (direction / slowDownCoefficient * (slowDownIndex + 1)));
+            rigidbodyRef.MoveRotation(Quaternion.Slerp(transformRef.rotation, stateInTime.rotation, 1f / slowDownCoefficient));
 
-            rigidbodyRef.MovePosition(stateInTime.position + stateInTime.linearVelocity * Time.fixedDeltaTime);
-            Quaternion deltaRotation = Quaternion.Euler(stateInTime.angularVelocity * Time.fixedDeltaTime);
-            rigidbodyRef.MoveRotation(stateInTime.rotation * deltaRotation);
-
-            rewindIndex--;
+            slowDownIndex++;
+            if (slowDownIndex >= slowDownCoefficient)
+            {
+                rewindIndex--;
+                slowDownIndex = 0;
+            }
         }
         else
         {
             SetState(TimeBodyStates.Natural);
-
         }
     }
 
