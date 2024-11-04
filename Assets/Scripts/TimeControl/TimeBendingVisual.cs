@@ -7,6 +7,9 @@ public class TimeBendingVisual : MonoBehaviour
     [SerializeField] private ParticleSystem focusing;
     [SerializeField] private ParticleSystem rewinding;
     [SerializeField] private ParticleSystem freeze;
+    [SerializeField] private ParticleSystem controlledFreeze;
+    [SerializeField] private ParticleSystem controlledRewiding;
+
 
     private void Awake() {
         CancelEverything();
@@ -16,9 +19,13 @@ public class TimeBendingVisual : MonoBehaviour
         focusing.Stop();
         rewinding.Stop();
         freeze.Stop();
+        controlledFreeze.Stop();
+        controlledRewiding.Stop();
         focusing.Clear();
         rewinding.Clear();
         freeze.Clear();
+        controlledFreeze.Clear();
+        controlledRewiding.Clear();
     }
 
     public void FocusAnimation() {
@@ -34,5 +41,15 @@ public class TimeBendingVisual : MonoBehaviour
     public void FreezeAnimation() {
         CancelEverything();
         freeze.Play();
+    }
+
+    public void ControlledFreezeAnimation() {
+        CancelEverything();
+        controlledFreeze.Play();
+    }
+
+    public void ControlledRewindAnimation() {
+        CancelEverything();
+        controlledRewiding.Play();
     }
 }

@@ -5,7 +5,8 @@ public enum PlayersActionType
     Pickup,
     Focus,
     Rewind,
-    CancelRewind,
     StopTime,
-    ResumeTime
+    ManualRewind,
+    StartManualRewind,
+    StartManualReverseRewind
 }

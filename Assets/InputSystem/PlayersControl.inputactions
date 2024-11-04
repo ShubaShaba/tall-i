@@ -76,6 +76,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ManualRewind",
+                    "type": "Button",
+                    "id": "5d764721-0a1e-4c9e-95b6-6686dc234785",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ManualForward",
+                    "type": "Value",
+                    "id": "52be0bf4-48ae-42a3-9dbe-502a5efa8656",
+                    "expectedControlType": "Digital",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ManualBackward",
+                    "type": "Value",
+                    "id": "aa9a1136-7417-4f80-a87a-a114e9653b29",
+                    "expectedControlType": "Digital",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -208,6 +235,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f03807f9-b72b-4e19-9a8d-84619776dd50",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ManualRewind",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c22700e6-3b30-4d37-8f6b-28ac4947cbc2",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ManualForward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67d8e5b9-2bfb-4c0d-89f1-043764994fb5",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ManualBackward",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

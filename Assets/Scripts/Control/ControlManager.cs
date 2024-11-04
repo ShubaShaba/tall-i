@@ -28,12 +28,24 @@ public class ControlManager : MonoBehaviour
     //     return new Vector2(playerActions.CameraX.ReadValue<float>(), playerActions.CameraY.ReadValue<float>()).normalized;
     // }
 
-    public bool PlayerIsHoldingLeftMouse() {
+    public bool PlayerIsHoldingLeftMouse()
+    {
         return playerActions.Pickup.ReadValue<float>() >= 1.0;
     }
 
-    public bool PlayerIsRunning () {
+    public bool PlayerIsRunning()
+    {
         return playerActions.Sprint.ReadValue<float>() >= 1.0;
+    }
+
+    public bool PlayerIsRewindingBackward()
+    {
+        return playerActions.ManualBackward.ReadValue<float>() >= 1.0;
+    }
+
+    public bool PlayerIsRewindingForward()
+    {
+        return playerActions.ManualForward.ReadValue<float>() >= 1.0;
     }
 
     public void AddPlayersAction(PlayersActionType type, Action<InputAction.CallbackContext> action)
@@ -57,6 +69,15 @@ public class ControlManager : MonoBehaviour
                 break;
             case PlayersActionType.Throw:
                 playerActions.Throw.performed += action;
+                break;
+            case PlayersActionType.ManualRewind:
+                playerActions.ManualRewind.performed += action;
+                break;
+            case PlayersActionType.StartManualRewind:
+                playerActions.ManualBackward.performed += action;
+                break;
+            case PlayersActionType.StartManualReverseRewind:
+                playerActions.ManualForward.performed += action;
                 break;
         }
     }

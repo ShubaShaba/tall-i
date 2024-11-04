@@ -98,6 +98,33 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ManualRewind"",
+                    ""type"": ""Button"",
+                    ""id"": ""5d764721-0a1e-4c9e-95b6-6686dc234785"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ManualForward"",
+                    ""type"": ""Value"",
+                    ""id"": ""52be0bf4-48ae-42a3-9dbe-502a5efa8656"",
+                    ""expectedControlType"": ""Digital"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ManualBackward"",
+                    ""type"": ""Value"",
+                    ""id"": ""aa9a1136-7417-4f80-a87a-a114e9653b29"",
+                    ""expectedControlType"": ""Digital"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -232,6 +259,39 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
                     ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f03807f9-b72b-4e19-9a8d-84619776dd50"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ManualRewind"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c22700e6-3b30-4d37-8f6b-28ac4947cbc2"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ManualForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67d8e5b9-2bfb-4c0d-89f1-043764994fb5"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ManualBackward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -248,6 +308,9 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         m_Player_StopTime = m_Player.FindAction("StopTime", throwIfNotFound: true);
         m_Player_Pickup = m_Player.FindAction("Pickup", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
+        m_Player_ManualRewind = m_Player.FindAction("ManualRewind", throwIfNotFound: true);
+        m_Player_ManualForward = m_Player.FindAction("ManualForward", throwIfNotFound: true);
+        m_Player_ManualBackward = m_Player.FindAction("ManualBackward", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -317,6 +380,9 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_StopTime;
     private readonly InputAction m_Player_Pickup;
     private readonly InputAction m_Player_Throw;
+    private readonly InputAction m_Player_ManualRewind;
+    private readonly InputAction m_Player_ManualForward;
+    private readonly InputAction m_Player_ManualBackward;
     public struct PlayerActions
     {
         private @PlayersControl m_Wrapper;
@@ -329,6 +395,9 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         public InputAction @StopTime => m_Wrapper.m_Player_StopTime;
         public InputAction @Pickup => m_Wrapper.m_Player_Pickup;
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
+        public InputAction @ManualRewind => m_Wrapper.m_Player_ManualRewind;
+        public InputAction @ManualForward => m_Wrapper.m_Player_ManualForward;
+        public InputAction @ManualBackward => m_Wrapper.m_Player_ManualBackward;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -362,6 +431,15 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
             @Throw.started += instance.OnThrow;
             @Throw.performed += instance.OnThrow;
             @Throw.canceled += instance.OnThrow;
+            @ManualRewind.started += instance.OnManualRewind;
+            @ManualRewind.performed += instance.OnManualRewind;
+            @ManualRewind.canceled += instance.OnManualRewind;
+            @ManualForward.started += instance.OnManualForward;
+            @ManualForward.performed += instance.OnManualForward;
+            @ManualForward.canceled += instance.OnManualForward;
+            @ManualBackward.started += instance.OnManualBackward;
+            @ManualBackward.performed += instance.OnManualBackward;
+            @ManualBackward.canceled += instance.OnManualBackward;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -390,6 +468,15 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
             @Throw.started -= instance.OnThrow;
             @Throw.performed -= instance.OnThrow;
             @Throw.canceled -= instance.OnThrow;
+            @ManualRewind.started -= instance.OnManualRewind;
+            @ManualRewind.performed -= instance.OnManualRewind;
+            @ManualRewind.canceled -= instance.OnManualRewind;
+            @ManualForward.started -= instance.OnManualForward;
+            @ManualForward.performed -= instance.OnManualForward;
+            @ManualForward.canceled -= instance.OnManualForward;
+            @ManualBackward.started -= instance.OnManualBackward;
+            @ManualBackward.performed -= instance.OnManualBackward;
+            @ManualBackward.canceled -= instance.OnManualBackward;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -417,5 +504,8 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         void OnStopTime(InputAction.CallbackContext context);
         void OnPickup(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
+        void OnManualRewind(InputAction.CallbackContext context);
+        void OnManualForward(InputAction.CallbackContext context);
+        void OnManualBackward(InputAction.CallbackContext context);
     }
 }

@@ -59,6 +59,21 @@ public class Player : MonoBehaviour, ICarrier
         currentFocus?.ToggleFreeze();
     }
 
+    private void ManualControlAction(InputAction.CallbackContext context)
+    {
+        currentFocus?.ToggleManualControl();
+    }
+
+    private void ManualBackward(InputAction.CallbackContext context)
+    {
+        currentFocus?.ManualBackward();
+    }
+
+    private void ManualForward(InputAction.CallbackContext context)
+    {
+        currentFocus?.ManualForward();
+    }
+
     private void Start()
     {
         controlManager.AddPlayersAction(PlayersActionType.Focus, FocusOnObject);
@@ -66,13 +81,24 @@ public class Player : MonoBehaviour, ICarrier
         controlManager.AddPlayersAction(PlayersActionType.Throw, ThrowObj);
         controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
         controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
+        controlManager.AddPlayersAction(PlayersActionType.ManualRewind, ManualControlAction);
+        controlManager.AddPlayersAction(PlayersActionType.StartManualRewind, ManualBackward);
+        controlManager.AddPlayersAction(PlayersActionType.StartManualReverseRewind, ManualForward);
     }
 
+    // TODO: fix: control releated stuff is not supposed to be in Player.cs
     private void Update()
     {
         if (!controlManager.PlayerIsHoldingLeftMouse())
         {
             currentPicked?.Throw(0);
+        }
+
+        if (currentFocus == null) return;
+
+        if (!controlManager.PlayerIsRewindingBackward() && !controlManager.PlayerIsRewindingForward() && currentFocus.IsInManualMode())
+        {
+            currentFocus?.ToggleManualControl();
         }
     }
 
