@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectableTag: Selectable
   outlineMaterial: {fileID: 2100000, guid: be76a31c909c346e7bbbf4dffe719e8e, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: f18daac959c149242b5526e747113348, type: 2}
   originalMaterial: {fileID: 2100000, guid: f18daac959c149242b5526e747113348, type: 2}
   cameraPosition: {fileID: 963194228}
   playerRef: {fileID: 531642600}

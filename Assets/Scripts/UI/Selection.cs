@@ -23,15 +23,9 @@ public class Selection : MonoBehaviour
         if (PauseMenu.isPaused == false)
         {
             instructionsText.text = defaultInstructions;
-            if (playerUIdata.isCarryingSomething()){
-                instructionsText.text = "Throw Object: Right Mouse";
-            }
+        
 
-            if (playerUIdata.isFocusedOnSomethingType2()){
-                instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
-                GetComponent<Renderer>().material = originalMaterial;
-
-            }
+            
 
             // Remove outline from the previously selected object
             if (_selection != null)
@@ -54,6 +48,15 @@ public class Selection : MonoBehaviour
                 if (selection.CompareTag(selectableTag))
                 {
                     var renderer = selection.GetComponent<Renderer>();
+                        if (playerUIdata.isCarryingSomething()){
+                            instructionsText.text = "Throw Object: Right Mouse";
+                            }
+
+            if (playerUIdata.isFocusedOnSomethingType2()){
+                instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
+                GetComponent<Renderer>().material = originalMaterial;
+
+            }
                     if (renderer != null)
                     {
                         // Store original material and apply outline
@@ -61,16 +64,13 @@ public class Selection : MonoBehaviour
                         renderer.material = outlineMaterial;
 
                         instructionsText.text = "Focus: F";
-
-                        if (playerUIdata.isFocusedOnSomethingType1()){
-                            instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
-
-                        }
-                        
+                    
                     }
                     _selection = selection;
+ 
                 }
-            }
+            }                    
+
         }
     }
 }
