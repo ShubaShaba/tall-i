@@ -12,41 +12,42 @@ public class Selection : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused == false){
-        instructionsText.text = defaultInstructions;
-
-        // Remove outline from the previously selected object
-        if (_selection != null)
+        if (PauseMenu.isPaused == false)
         {
-            var renderer = _selection.GetComponent<Renderer>();
-            if (renderer != null && originalMaterial != null)
-            {
-                renderer.material = originalMaterial;
-            }
-            _selection = null;
-        }
+            instructionsText.text = defaultInstructions;
 
-        // Perform raycast to find selectable object
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            var selection = hit.transform;
-            if (selection.CompareTag(selectableTag))
+            // Remove outline from the previously selected object
+            if (_selection != null)
             {
-                var renderer = selection.GetComponent<Renderer>();
-                if (renderer != null)
+                var renderer = _selection.GetComponent<Renderer>();
+                if (renderer != null && originalMaterial != null)
                 {
-                    // Store original material and apply outline
-                    originalMaterial = renderer.material;
-                    renderer.material = outlineMaterial;
-
-                    instructionsText.text = "Focus: F \nRewind: 1 \nFreeze Object: 2 \nManual Rewind: 3 \nManual Forward: E \nManual Backward: Q";
+                    renderer.material = originalMaterial;
                 }
-                _selection = selection;
+                _selection = null;
+            }
+
+            // Perform raycast to find selectable object
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                var selection = hit.transform;
+                if (selection.CompareTag(selectableTag))
+                {
+                    var renderer = selection.GetComponent<Renderer>();
+                    if (renderer != null)
+                    {
+                        // Store original material and apply outline
+                        originalMaterial = renderer.material;
+                        renderer.material = outlineMaterial;
+
+                        instructionsText.text = "Focus: F \nRewind: 1 \nFreeze Object: 2 \nManual Rewind: 3 \nManual Forward: E \nManual Backward: Q";
+                    }
+                    _selection = selection;
+                }
             }
         }
-    }
     }
 }
