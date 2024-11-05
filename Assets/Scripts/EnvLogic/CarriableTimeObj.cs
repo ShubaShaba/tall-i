@@ -9,8 +9,9 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     [SerializeField] private ControlManager controlManager;
     [SerializeField] private float rewindTimeTime = 5;
     [SerializeField] private int slowDownCoefficient = 2;
-    [SerializeField] private Vector3 deathZone;
+    [SerializeField] private float deathZoneSensitivity = 0.6f;
     [SerializeField] private Transform respawn;
+    private Collider deathZone;
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
     private PhysicalTimeHelper physicalTimeObjHelper;
@@ -20,6 +21,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         visuals = GetComponent<TimeBendingVisual>();
         timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
         physicalTimeObjHelper = new PhysicalTimeHelper(visuals, timeBendingController);
+        deathZone = GetComponent<Collider>();
 
         foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
         {
@@ -62,7 +64,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
     private void DuringAnyStateExceptNatural()
     {
-        Collider[] hitColliders = Physics.OverlapBox(rb.position, deathZone, transform.rotation);
+        Collider[] hitColliders = DeathZone.GetIntesectingColliders(rb.position, transform.rotation, deathZone, deathZoneSensitivity);
         if (hitColliders.Length > 1)
         {
             visuals.RespawnAnimation(true);

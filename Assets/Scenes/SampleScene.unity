@@ -976,12 +976,12 @@ MonoBehaviour:
   path:
   - {fileID: 1676812038}
   - {fileID: 1665023629}
-  carryDetectionOffset: {x: 0, y: 0.5, z: 0}
-  carryDetectionSize: {x: 2.5, y: 0.25, z: 2.5}
+  carryDetectionZone: {fileID: 676275442}
+  carryDetectionExtra: {x: 0, y: 0.5, z: 0}
   controlManager: {fileID: 1928338603}
   rewindTimeTime: 15
   slowDownCoefficient: 2
-  deathZone: {x: 2.48, y: 0.245, z: 2.48}
+  deathZoneSensitivity: 0.95
 --- !u!114 &676275448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,12 +1181,12 @@ MonoBehaviour:
   path:
   - {fileID: 936507177}
   - {fileID: 801335053}
-  carryDetectionOffset: {x: 0, y: 0.5, z: 0}
-  carryDetectionSize: {x: 2.5, y: 0.25, z: 2.5}
+  carryDetectionZone: {fileID: 820524871}
+  carryDetectionExtra: {x: 0, y: 0.5, z: 0}
   controlManager: {fileID: 1928338603}
   rewindTimeTime: 15
   slowDownCoefficient: 2
-  deathZone: {x: 2.48, y: 0.245, z: 2.48}
+  deathZoneSensitivity: 1.005
 --- !u!54 &820524870
 Rigidbody:
   m_ObjectHideFlags: 0
