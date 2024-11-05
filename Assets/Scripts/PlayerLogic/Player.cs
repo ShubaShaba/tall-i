@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour, ICarrier
+public class Player : MonoBehaviour, ICarrier, IPlayerUI
 {
 
     [SerializeField] private Transform cameraPosition;
@@ -112,5 +112,20 @@ public class Player : MonoBehaviour, ICarrier
     public Transform GetMountingPointTransform()
     {
         return mountingPoint;
+    }
+
+    public bool isCarryingSomething()
+    {
+        return currentPicked != null;
+    }
+
+    public bool isFocusedOnSomethingType1()
+    {
+        return currentFocus != null;
+    }
+
+    public bool isFocusedOnSomethingType2()
+    {
+        return currentFocus != null;
     }
 }

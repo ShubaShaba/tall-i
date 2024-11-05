@@ -7,9 +7,16 @@ public class Selection : MonoBehaviour
     [SerializeField] private Material outlineMaterial;
     [SerializeField] private Material originalMaterial;
     [SerializeField] private Transform cameraPosition;
+    [SerializeField] private GameObject playerRef;
+    private IPlayerUI playerUIdata;
     private Transform _selection;
     public TextMeshProUGUI instructionsText;
     private string defaultInstructions = "Pick up: Left Mouse \nThrow: Right Mouse";
+
+    void Start()
+    {
+        playerUIdata = playerRef.GetComponent<IPlayerUI>();
+    }
 
     void Update()
     {
