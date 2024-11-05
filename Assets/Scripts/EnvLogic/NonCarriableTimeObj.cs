@@ -31,7 +31,7 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
             timeBendingController.AddOnExitAction(state, OnAnyStateExit);
         }
 
-        timeBendingController.SetRecordConstraints(RecordConstraints);
+        // timeBendingController.SetRecordConstraints(RecordConstraints);
     }
 
     void FixedUpdate()
@@ -75,5 +75,5 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
 
     private void OnAnyStateExit() { StartCycling(); }
 
-    private bool RecordConstraints() { return isMoving; }
+    // private bool RecordConstraints() { return isMoving; }
 }
