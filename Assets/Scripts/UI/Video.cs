@@ -22,9 +22,5 @@ public class Video : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-    void Skip(){
-        if (Input.GetKeyDown(KeyCode.Alpha1)){
-        SceneManager.LoadScene("SampleScene"); 
-        }
-    }
+
 }
