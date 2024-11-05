@@ -8,7 +8,7 @@ public class Player : MonoBehaviour, ICarrier
 
     [SerializeField] private Camera fPcamera;
     [SerializeField] private float maxFocusDistance = 100;
-    [SerializeField] private float maxPickingDistance = 2;
+    [SerializeField] private float maxInteractionDistance = 2;
     [SerializeField] private float throwForce = 10;
 
     [SerializeField] private ControlManager controlManager;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour, ICarrier
 
     private void PickupObj(InputAction.CallbackContext context)
     {
-        ICarriable carriableObj = GetObjectReference<ICarriable>(maxPickingDistance);
+        ICarriable carriableObj = GetObjectReference<ICarriable>(maxInteractionDistance);
         if (carriableObj != null)
         {
             currentPicked?.Throw(0);
@@ -39,6 +39,12 @@ public class Player : MonoBehaviour, ICarrier
     private void ThrowObj(InputAction.CallbackContext context)
     {
         currentPicked?.Throw(throwForce);
+    }
+
+    private void InteractWithObj(InputAction.CallbackContext context)
+    {
+        IInteractable interactableObj = GetObjectReference<IInteractable>(maxInteractionDistance);
+        interactableObj?.Interact();
     }
 
     private void FocusOnObject(InputAction.CallbackContext context)
@@ -77,7 +83,8 @@ public class Player : MonoBehaviour, ICarrier
     private void Start()
     {
         controlManager.AddPlayersAction(PlayersActionType.Focus, FocusOnObject);
-        controlManager.AddPlayersAction(PlayersActionType.Pickup, PickupObj);
+        controlManager.AddPlayersAction(PlayersActionType.Interact, PickupObj);
+        controlManager.AddPlayersAction(PlayersActionType.Interact, InteractWithObj);
         controlManager.AddPlayersAction(PlayersActionType.Throw, ThrowObj);
         controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
         controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);

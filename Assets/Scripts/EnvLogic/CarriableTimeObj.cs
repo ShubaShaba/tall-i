@@ -13,13 +13,13 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     [SerializeField] private Transform respawn;
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
-    private PhysicalTimeObj physicalTimeObjBase;
+    private PhysicalTimeHelper physicalTimeObjHelper;
 
     private void Start()
     {
         visuals = GetComponent<TimeBendingVisual>();
         timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
-        physicalTimeObjBase = new PhysicalTimeObj(visuals, timeBendingController);
+        physicalTimeObjHelper = new PhysicalTimeHelper(visuals, timeBendingController);
 
         foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
         {
@@ -30,33 +30,33 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
     void FixedUpdate() { timeBendingController.HandleTime(); }
 
-    public void Focus() { physicalTimeObjBase.Focus(); }
+    public void Focus() { physicalTimeObjHelper.Focus(); }
 
-    public void UnFocus() { physicalTimeObjBase.UnFocus(); }
+    public void UnFocus() { physicalTimeObjHelper.UnFocus(); }
 
     public void ToggleRewind()
     {
         Throw(0);
-        physicalTimeObjBase.ToggleState(TimeBodyStates.Rewinding);
+        physicalTimeObjHelper.ToggleState(TimeBodyStates.Rewinding);
     }
 
     public void ToggleFreeze()
     {
         Throw(0);
-        physicalTimeObjBase.ToggleState(TimeBodyStates.Stoped);
+        physicalTimeObjHelper.ToggleState(TimeBodyStates.Stoped);
     }
 
     public void ToggleManualControl()
     {
         Throw(0);
-        physicalTimeObjBase.ToggleState(TimeBodyStates.ControlledStoped);
+        physicalTimeObjHelper.ToggleState(TimeBodyStates.ControlledStoped);
     }
 
-    public void ManualBackward() { physicalTimeObjBase.ManualBackward(); }
+    public void ManualBackward() { physicalTimeObjHelper.ManualBackward(); }
 
-    public void ManualForward() { physicalTimeObjBase.ManualForward(); }
+    public void ManualForward() { physicalTimeObjHelper.ManualForward(); }
 
-    public bool IsInManualMode() { return physicalTimeObjBase.IsInManualMode(); }
+    public bool IsInManualMode() { return physicalTimeObjHelper.IsInManualMode(); }
 
     protected override void OnPickup() { timeBendingController.ForceQuite(); }
 

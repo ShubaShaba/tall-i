@@ -11,13 +11,13 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
     [SerializeField] private Vector3 deathZone;
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
-    private PhysicalTimeObj physicalTimeObjBase;
+    private PhysicalTimeHelper physicalTimeObjHelper;
 
     private void Start()
     {
         visuals = GetComponent<TimeBendingVisual>();
         timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
-        physicalTimeObjBase = new PhysicalTimeObj(visuals, timeBendingController);
+        physicalTimeObjHelper = new PhysicalTimeHelper(visuals, timeBendingController);
 
         timeBendingController.AddDuringStateActionFixedUpdate(TimeBodyStates.Natural, DuringNaturalState);
 
@@ -40,21 +40,21 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
         MoveInFixedUpdate();
     }
 
-    public void Focus() { physicalTimeObjBase.Focus(); }
+    public void Focus() { physicalTimeObjHelper.Focus(); }
 
-    public void UnFocus() { physicalTimeObjBase.UnFocus(); }
+    public void UnFocus() { physicalTimeObjHelper.UnFocus(); }
 
-    public bool IsInManualMode() { return physicalTimeObjBase.IsInManualMode(); }
+    public bool IsInManualMode() { return physicalTimeObjHelper.IsInManualMode(); }
 
-    public void ManualBackward() { physicalTimeObjBase.ManualBackward(); }
+    public void ManualBackward() { physicalTimeObjHelper.ManualBackward(); }
 
-    public void ManualForward() { physicalTimeObjBase.ManualForward(); }
+    public void ManualForward() { physicalTimeObjHelper.ManualForward(); }
 
-    public void ToggleFreeze() { physicalTimeObjBase.ToggleState(TimeBodyStates.Stoped); }
+    public void ToggleFreeze() { physicalTimeObjHelper.ToggleState(TimeBodyStates.Stoped); }
 
-    public void ToggleManualControl() { physicalTimeObjBase.ToggleState(TimeBodyStates.ControlledStoped); }
+    public void ToggleManualControl() { physicalTimeObjHelper.ToggleState(TimeBodyStates.ControlledStoped); }
 
-    public void ToggleRewind() { physicalTimeObjBase.ToggleState(TimeBodyStates.Rewinding); }
+    public void ToggleRewind() { physicalTimeObjHelper.ToggleState(TimeBodyStates.Rewinding); }
 
     private void DuringNaturalState()
     {

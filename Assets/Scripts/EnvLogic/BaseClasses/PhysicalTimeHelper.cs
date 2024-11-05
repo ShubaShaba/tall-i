@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Helper class for other physical time objects
-public class PhysicalTimeObj
+public class PhysicalTimeHelper
 {
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
 
-    public PhysicalTimeObj(TimeBendingVisual _visuals, PhysicalTimeBendingController _timeBendingController)
+    public PhysicalTimeHelper(TimeBendingVisual _visuals, PhysicalTimeBendingController _timeBendingController)
     {
         visuals = _visuals;
         timeBendingController = _timeBendingController;

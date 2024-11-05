@@ -30,7 +30,7 @@ public class ControlManager : MonoBehaviour
 
     public bool PlayerIsHoldingLeftMouse()
     {
-        return playerActions.Pickup.ReadValue<float>() >= 1.0;
+        return playerActions.Interact.ReadValue<float>() >= 1.0;
     }
 
     public bool PlayerIsRunning()
@@ -64,8 +64,8 @@ public class ControlManager : MonoBehaviour
             case PlayersActionType.StopTime:
                 playerActions.StopTime.performed += action;
                 break;
-            case PlayersActionType.Pickup:
-                playerActions.Pickup.performed += action;
+            case PlayersActionType.Interact:
+                playerActions.Interact.performed += action;
                 break;
             case PlayersActionType.Throw:
                 playerActions.Throw.performed += action;

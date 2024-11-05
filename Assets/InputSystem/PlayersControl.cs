@@ -82,7 +82,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pickup"",
+                    ""name"": ""Interact"",
                     ""type"": ""Value"",
                     ""id"": ""0c54761b-4cf6-4cf8-8854-df31cb595021"",
                     ""expectedControlType"": ""Digital"",
@@ -245,7 +245,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pickup"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -306,7 +306,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         m_Player_Focus = m_Player.FindAction("Focus", throwIfNotFound: true);
         m_Player_RewindTime = m_Player.FindAction("RewindTime", throwIfNotFound: true);
         m_Player_StopTime = m_Player.FindAction("StopTime", throwIfNotFound: true);
-        m_Player_Pickup = m_Player.FindAction("Pickup", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
         m_Player_ManualRewind = m_Player.FindAction("ManualRewind", throwIfNotFound: true);
         m_Player_ManualForward = m_Player.FindAction("ManualForward", throwIfNotFound: true);
@@ -378,7 +378,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Focus;
     private readonly InputAction m_Player_RewindTime;
     private readonly InputAction m_Player_StopTime;
-    private readonly InputAction m_Player_Pickup;
+    private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Throw;
     private readonly InputAction m_Player_ManualRewind;
     private readonly InputAction m_Player_ManualForward;
@@ -393,7 +393,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         public InputAction @Focus => m_Wrapper.m_Player_Focus;
         public InputAction @RewindTime => m_Wrapper.m_Player_RewindTime;
         public InputAction @StopTime => m_Wrapper.m_Player_StopTime;
-        public InputAction @Pickup => m_Wrapper.m_Player_Pickup;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputAction @ManualRewind => m_Wrapper.m_Player_ManualRewind;
         public InputAction @ManualForward => m_Wrapper.m_Player_ManualForward;
@@ -425,9 +425,9 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
             @StopTime.started += instance.OnStopTime;
             @StopTime.performed += instance.OnStopTime;
             @StopTime.canceled += instance.OnStopTime;
-            @Pickup.started += instance.OnPickup;
-            @Pickup.performed += instance.OnPickup;
-            @Pickup.canceled += instance.OnPickup;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
             @Throw.started += instance.OnThrow;
             @Throw.performed += instance.OnThrow;
             @Throw.canceled += instance.OnThrow;
@@ -462,9 +462,9 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
             @StopTime.started -= instance.OnStopTime;
             @StopTime.performed -= instance.OnStopTime;
             @StopTime.canceled -= instance.OnStopTime;
-            @Pickup.started -= instance.OnPickup;
-            @Pickup.performed -= instance.OnPickup;
-            @Pickup.canceled -= instance.OnPickup;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
             @Throw.started -= instance.OnThrow;
             @Throw.performed -= instance.OnThrow;
             @Throw.canceled -= instance.OnThrow;
@@ -502,7 +502,7 @@ public partial class @PlayersControl: IInputActionCollection2, IDisposable
         void OnFocus(InputAction.CallbackContext context);
         void OnRewindTime(InputAction.CallbackContext context);
         void OnStopTime(InputAction.CallbackContext context);
-        void OnPickup(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnManualRewind(InputAction.CallbackContext context);
         void OnManualForward(InputAction.CallbackContext context);
