@@ -8,6 +8,7 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
     [SerializeField] private ControlManager controlManager;
     [SerializeField] private float rewindTimeTime = 15;
     [SerializeField] private int slowDownCoefficient = 2;
+    [SerializeField] private Vector3 deathZone;
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
     private PhysicalTimeObj physicalTimeObjBase;
@@ -17,6 +18,8 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
         visuals = GetComponent<TimeBendingVisual>();
         timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
         physicalTimeObjBase = new PhysicalTimeObj(visuals, timeBendingController);
+
+        // timeBendingController.AddDuringStateActionFixedUpdate(TimeBodyStates.Natural, DuringNaturalState);
 
         foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
         {
@@ -73,6 +76,19 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
     public void ToggleRewind()
     {
         physicalTimeObjBase.ToggleState(TimeBodyStates.Rewinding);
+    }
+
+    private void DuringNaturalState()
+    {
+        Collider[] hitColliders = Physics.OverlapBox(rb.position, deathZone, transform.rotation);
+        if (hitColliders.Length > 1)
+        {
+            StopCycling();
+        }
+        else
+        {
+            StartCycling();
+        }
     }
 
     private void OnAnyStateEnterExceptNatural()

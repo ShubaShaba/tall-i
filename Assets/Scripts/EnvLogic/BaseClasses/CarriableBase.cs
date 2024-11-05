@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /*
@@ -38,6 +39,8 @@ public class CarriableBase : MonoBehaviour, ICarriable
     public void Throw(float magnitude)
     {
         if (carrier == null) return;
+        Collider[] hitColliders = Physics.OverlapBox(rb.position, transform.localScale / 2, transform.rotation);
+        if (hitColliders.Length > 0) return;
 
         carrier.RemoveCarriable(this);
         carrier = null;

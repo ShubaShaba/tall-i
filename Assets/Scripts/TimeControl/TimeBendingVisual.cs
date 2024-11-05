@@ -9,10 +9,15 @@ public class TimeBendingVisual : MonoBehaviour
     [SerializeField] private ParticleSystem freeze;
     [SerializeField] private ParticleSystem controlledFreeze;
     [SerializeField] private ParticleSystem controlledRewiding;
+    [SerializeField] private GameObject respawnAnimation;
+
+    private GameObject respawnFirst;
 
     private void Awake()
     {
         CancelEverything();
+        respawnAnimation.GetComponent<ParticleSystem>().Stop();
+        respawnAnimation.GetComponent<ParticleSystem>().Clear();
     }
 
     public void InitializeVisuals(StateMachine _timeBendingController)
@@ -72,5 +77,16 @@ public class TimeBendingVisual : MonoBehaviour
     {
         CancelEverything();
         controlledRewiding.Play();
+    }
+
+    public void RespawnAnimation(bool isFirst)
+    {
+        CancelEverything();
+        if (respawnFirst != null && isFirst) 
+            Destroy(respawnFirst);
+        
+        if (isFirst)    
+            respawnFirst = Instantiate(respawnAnimation, transform.position, Quaternion.identity);
+        respawnAnimation.GetComponent<ParticleSystem>().Play();
     }
 }

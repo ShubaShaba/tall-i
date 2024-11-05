@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class PhysicalTimeBendingController : StateMachine
@@ -38,6 +39,7 @@ public class PhysicalTimeBendingController : StateMachine
         AddOnExitAction(TimeBodyStates.ControlledStoped, OnExitFreeze);
     }
 
+    // WARNING TO BE EXECUTED IN FixedUpdate ONLY !!!
     public void HandleTime()
     {
         switch (currentState)
@@ -77,10 +79,23 @@ public class PhysicalTimeBendingController : StateMachine
             statesInTime.RemoveAt(0);
         }
         rewindIndex = 0;
+        slowDownIndex = 0;
         SetState(TimeBodyStates.Natural);
     }
 
-    public StateInTime GetCurrentStateInTime() {
+    public void HardReset()
+    {
+        statesInTime.Clear();
+        slowDownIndex = 0;
+        rewindIndex = 0;
+        SetState(TimeBodyStates.Natural);
+        rigidbodyRef.velocity = Vector3.zero;
+        rigidbodyRef.rotation = Quaternion.identity;
+        transformRef.rotation = Quaternion.identity;
+    }
+
+    public StateInTime GetCurrentStateInTime()
+    {
         return statesInTime[rewindIndex];
     }
 
