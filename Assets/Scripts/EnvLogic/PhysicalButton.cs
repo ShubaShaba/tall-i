@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhysicalButton : MonoBehaviour
+public class PhysicalButton : SwitcherBase
 {
-    // Start is called before the first frame update
+    private Collider colliderRef;
+
     void Start()
     {
-        
+        colliderRef = GetComponent<Collider>();
+        colliderRef.isTrigger = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private void OnTriggerEnter(Collider other) { Switch(); }
+
+    private void OnTriggerExit(Collider other) { Switch(); }
 }
