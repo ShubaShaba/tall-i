@@ -151,7 +151,7 @@ MonoBehaviour:
   controlManager: {fileID: 0}
   rewindTimeTime: 5
   slowDownCoefficient: 2
-  deathZone: {x: 0.4, y: 0.4, z: 0.4}
+  deathZone: {x: 0.3, y: 0.3, z: 0.3}
   respawn: {fileID: 0}
 --- !u!114 &6862290238284649337
 MonoBehaviour:

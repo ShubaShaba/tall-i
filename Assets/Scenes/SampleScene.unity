@@ -1154,6 +1154,71 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 797784518864179116, guid: a2a060732547fe64581bb0cb3c2bdf1d, type: 3}
   m_PrefabInstance: {fileID: 1006014389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1082639116
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 286077733750643401, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_Name
+      value: CarriableItemTimeBending (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532556077352672555, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: respawn
+      value: 
+      objectReference: {fileID: 1510402084}
+    - target: {fileID: 1532556077352672555, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: controlManager
+      value: 
+      objectReference: {fileID: 1928338603}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c798f48a301e54744b04097d00084fd3, type: 3}
 --- !u!1001 &1461511610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1792,83 +1857,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2032446106
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.739
-      objectReference: {fileID: 0}
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 286077733750643401, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: m_Name
-      value: CarriableItemTimeBending
-      objectReference: {fileID: 0}
-    - target: {fileID: 1532556077352672555, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: respawn
-      value: 
-      objectReference: {fileID: 1510402084}
-    - target: {fileID: 1532556077352672555, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: deathZone.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1532556077352672555, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: deathZone.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1532556077352672555, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: deathZone.z
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1532556077352672555, guid: c798f48a301e54744b04097d00084fd3, type: 3}
-      propertyPath: controlManager
-      value: 
-      objectReference: {fileID: 1928338603}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c798f48a301e54744b04097d00084fd3, type: 3}
 --- !u!1001 &2066344481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2019,8 +2007,8 @@ SceneRoots:
   - {fileID: 1860275427}
   - {fileID: 1722853135}
   - {fileID: 1928338604}
-  - {fileID: 2032446106}
   - {fileID: 1478956678}
+  - {fileID: 1082639116}
   - {fileID: 2066344481}
   - {fileID: 1676812038}
   - {fileID: 676275445}
