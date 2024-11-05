@@ -30,6 +30,8 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
             timeBendingController.AddOnEnterAction(state, OnAnyStateEnter);
             timeBendingController.AddOnExitAction(state, OnAnyStateExit);
         }
+
+        timeBendingController.SetRecordConstraints(RecordConstraints);
     }
 
     void FixedUpdate()
@@ -38,45 +40,21 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
         MoveInFixedUpdate();
     }
 
-    public void Focus()
-    {
-        physicalTimeObjBase.Focus();
-    }
+    public void Focus() { physicalTimeObjBase.Focus(); }
 
-    public void UnFocus()
-    {
-        physicalTimeObjBase.UnFocus();
-    }
+    public void UnFocus() { physicalTimeObjBase.UnFocus(); }
 
-    public bool IsInManualMode()
-    {
-        return physicalTimeObjBase.IsInManualMode();
-    }
+    public bool IsInManualMode() { return physicalTimeObjBase.IsInManualMode(); }
 
-    public void ManualBackward()
-    {
-        physicalTimeObjBase.ManualBackward();
-    }
+    public void ManualBackward() { physicalTimeObjBase.ManualBackward(); }
 
-    public void ManualForward()
-    {
-        physicalTimeObjBase.ManualForward();
-    }
+    public void ManualForward() { physicalTimeObjBase.ManualForward(); }
 
-    public void ToggleFreeze()
-    {
-        physicalTimeObjBase.ToggleState(TimeBodyStates.Stoped);
-    }
+    public void ToggleFreeze() { physicalTimeObjBase.ToggleState(TimeBodyStates.Stoped); }
 
-    public void ToggleManualControl()
-    {
-        physicalTimeObjBase.ToggleState(TimeBodyStates.ControlledStoped);
-    }
+    public void ToggleManualControl() { physicalTimeObjBase.ToggleState(TimeBodyStates.ControlledStoped); }
 
-    public void ToggleRewind()
-    {
-        physicalTimeObjBase.ToggleState(TimeBodyStates.Rewinding);
-    }
+    public void ToggleRewind() { physicalTimeObjBase.ToggleState(TimeBodyStates.Rewinding); }
 
     private void DuringNaturalState()
     {
@@ -91,18 +69,11 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
         }
     }
 
-    private void OnAnyStateEnterExceptNatural()
-    {
-        StopCycling();
-    }
+    private void OnAnyStateEnterExceptNatural() { StopCycling(); }
 
-    private void OnAnyStateEnter()
-    {
-        rb.isKinematic = true;
-    }
+    private void OnAnyStateEnter() { rb.isKinematic = true; }
 
-    private void OnAnyStateExit()
-    {
-        StartCycling();
-    }
+    private void OnAnyStateExit() { StartCycling(); }
+
+    private bool RecordConstraints() { return isMoving; }
 }

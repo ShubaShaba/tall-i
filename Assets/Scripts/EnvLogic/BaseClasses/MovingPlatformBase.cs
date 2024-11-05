@@ -13,7 +13,7 @@ public class MovingPlatformBase : MonoBehaviour
     protected Rigidbody rb;
     private int currentTarget = 0;
     private bool isForwardDirection = true;
-    private bool isMoving = true;
+    protected bool isMoving = true;
     private Vector3 lastFramePos;
 
     void Awake()

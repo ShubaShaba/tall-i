@@ -11,11 +11,17 @@ public class PhysicalTimeBendingController : StateMachine
     private Rigidbody rigidbodyRef;
     private float rememberTime;
     private int slowDownC;
+    private Func<bool> recordConstraints;
 
     private int rewindIndex = 0;
     private int slowDownIndex = 0;
 
-    public PhysicalTimeBendingController(float _rememberTime, Transform _transformRef, Rigidbody _rigidbodyRef, int _slowDownC = 1)
+    public PhysicalTimeBendingController(
+        float _rememberTime,
+        Transform _transformRef,
+        Rigidbody _rigidbodyRef,
+        int _slowDownC = 1
+    )
     {
         Init();
         statesInTime = new List<StateInTime>();
@@ -23,6 +29,7 @@ public class PhysicalTimeBendingController : StateMachine
         transformRef = _transformRef;
         rigidbodyRef = _rigidbodyRef;
         slowDownC = _slowDownC;
+        recordConstraints = () => true;
 
         AddOnEnterAction(TimeBodyStates.Rewinding, onEnterRewind);
         AddOnEnterAction(TimeBodyStates.ReverseRewinding, onEnterRewind);
@@ -49,7 +56,7 @@ public class PhysicalTimeBendingController : StateMachine
                 {
                     SetState(TimeBodyStates.ReverseRewinding);
                 }
-                else
+                else if (recordConstraints())
                 {
                     Record();
                 }
@@ -94,10 +101,9 @@ public class PhysicalTimeBendingController : StateMachine
         transformRef.rotation = Quaternion.identity;
     }
 
-    public StateInTime GetCurrentStateInTime()
-    {
-        return statesInTime[rewindIndex];
-    }
+    public StateInTime GetCurrentStateInTime() { return statesInTime[rewindIndex]; }
+
+    public void SetRecordConstraints(Func<bool> action) { recordConstraints = action; }
 
     private void SetPreviousPhysicalState()
     {

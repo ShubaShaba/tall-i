@@ -28,20 +28,11 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         }
     }
 
-    void FixedUpdate()
-    {
-        timeBendingController.HandleTime();
-    }
+    void FixedUpdate() { timeBendingController.HandleTime(); }
 
-    public void Focus()
-    {
-        physicalTimeObjBase.Focus();
-    }
+    public void Focus() { physicalTimeObjBase.Focus(); }
 
-    public void UnFocus()
-    {
-        physicalTimeObjBase.UnFocus();
-    }
+    public void UnFocus() { physicalTimeObjBase.UnFocus(); }
 
     public void ToggleRewind()
     {
@@ -61,25 +52,13 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         physicalTimeObjBase.ToggleState(TimeBodyStates.ControlledStoped);
     }
 
-    public void ManualBackward()
-    {
-        physicalTimeObjBase.ManualBackward();
-    }
+    public void ManualBackward() { physicalTimeObjBase.ManualBackward(); }
 
-    public void ManualForward()
-    {
-        physicalTimeObjBase.ManualForward();
-    }
+    public void ManualForward() { physicalTimeObjBase.ManualForward(); }
 
-    public bool IsInManualMode()
-    {
-        return physicalTimeObjBase.IsInManualMode();
-    }
+    public bool IsInManualMode() { return physicalTimeObjBase.IsInManualMode(); }
 
-    protected override void OnPickup()
-    {
-        timeBendingController.ForceQuite();
-    }
+    protected override void OnPickup() { timeBendingController.ForceQuite(); }
 
     private void DuringAnyStateExceptNatural()
     {
