@@ -19,7 +19,7 @@ public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
         timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
         physicalTimeObjBase = new PhysicalTimeObj(visuals, timeBendingController);
 
-        // timeBendingController.AddDuringStateActionFixedUpdate(TimeBodyStates.Natural, DuringNaturalState);
+        timeBendingController.AddDuringStateActionFixedUpdate(TimeBodyStates.Natural, DuringNaturalState);
 
         foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
         {

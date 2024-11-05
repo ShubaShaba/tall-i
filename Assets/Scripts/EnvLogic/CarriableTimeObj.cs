@@ -21,11 +21,11 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
         physicalTimeObjBase = new PhysicalTimeObj(visuals, timeBendingController);
 
-        // foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
-        // {
-        //     if (state != TimeBodyStates.Natural)
-        //         timeBendingController.AddDuringStateActionFixedUpdate(state, DuringAnyStateExceptNatural);
-        // }
+        foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
+        {
+            if (state != TimeBodyStates.Natural)
+                timeBendingController.AddDuringStateActionFixedUpdate(state, DuringAnyStateExceptNatural);
+        }
     }
 
     void FixedUpdate()
