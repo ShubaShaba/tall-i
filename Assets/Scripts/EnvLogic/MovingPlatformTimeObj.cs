@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NonCarriableTimeObj : MovingPlatformBase, ITimeBody
+public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
 {
     [SerializeField] private ControlManager controlManager;
     [SerializeField] private float rewindTimeTime = 15;

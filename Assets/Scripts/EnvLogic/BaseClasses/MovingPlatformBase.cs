@@ -6,22 +6,20 @@ using UnityEngine;
 
 public class MovingPlatformBase : MonoBehaviour
 {
-    [SerializeField] private List<float> speed;
-    [SerializeField] private List<Transform> path;
+    [SerializeField] protected List<float> speed;
+    [SerializeField] protected List<Transform> path;
     [SerializeField] protected Vector3 carryDetectionOffset;
     [SerializeField] protected Vector3 carryDetectionSize;
     protected Rigidbody rb;
-    private int currentTarget = 0;
-    private bool isForwardDirection = true;
+    protected int currentTarget = 0;
+    protected bool isForwardDirection = true;
     protected bool isMoving = true;
-    private Vector3 lastFramePos;
+    protected Vector3 lastFramePos;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         lastFramePos = rb.position;
-        carryDetectionOffset = new Vector3(0, 0.5f, 0);
-        carryDetectionSize = new Vector3(2.5f, 0.25f, 2.5f);
     }
 
     public void StartCycling()
@@ -34,7 +32,7 @@ public class MovingPlatformBase : MonoBehaviour
         isMoving = false;
     }
 
-    protected void MoveInFixedUpdate()
+    protected virtual void MoveInFixedUpdate()
     {
         if (isMoving)
         {
@@ -47,7 +45,7 @@ public class MovingPlatformBase : MonoBehaviour
         lastFramePos = rb.position;
     }
 
-    protected void UpdateTarget()
+    protected virtual void UpdateTarget()
     {
         if (Vector3.Distance(rb.position, path[currentTarget].position) < speed[currentTarget] * Time.fixedDeltaTime)
         {
@@ -60,7 +58,7 @@ public class MovingPlatformBase : MonoBehaviour
         }
     }
 
-    private void CarryObjects()
+    protected virtual void CarryObjects()
     {
         Collider[] hitColliders = Physics.OverlapBox(rb.position + carryDetectionOffset, carryDetectionSize, Quaternion.identity);
         for (int i = 0; i < hitColliders.Length; i++)
