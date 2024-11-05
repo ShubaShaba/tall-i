@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MovingPlatformBase : MonoBehaviour
 {
     [SerializeField] protected List<float> speed;
     [SerializeField] protected List<Transform> path;
-    [SerializeField] protected BoxCollider carryDetectionZone;
     [SerializeField] protected Vector3 carryDetectionExtra = new Vector3(0f,0.5f,0f);
+    protected BoxCollider carryDetectionZone;
     protected Rigidbody rb;
     protected int currentTarget = 0;
     protected bool isForwardDirection = true;
@@ -19,6 +20,7 @@ public class MovingPlatformBase : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        carryDetectionZone = GetComponent<BoxCollider>();
         lastFramePos = rb.position;
     }
 
