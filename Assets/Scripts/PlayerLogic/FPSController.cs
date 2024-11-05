@@ -9,12 +9,12 @@ public class FPSController : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private ControlManager controlManager;
-    private float walkingSpeed = 7.5f;
-    private float runningSpeed = 11.5f;
-    private float jumpSpeed = 8.0f;
-    private float gravity = 20.0f;
-    private float lookSpeed = 2.0f;
-    private float lookXLimit = 45.0f;
+    [SerializeField] private float walkingSpeed = 7.5f;
+    [SerializeField] private float runningSpeed = 11.5f;
+    [SerializeField] private float jumpSpeed = 8.0f;
+    [SerializeField] private float gravity = 20.0f;
+    [SerializeField] private float lookSpeed = 2.0f;
+    [SerializeField] private float lookXLimit = 45.0f;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
