@@ -6,6 +6,7 @@ public class Selection : MonoBehaviour
     [SerializeField] private string selectableTag = "Selectable";
     [SerializeField] private Material outlineMaterial;
     [SerializeField] private Material originalMaterial;
+    [SerializeField] private Transform cameraPosition;
     private Transform _selection;
     public TextMeshProUGUI instructionsText;
     private string defaultInstructions = "Pick up: Left Mouse \nThrow: Right Mouse";

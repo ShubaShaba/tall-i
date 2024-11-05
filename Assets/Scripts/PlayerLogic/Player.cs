@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour, ICarrier
 {
 
-    [SerializeField] private Camera fPcamera;
+    [SerializeField] private Transform cameraPosition;
     [SerializeField] private float maxFocusDistance = 100;
     [SerializeField] private float maxInteractionDistance = 2;
     [SerializeField] private float throwForce = 10;
@@ -16,19 +16,9 @@ public class Player : MonoBehaviour, ICarrier
     private ITimeBody currentFocus;
     private ICarriable currentPicked;
 
-    private T GetObjectReference<T>(float maxDistance)
-    {
-        bool raycastHit = Physics.Raycast(fPcamera.transform.position, fPcamera.transform.forward, out RaycastHit hit, maxDistance);
-        if (raycastHit && hit.collider.TryGetComponent<T>(out T timeBendableObject))
-        {
-            return timeBendableObject;
-        }
-        return default;
-    }
-
     private void PickupObj(InputAction.CallbackContext context)
     {
-        ICarriable carriableObj = GetObjectReference<ICarriable>(maxInteractionDistance);
+        ICarriable carriableObj = PlayerSelection.GetObjectReference<ICarriable>(maxInteractionDistance, cameraPosition);
         if (carriableObj != null)
         {
             currentPicked?.Throw(0);
@@ -43,14 +33,14 @@ public class Player : MonoBehaviour, ICarrier
 
     private void InteractWithObj(InputAction.CallbackContext context)
     {
-        IInteractable interactableObj = GetObjectReference<IInteractable>(maxInteractionDistance);
+        IInteractable interactableObj = PlayerSelection.GetObjectReference<IInteractable>(maxInteractionDistance, cameraPosition);
         interactableObj?.Interact();
     }
 
     private void FocusOnObject(InputAction.CallbackContext context)
     {
         currentFocus?.UnFocus();
-        ITimeBody timeBendableObject = GetObjectReference<ITimeBody>(maxFocusDistance);
+        ITimeBody timeBendableObject = PlayerSelection.GetObjectReference<ITimeBody>(maxFocusDistance, cameraPosition);
         timeBendableObject?.Focus();
         currentFocus = timeBendableObject;
     }
