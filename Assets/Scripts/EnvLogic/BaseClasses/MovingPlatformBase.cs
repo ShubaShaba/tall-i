@@ -8,8 +8,8 @@ public class MovingPlatformBase : MonoBehaviour
 {
     [SerializeField] protected List<float> speed;
     [SerializeField] protected List<Transform> path;
-    [SerializeField] protected Vector3 carryDetectionOffset;
-    [SerializeField] protected Vector3 carryDetectionSize;
+    [SerializeField] protected BoxCollider carryDetectionZone;
+    [SerializeField] protected Vector3 carryDetectionExtra = new Vector3(0f,0.5f,0f);
     protected Rigidbody rb;
     protected int currentTarget = 0;
     protected bool isForwardDirection = true;
@@ -60,11 +60,11 @@ public class MovingPlatformBase : MonoBehaviour
 
     protected virtual void CarryObjects()
     {
-        Collider[] hitColliders = Physics.OverlapBox(rb.position + carryDetectionOffset, carryDetectionSize, Quaternion.identity);
+        Vector3 detectionZone = (carryDetectionZone.size / 2) + carryDetectionExtra;
+        
+        Collider[] hitColliders = Physics.OverlapBox(transform.position, detectionZone, rb.rotation);
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            if (hitColliders[i] == GetComponent<Collider>()) continue;
-
             if (hitColliders[i].TryGetComponent<Transform>(out Transform childNodeTr) && !hitColliders[i].TryGetComponent<Rigidbody>(out Rigidbody childNodeRb))
                 childNodeTr.position = childNodeTr.position + (rb.position - lastFramePos);
         }

@@ -8,7 +8,8 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
     [SerializeField] private ControlManager controlManager;
     [SerializeField] private float rewindTimeTime = 15;
     [SerializeField] private int slowDownCoefficient = 2;
-    [SerializeField] private Vector3 deathZone;
+    [SerializeField] private float deathZoneSensitivity = 0.95f;
+    private Collider deathZone;
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
     private PhysicalTimeHelper physicalTimeObjHelper;
@@ -18,9 +19,9 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
         visuals = GetComponent<TimeBendingVisual>();
         timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
         physicalTimeObjHelper = new PhysicalTimeHelper(visuals, timeBendingController);
+        deathZone = GetComponent<Collider>();
 
         timeBendingController.AddDuringStateActionFixedUpdate(TimeBodyStates.Natural, DuringNaturalState);
-
         foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
         {
             if (state != TimeBodyStates.Natural)
@@ -58,7 +59,8 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
 
     private void DuringNaturalState()
     {
-        Collider[] hitColliders = Physics.OverlapBox(rb.position, deathZone, transform.rotation);
+        Collider[] hitColliders = DeathZone.GetIntesectingColliders(
+            rb.position, transform.rotation, deathZone, deathZoneSensitivity);
         if (hitColliders.Length > 1)
         {
             StopCycling();
