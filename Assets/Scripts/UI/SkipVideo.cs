@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SkipVideo : MonoBehaviour
 {
-    [SerializeField] VideoPlayer video;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +21,6 @@ public class SkipVideo : MonoBehaviour
 
     public void Skip(){
         SceneManager.LoadScene("SampleScene"); 
-        }
     }
-}
+    }
+
