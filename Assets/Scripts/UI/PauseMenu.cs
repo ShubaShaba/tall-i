@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K)){
+        if (Input.GetKeyDown(KeyCode.Escape)){
             Cursor.lockState = CursorLockMode.None;
 
             if (isPaused){
@@ -42,5 +44,17 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false; 
+        Cursor.lockState = CursorLockMode.Locked;           
+    }
+    public void Return(){
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+        isPaused = false; 
+    }
+
+    public void Exit(){
+        Application.Quit();    
+
     }
 }
+
