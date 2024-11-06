@@ -21,7 +21,6 @@ public class Generator : KeyHole, ITimeBody
     private TwoStatesTimeBodyHelper twoStatesTimeBodyHelper;
     private IEnumerator forwardCoroutine;
     private IEnumerator backwardCoroutine;
-    private bool isRunning;
 
     private void Start()
     {
@@ -34,7 +33,6 @@ public class Generator : KeyHole, ITimeBody
 
         forwardCoroutine = ForwardSequence();
         backwardCoroutine = BackwardSequence();
-        isRunning = false;
     }
 
     public void Focus() { twoStatesTimeBodyHelper.Focus(); }
