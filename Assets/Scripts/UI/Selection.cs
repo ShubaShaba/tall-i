@@ -54,6 +54,9 @@ public class Selection : MonoBehaviour
 
           if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.ControlledRewinding){
                 instructionsText.text = "Forward Object: E";
+            }
+            if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.ControlledStoped){
+                instructionsText.text = "Reverse Object: Q \nForward Object: E";
             } 
 
           if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.    ControlledReverseRewinding){
