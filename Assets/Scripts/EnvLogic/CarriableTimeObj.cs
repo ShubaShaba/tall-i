@@ -38,19 +38,19 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
     public void ToggleRewind()
     {
-        Throw(0);
+        Throw(Vector3.zero, false);
         physicalTimeObjHelper.ToggleState(TimeBodyStates.Rewinding);
     }
 
     public void ToggleFreeze()
     {
-        Throw(0);
+        Throw(Vector3.zero, false);
         physicalTimeObjHelper.ToggleState(TimeBodyStates.Stoped);
     }
 
     public void ToggleManualControl()
     {
-        Throw(0);
+        Throw(Vector3.zero, false);
         physicalTimeObjHelper.ToggleState(TimeBodyStates.ControlledStoped);
     }
 
@@ -65,12 +65,18 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     private void DuringAnyStateExceptNatural()
     {
         Collider[] hitColliders = DeathZone.GetIntesectingColliders(rb.position, transform.rotation, deathZone, deathZoneSensitivity);
-        if (hitColliders.Length > 1)
+        for (int i = 0; i < hitColliders.Length; i++)
         {
-            visuals.RespawnAnimation(true);
-            timeBendingController.HardReset();
-            transform.position = respawn.position;
-            visuals.RespawnAnimation(false);
+            if (!hitColliders[i].isTrigger && hitColliders[i] != GetComponent<Collider>())
+            {
+                Debug.Log(hitColliders[i].name);
+                visuals.RespawnAnimation(true);
+                timeBendingController.HardReset();
+                transform.position = respawn.position;
+                visuals.RespawnAnimation(false);
+                visuals.FocusAnimation();
+                return;
+            }
         }
     }
 }

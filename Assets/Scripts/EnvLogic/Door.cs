@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, IPluggedTo
 {
+    [SerializeField] private Animator animator;
+    private Collider doorCollider;
+    private bool isOpen;
+
+    private void Start()
+    {
+        doorCollider = GetComponent<Collider>();
+        isOpen = false;
+    }
+
     public void Trigger()
     {
-        Debug.Log("Door is being interacted with");
+        isOpen = !isOpen;
+        doorCollider.enabled = !isOpen;
+        animator.SetBool("isOpen", isOpen);
     }
 }
