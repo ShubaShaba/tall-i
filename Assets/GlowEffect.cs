@@ -45,10 +45,12 @@ public class GlowEffect : MonoBehaviour
     public void PlayAnimation()
     {
         change = true;
+        increasing = true;
     }
 
     public void CancelAnimation()
     {
         change = false;
+        increasing = false;
     }
 }

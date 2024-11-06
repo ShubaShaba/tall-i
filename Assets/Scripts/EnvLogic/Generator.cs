@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+NOTE!!!!!!!!!!: 
+
+ANIMATION IS A MESS
+NEED TO FIX THIS, HAVE NOT TIME
+IT WORKS FOR NOW 
+
+*/
 public class Generator : KeyHole, ITimeBody
 {
     [SerializeField] private ControlManager controlManager;
@@ -30,12 +39,23 @@ public class Generator : KeyHole, ITimeBody
 
     public void UnFocus() { twoStatesTimeBodyHelper.UnFocus(); }
 
-    public void ToggleRewind() { twoStatesTimeBodyHelper.ToggleState(); }
+    public void ToggleRewind()
+    {
+        if (timeBendingController.GetCurrentState() == TimeBodyStates.Natural)
+        {
+            StopAllCoroutines();
+            twoStatesTimeBodyHelper.ToggleState();
+        }
+    }
 
     public override void Interact()
     {
-        forwardCoroutine = ForwardSequence();
-        StartCoroutine(forwardCoroutine);
+        if (isInjected() && !isTriggered && timeBendingController.GetCurrentState() == TimeBodyStates.Natural)
+        {
+            Invoke("delayedSwitchForward", 2f);
+            forwardCoroutine = ForwardSequence();
+            StartCoroutine(forwardCoroutine);
+        }
     }
 
     public override void Eject() { if (!isTriggered) base.Eject(); }
@@ -49,49 +69,71 @@ public class Generator : KeyHole, ITimeBody
     private void OnEnterRewind()
     {
         visuals.RewindAnimation();
-        backwardCoroutine = BackwardSequence();
-        StartCoroutine(backwardCoroutine);
+        if (isTriggered)
+        {
+            Switch();
+            Invoke("delayedSwitchBackward", 2f);
+            backwardCoroutine = BackwardSequence();
+            StartCoroutine(backwardCoroutine);
+        }
+        else
+        {
+            CancelInvoke("delayedSwitchForward");
+            StopAllCoroutines();
+            backwardCoroutine = BackwardSequence();
+            StartCoroutine(backwardCoroutine);
+        }
     }
     private void OnEnterNatural()
     {
         visuals.FocusAnimation();
-        StopCoroutine(backwardCoroutine);
+        if (isTriggered)
+        {
+            Switch();
+            CancelInvoke("delayedSwitchBackward");
+            StopAllCoroutines();
+            openCloseAnimation.SetBool("IsEnabled", true);
+            dissolveAnimation.PlayAnimation();
+        }
+        else
+        {
+            StopAllCoroutines();
+            dissolveAnimation.CancelAnimation();
+        }
     }
 
-    private IEnumerator ForwardSequence()
+    private void delayedSwitchForward()
     {
-        bool condition = isInjected() && !isTriggered && timeBendingController.GetCurrentState() == TimeBodyStates.Natural;
-        if (condition)
-        {
-            StopCoroutine(backwardCoroutine);
-            openCloseAnimation.SetBool("IsEnabled", !isTriggered);
-        }
-        yield return new WaitForSeconds(1);
-        if (condition) dissolveAnimation.PlayAnimation();
-        yield return new WaitForSeconds(2);
-        if (condition)
+        if (isInjected() && !isTriggered && timeBendingController.GetCurrentState() == TimeBodyStates.Natural)
         {
             Switch();
             isTriggered = true;
         }
     }
 
-    private IEnumerator BackwardSequence()
+    private void delayedSwitchBackward()
     {
         if (isTriggered)
         {
-            StopCoroutine(forwardCoroutine);
-            dissolveAnimation.CancelAnimation();
-        }
-        yield return new WaitForSeconds(2);
-        if (isTriggered) openCloseAnimation.SetBool("IsEnabled", !isTriggered);
-        yield return new WaitForSeconds(1);
-
-        if (isTriggered)
-        {
-            Switch();
             isTriggered = false;
         }
         ToggleRewind();
+    }
+
+    private IEnumerator ForwardSequence()
+    {
+        openCloseAnimation.SetBool("IsEnabled", true);
+        yield return new WaitForSeconds(1);
+        dissolveAnimation.PlayAnimation();
+        yield return new WaitForSeconds(1);
+    }
+
+    private IEnumerator BackwardSequence()
+    {
+        dissolveAnimation.CancelAnimation();
+        yield return new WaitForSeconds(1);
+        openCloseAnimation.SetBool("IsEnabled", false);
+        yield return new WaitForSeconds(1);
+        timeBendingController.SetState(TimeBodyStates.Natural);
     }
 }
