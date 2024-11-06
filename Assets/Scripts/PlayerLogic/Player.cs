@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour, ICarrier
+public class Player : MonoBehaviour, ICarrier, IPlayerUI
 {
 
-    [SerializeField] private Camera fPcamera;
+    [SerializeField] private Transform cameraPosition;
     [SerializeField] private float maxFocusDistance = 100;
     [SerializeField] private float maxInteractionDistance = 2;
     [SerializeField] private float throwForce = 10;
@@ -16,41 +16,39 @@ public class Player : MonoBehaviour, ICarrier
     private ITimeBody currentFocus;
     private ICarriable currentPicked;
 
-    private T GetObjectReference<T>(float maxDistance)
-    {
-        bool raycastHit = Physics.Raycast(fPcamera.transform.position, fPcamera.transform.forward, out RaycastHit hit, maxDistance);
-        if (raycastHit && hit.collider.TryGetComponent<T>(out T timeBendableObject))
-        {
-            return timeBendableObject;
-        }
-        return default;
-    }
-
     private void PickupObj(InputAction.CallbackContext context)
     {
-        ICarriable carriableObj = GetObjectReference<ICarriable>(maxInteractionDistance);
+        if (currentPicked != null) return;
+
+        ICarriable carriableObj = PlayerSelection.GetObjectReference<ICarriable>(maxInteractionDistance, cameraPosition);
+        if (carriableObj == null)
+            carriableObj = PlayerSelection.GetObjectReferenceImproved<ICarriable>(maxInteractionDistance, cameraPosition);
+
         if (carriableObj != null)
-        {
-            currentPicked?.Throw(0);
             carriableObj.Pickup(this);
-        }
     }
 
     private void ThrowObj(InputAction.CallbackContext context)
     {
-        currentPicked?.Throw(throwForce);
+        currentPicked?.Throw(cameraPosition.forward * throwForce, false);
     }
 
     private void InteractWithObj(InputAction.CallbackContext context)
     {
-        IInteractable interactableObj = GetObjectReference<IInteractable>(maxInteractionDistance);
+        IInteractable interactableObj = PlayerSelection.GetObjectReference<IInteractable>(maxInteractionDistance, cameraPosition);
         interactableObj?.Interact();
+    }
+
+    private void EjectCarriableFromObject(InputAction.CallbackContext context)
+    {
+        ICarrier anotherCarrier = PlayerSelection.GetObjectReference<ICarrier>(maxInteractionDistance, cameraPosition);
+        anotherCarrier?.Eject();
     }
 
     private void FocusOnObject(InputAction.CallbackContext context)
     {
         currentFocus?.UnFocus();
-        ITimeBody timeBendableObject = GetObjectReference<ITimeBody>(maxFocusDistance);
+        ITimeBody timeBendableObject = PlayerSelection.GetObjectReference<ITimeBody>(maxFocusDistance, cameraPosition);
         timeBendableObject?.Focus();
         currentFocus = timeBendableObject;
     }
@@ -86,6 +84,7 @@ public class Player : MonoBehaviour, ICarrier
         controlManager.AddPlayersAction(PlayersActionType.Interact, PickupObj);
         controlManager.AddPlayersAction(PlayersActionType.Interact, InteractWithObj);
         controlManager.AddPlayersAction(PlayersActionType.Throw, ThrowObj);
+        controlManager.AddPlayersAction(PlayersActionType.Throw, EjectCarriableFromObject);
         controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
         controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
         controlManager.AddPlayersAction(PlayersActionType.ManualRewind, ManualControlAction);
@@ -98,7 +97,7 @@ public class Player : MonoBehaviour, ICarrier
     {
         if (!controlManager.PlayerIsHoldingLeftMouse())
         {
-            currentPicked?.Throw(0);
+            currentPicked?.Throw(Vector3.zero, false);
         }
 
         if (currentFocus == null) return;
@@ -123,4 +122,30 @@ public class Player : MonoBehaviour, ICarrier
     {
         return mountingPoint;
     }
+
+    public void Eject()
+    {
+        currentPicked?.Throw(Vector3.zero, true);
+    }
+
+    public ICarriable GetCarriable()
+    {
+        return currentPicked;
+    }
+
+    public bool isCarryingSomething()
+    {
+        return currentPicked != null;
+    }
+
+    public bool isFocusedOnSomethingType1()
+    {
+        return currentFocus != null;
+    }
+
+    public bool isFocusedOnSomethingType2()
+    {
+        return currentFocus != null;
+    }
+
 }

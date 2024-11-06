@@ -90,8 +90,11 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
-        HandleMovement();
-        HandleGravity();
-        HandleRotation();
+        if (PauseMenu.isPaused == false)
+        {
+            HandleMovement();
+            HandleGravity();
+            HandleRotation();
+        }
     }
 }

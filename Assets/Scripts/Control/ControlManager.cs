@@ -81,4 +81,9 @@ public class ControlManager : MonoBehaviour
                 break;
         }
     }
+
+    private void OnDestroy()
+    {
+        inputActions.Dispose();
+    }
 }
