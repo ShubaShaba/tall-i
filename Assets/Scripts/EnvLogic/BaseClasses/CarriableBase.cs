@@ -8,13 +8,11 @@ using UnityEngine;
 */
 public class CarriableBase : MonoBehaviour, ICarriable
 {
+    [SerializeField] protected int keyID; 
     private ICarrier carrier;
     protected Rigidbody rb;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    private void Awake() { rb = GetComponent<Rigidbody>(); }
 
     private void TogglePhysics(bool enable)
     {
@@ -25,6 +23,9 @@ public class CarriableBase : MonoBehaviour, ICarriable
 
     public void Pickup(ICarrier parent)
     {
+        if (carrier != null)
+            Throw(0);
+
         OnPickup();
         if (!CanPick()) return;
 
@@ -32,6 +33,8 @@ public class CarriableBase : MonoBehaviour, ICarriable
         carrier.AddCarriable(this);
         transform.parent = carrier.GetMountingPointTransform();
         transform.position = carrier.GetMountingPointTransform().position;
+
+        Debug.Log(transform.position);
         transform.localRotation = Quaternion.identity;
         TogglePhysics(false);
     }
@@ -40,7 +43,8 @@ public class CarriableBase : MonoBehaviour, ICarriable
     {
         if (carrier == null) return;
         Collider[] hitColliders = Physics.OverlapBox(rb.position, transform.localScale / 2, transform.rotation);
-        if (hitColliders.Length > 0) return;
+        for (int i = 0; i < hitColliders.Length; i++)
+            if (hitColliders[i].isTrigger == false) return;
 
         carrier.RemoveCarriable(this);
         carrier = null;
@@ -49,15 +53,11 @@ public class CarriableBase : MonoBehaviour, ICarriable
         rb.velocity = transform.forward * magnitude;
     }
 
-    public virtual bool CanPick()
-    {
-        return true;
-    }
+    public virtual bool CanPick() { return true; }
 
     protected virtual void OnPickup() { }
 
-    public bool IsPicked()
-    {
-        return carrier != null;
-    }
+    public virtual int GetKeyID() { return keyID; }
+
+    public bool IsPicked() { return carrier != null; }
 }

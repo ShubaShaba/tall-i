@@ -8,4 +8,5 @@ public interface ICarriable
     public void Throw(float magnitude);
     public bool CanPick();
     public bool IsPicked();
+    public int GetKeyID();
 }
