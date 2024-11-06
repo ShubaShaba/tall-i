@@ -26,6 +26,7 @@ public class FPSController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         controlManager.AddPlayersAction(PlayersActionType.Jump, HandleJump);
+        controlManager.AddPlayersAction(PlayersActionType.Jump, HandleJumpSound);
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -100,6 +101,14 @@ public class FPSController : MonoBehaviour
         else
         {
             soundManager.StopSound(Sound.RobotMovement);
+        }
+    }
+
+    private void HandleJumpSound(InputAction.CallbackContext context)
+    {
+        if (characterController.isGrounded)
+        {
+            soundManager.PlaySound(Sound.RobotJump, false, transform);
         }
     }
 

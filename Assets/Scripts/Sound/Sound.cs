@@ -17,6 +17,7 @@ public enum Sound
     AmbienceMoody,
     AmbienceRumble,
     RobotMovement,
+    RobotJump,
     RobotBeep1,
     RobotBeep2,
     RobotBeep3,

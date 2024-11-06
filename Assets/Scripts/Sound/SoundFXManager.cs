@@ -23,6 +23,7 @@ public class SoundFXManager : MonoBehaviour
     [SerializeField] private AudioClip Ambience2_moody_Clip;
     [SerializeField] private AudioClip Ambience3_rumble_Clip;
     [SerializeField] private AudioClip Robot_Movement_Clip;
+    [SerializeField] private AudioClip Robot_Jump_Clip;
     [SerializeField] private AudioClip Robot_Beep1_Clip;
     [SerializeField] private AudioClip Robot_Beep2_Clip;
     [SerializeField] private AudioClip Robot_Beep3_Clip;
@@ -57,6 +58,7 @@ public class SoundFXManager : MonoBehaviour
         { Sound.AmbienceMoody, Ambience2_moody_Clip },
         { Sound.AmbienceRumble, Ambience3_rumble_Clip },
         { Sound.RobotMovement, Robot_Movement_Clip },
+        { Sound.RobotJump, Robot_Jump_Clip},
         { Sound.RobotBeep1, Robot_Beep1_Clip },
         { Sound.RobotBeep2, Robot_Beep2_Clip },
         { Sound.RobotBeep3, Robot_Beep3_Clip },
@@ -85,6 +87,7 @@ public class SoundFXManager : MonoBehaviour
         { Sound.AmbienceMoody, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.AmbienceRumble, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.RobotMovement, new SoundSettings(0.6f, 0.4f, 1f) },
+        { Sound.RobotJump, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.RobotBeep1, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.RobotBeep2, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.RobotBeep3, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
@@ -99,12 +102,14 @@ public class SoundFXManager : MonoBehaviour
     public void PlaySound(Sound sound, bool _loop, Transform _parent)
     {
         if (!audioSources.ContainsKey(sound))
-        {
             audioSources.Add(sound, Instantiate(audioSourceRef, _parent));
-            audioSources[sound].transform.position = _parent.position;
-            audioSources[sound].transform.SetParent(_parent);
-        }
+
         AudioSource source = audioSources[sound];
+        if (source.transform.parent != _parent)
+        {
+            source.transform.position = _parent.position;
+            source.transform.SetParent(_parent);
+        }
 
         if (source.isPlaying) return;
         source.loop = _loop;
