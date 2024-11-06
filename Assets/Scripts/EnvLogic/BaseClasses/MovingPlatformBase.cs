@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MovingPlatformBase : MonoBehaviour
+public class MovingPlatformBase : MonoBehaviour, IPluggedTo
 {
     [SerializeField] protected List<float> speed;
     [SerializeField] protected List<Transform> path;
@@ -15,7 +15,7 @@ public class MovingPlatformBase : MonoBehaviour
     protected Rigidbody rb;
     protected int currentTarget = 0;
     protected bool isForwardDirection = true;
-    protected bool isMoving = true;
+    [SerializeField] protected bool isMoving = true;
     protected Vector3 lastFramePos;
 
     void Awake()
@@ -75,5 +75,11 @@ public class MovingPlatformBase : MonoBehaviour
             if (hitColliders[i].TryGetComponent<Transform>(out Transform childNodeTr) && !hitColliders[i].TryGetComponent<Rigidbody>(out Rigidbody childNodeRb))
                 childNodeTr.position = childNodeTr.position + (rb.position - lastFramePos);
         }
+    }
+
+    public void Trigger()
+    {
+        Debug.Log("AAAAAAAAAAAA");
+        isMoving = !isMoving;
     }
 }
