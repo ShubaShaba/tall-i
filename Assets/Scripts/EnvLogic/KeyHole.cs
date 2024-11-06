@@ -6,6 +6,7 @@ public class KeyHole : SwitcherBase, ICarrier, IInteractable
 {
     [SerializeField] private int keyID = 0;
     [SerializeField] private Transform mountingPoint;
+    [SerializeField] private Transform unMountPoint;
     private ICarriable carriable;
 
     public void AddCarriable(ICarriable obj) { carriable = obj; }
@@ -21,15 +22,14 @@ public class KeyHole : SwitcherBase, ICarrier, IInteractable
 
     void OnTriggerEnter(Collider insertion)
     {
-        if (insertion.TryGetComponent<ICarriable>(out ICarriable obj) && obj.GetKeyID() == keyID)
+        if (insertion.TryGetComponent<ICarrier>(out ICarrier obj) && 
+            obj.GetCarriable() != null && obj.GetCarriable().GetKeyID() == keyID)
         {
-            Debug.Log("AAAAAAAAA");
-            obj.Pickup(this);
+            obj.GetCarriable().Pickup(this);
         }
     }
 
-    void FixedUpdate()
-    {
-        // Debug.Log(isInjected());
-    }
+    public void Eject() { carriable.Throw(transform.forward * -2, true); }
+
+    public ICarriable GetCarriable() { return carriable; }
 }

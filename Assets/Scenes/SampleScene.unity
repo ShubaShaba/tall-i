@@ -681,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 462626046}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.673, y: 0.682, z: 0.020999908}
+  m_LocalPosition: {x: -0, y: 0, z: -0.218}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -702,6 +702,7 @@ MonoBehaviour:
   connectedObj: {fileID: 919132149081408424}
   keyID: 1
   mountingPoint: {fileID: 1220213728}
+  unMountPoint: {fileID: 0}
 --- !u!65 &462626049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -721,7 +722,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6, y: 1.07, z: 0.5}
+  m_Size: {x: 1, y: 2.11, z: 1.45}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &476192828
 GameObject:
@@ -2279,13 +2280,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097020052}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7.6430593, y: 8.279732, z: 43.755913}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1163854389}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
 --- !u!1 &1163854387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,7 +2323,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.28, y: 1.33, z: 0.4}
+  m_Size: {x: 0.43, y: 1.33, z: 0.22}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1163854389
 Transform:
@@ -2332,8 +2333,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163854387}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.10405334, z: -0, w: 0.99457175}
-  m_LocalPosition: {x: -7.6580753, y: 0.549, z: -4.9653}
+  m_LocalRotation: {x: -0, y: -0.830012, z: -0, w: 0.5577456}
+  m_LocalPosition: {x: -7.810714, y: 0.549, z: -5.2816467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2341,7 +2342,7 @@ Transform:
   - {fileID: 462626047}
   - {fileID: 1097020056}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -11.945, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -112.2, z: 0}
 --- !u!1 &1220213727
 GameObject:
   m_ObjectHideFlags: 0

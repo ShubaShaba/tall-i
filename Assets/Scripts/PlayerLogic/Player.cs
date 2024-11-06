@@ -21,20 +21,26 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
         ICarriable carriableObj = PlayerSelection.GetObjectReference<ICarriable>(maxInteractionDistance, cameraPosition);
         if (carriableObj != null)
         {
-            currentPicked?.Throw(0);
+            currentPicked?.Throw(Vector3.zero, false);
             carriableObj.Pickup(this);
         }
     }
 
     private void ThrowObj(InputAction.CallbackContext context)
     {
-        currentPicked?.Throw(throwForce);
+        currentPicked?.Throw(cameraPosition.forward * throwForce, false);
     }
 
     private void InteractWithObj(InputAction.CallbackContext context)
     {
         IInteractable interactableObj = PlayerSelection.GetObjectReference<IInteractable>(maxInteractionDistance, cameraPosition);
         interactableObj?.Interact();
+    }
+
+    private void EjectCarriableFromObject(InputAction.CallbackContext context)
+    {
+        ICarrier anotherCarrier = PlayerSelection.GetObjectReference<ICarrier>(maxInteractionDistance, cameraPosition);
+        anotherCarrier?.Eject();
     }
 
     private void FocusOnObject(InputAction.CallbackContext context)
@@ -76,6 +82,7 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
         controlManager.AddPlayersAction(PlayersActionType.Interact, PickupObj);
         controlManager.AddPlayersAction(PlayersActionType.Interact, InteractWithObj);
         controlManager.AddPlayersAction(PlayersActionType.Throw, ThrowObj);
+        controlManager.AddPlayersAction(PlayersActionType.Throw, EjectCarriableFromObject);
         controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
         controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
         controlManager.AddPlayersAction(PlayersActionType.ManualRewind, ManualControlAction);
@@ -88,7 +95,7 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
     {
         if (!controlManager.PlayerIsHoldingLeftMouse())
         {
-            currentPicked?.Throw(0);
+            currentPicked?.Throw(Vector3.zero, false);
         }
 
         if (currentFocus == null) return;
@@ -114,6 +121,16 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
         return mountingPoint;
     }
 
+    public void Eject()
+    {
+        currentPicked?.Throw(Vector3.zero, true);
+    }
+
+    public ICarriable GetCarriable()
+    {
+        return currentPicked;
+    }
+
     public bool isCarryingSomething()
     {
         return currentPicked != null;
@@ -128,4 +145,5 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
     {
         return currentFocus != null;
     }
+
 }

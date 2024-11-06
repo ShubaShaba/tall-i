@@ -38,19 +38,19 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
 
     public void ToggleRewind()
     {
-        Throw(0);
+        Throw(Vector3.zero, false);
         physicalTimeObjHelper.ToggleState(TimeBodyStates.Rewinding);
     }
 
     public void ToggleFreeze()
     {
-        Throw(0);
+        Throw(Vector3.zero, false);
         physicalTimeObjHelper.ToggleState(TimeBodyStates.Stoped);
     }
 
     public void ToggleManualControl()
     {
-        Throw(0);
+        Throw(Vector3.zero, false);
         physicalTimeObjHelper.ToggleState(TimeBodyStates.ControlledStoped);
     }
 

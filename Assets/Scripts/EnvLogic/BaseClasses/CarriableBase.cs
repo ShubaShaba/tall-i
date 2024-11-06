@@ -8,7 +8,7 @@ using UnityEngine;
 */
 public class CarriableBase : MonoBehaviour, ICarriable
 {
-    [SerializeField] protected int keyID; 
+    [SerializeField] protected int keyID;
     private ICarrier carrier;
     protected Rigidbody rb;
 
@@ -24,8 +24,8 @@ public class CarriableBase : MonoBehaviour, ICarriable
     public void Pickup(ICarrier parent)
     {
         if (carrier != null)
-            Throw(0);
-
+            carrier.Eject();
+        
         OnPickup();
         if (!CanPick()) return;
 
@@ -33,24 +33,22 @@ public class CarriableBase : MonoBehaviour, ICarriable
         carrier.AddCarriable(this);
         transform.parent = carrier.GetMountingPointTransform();
         transform.position = carrier.GetMountingPointTransform().position;
-
-        Debug.Log(transform.position);
         transform.localRotation = Quaternion.identity;
         TogglePhysics(false);
     }
 
-    public void Throw(float magnitude)
+    public void Throw(Vector3 direction, bool ignoreCollision)
     {
         if (carrier == null) return;
         Collider[] hitColliders = Physics.OverlapBox(rb.position, transform.localScale / 2, transform.rotation);
         for (int i = 0; i < hitColliders.Length; i++)
-            if (hitColliders[i].isTrigger == false) return;
+            if (hitColliders[i].isTrigger == false && !ignoreCollision) return;
 
         carrier.RemoveCarriable(this);
         carrier = null;
         transform.parent = null;
         TogglePhysics(true);
-        rb.velocity = transform.forward * magnitude;
+        rb.velocity = direction;
     }
 
     public virtual bool CanPick() { return true; }
