@@ -8,6 +8,9 @@ public class PhysicalTimeObj
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
 
+
+void Start(){
+}
     public PhysicalTimeObj(TimeBendingVisual _visuals, PhysicalTimeBendingController _timeBendingController)
     {
         visuals = _visuals;
