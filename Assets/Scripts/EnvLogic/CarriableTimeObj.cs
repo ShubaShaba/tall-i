@@ -15,6 +15,8 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     private PhysicalTimeBendingController timeBendingController;
     private PhysicalTimeObj physicalTimeObjBase;
 
+   
+
     private void Start()
     {
         visuals = GetComponent<TimeBendingVisual>();

@@ -64,13 +64,14 @@ public class TimeBendingVisual : MonoBehaviour
     public void FreezeAnimation()
     {
         CancelEverything();
-        freeze.Play();
+        freeze.Play();   
     }
 
     public void ControlledFreezeAnimation()
     {
         CancelEverything();
         controlledFreeze.Play();
+        
     }
 
     public void ControlledRewindAnimation()

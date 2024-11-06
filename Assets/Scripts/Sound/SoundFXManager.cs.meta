@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: 6d7094a8d8d9b45edbf6f0591596b85f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Time_Stop_Clip: {fileID: 8300000, guid: 67a5c73cda3a0401aa7883709ca32b96, type: 3}
+  - Constant_Time_Stop_Clip: {fileID: 8300000, guid: afd9b446595c643a49369db6e33b2101, type: 3}
+  - Time_Rewind_Clip: {fileID: 8300000, guid: 14bf422bd407041c8b1325145fda7379, type: 3}
+  - Manual_Rewind_Clip: {fileID: 8300000, guid: ee2324a5e13ef4e939fb901303a47026, type: 3}
+  - HardReset_Clip: {fileID: 8300000, guid: 8dd4b031436114b008070dc3ac8b729e, type: 3}
+  - Heavy_Metal_Impact_Clip: {fileID: 8300000, guid: 10fb432b79e19430690713ee2c6c2bb5, type: 3}
+  - Metal_Clang_Clip: {fileID: 8300000, guid: 9e6ea2ac2d4c04bcb96378fbb550a19c, type: 3}
+  - Thud1_Clip: {fileID: 8300000, guid: 09b2e45d7b2a34c7aac85368a324dfea, type: 3}
+  - Thud2_Clip: {fileID: 8300000, guid: 07ad24b23cb944dd7b66fc847570b67b, type: 3}
+  - Thud3_Clip: {fileID: 8300000, guid: 0578d7d8ca3374ac09da8fc6cc68c3ca, type: 3}
+  - Thud4_Clip: {fileID: 8300000, guid: 3d30edb95867347bea3a7eae55d7357e, type: 3}
+  - Soft_Thud_Clip: {fileID: 8300000, guid: 597ca27bf8e6245f483ffeaaa04e97ac, type: 3}
+  - Stone_Impact_Clip: {fileID: 8300000, guid: 2d368db13ada940ba9533aefc1a36af5, type: 3}
+  - Ambience_hum_Clip: {fileID: 8300000, guid: 4462d85b16388441ab11905df6d9ead0, type: 3}
+  - Ambience2_moody_Clip: {fileID: 8300000, guid: b52f4826a9a0c448c9ff2bfac925ae7d, type: 3}
+  - Ambience3_rumble_Clip: {fileID: 8300000, guid: c0575b7c636454c97823a7e4f787d430, type: 3}
+  - Robot_Movement_Clip: {fileID: 8300000, guid: 2fcffb5e511034e71b3761df53b97964, type: 3}
+  - Robot_Beep1_Clip: {fileID: 8300000, guid: 4a702f63d0e994d4990e4032d9271d65, type: 3}
+  - Robot_Beep2_Clip: {fileID: 8300000, guid: 0abf475827fd845d995756b941095b8d, type: 3}
+  - Robot_Beep3_Clip: {fileID: 8300000, guid: 7ab7c066819fd47c7b2cdffb5c961434, type: 3}
+  - Robot_Beep4_Clip: {fileID: 8300000, guid: 451a17b5811024cdbbfb4cd7f5c7d924, type: 3}
+  - Stone_Scraping_Short_Clip: {fileID: 8300000, guid: ba3c89713bf864b61bbb6158a39d2605, type: 3}
+  - Stone_Scraping_Clip: {fileID: 8300000, guid: 2cae909479f764c799d796279aa7733d, type: 3}
+  - Generator_Clip: {fileID: 8300000, guid: 81bbc5a3ce5834a1796e8c27c4d0d4a2, type: 3}
+  - audioClip1: {instanceID: 0}
+  - audioClip2: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

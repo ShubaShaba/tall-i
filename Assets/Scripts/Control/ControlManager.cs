@@ -10,6 +10,7 @@ public class ControlManager : MonoBehaviour
     [SerializeField] GameObject playerReference;
     private PlayersControl inputActions;
     private PlayersControl.PlayerActions playerActions;
+   
 
     private void Awake()
     {

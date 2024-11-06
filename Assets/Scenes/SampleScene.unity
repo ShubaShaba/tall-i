@@ -774,6 +774,7 @@ MonoBehaviour:
   controlledFreeze: {fileID: 1461511612}
   controlledRewiding: {fileID: 1778793489}
   respawnAnimation: {fileID: 587957742}
+  timeStopClip: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,8 +1218,56 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 286077733750643401, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1505199710}
   m_SourcePrefab: {fileID: 100100000, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+--- !u!1 &1295144513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295144515}
+  - component: {fileID: 1295144514}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1295144514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295144513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d51e6f9534e1400a97d76bd171d1ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundFXObject: {fileID: 5478670550539708219, guid: 69073d2bef6aa4555acb4c89077cc655, type: 3}
+--- !u!4 &1295144515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295144513}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -39.303116, y: 0.099998474, z: -79.822876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1461511610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1308,11 +1357,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.8
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.01
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 114690337107784392, guid: c798f48a301e54744b04097d00084fd3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1358,6 +1407,10 @@ PrefabInstance:
       propertyPath: controlManager
       value: 
       objectReference: {fileID: 1928338603}
+    - target: {fileID: 6862290238284649337, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: timeStopClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 67a5c73cda3a0401aa7883709ca32b96, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1394,6 +1447,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1505199702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 286077733750643401, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+  m_PrefabInstance: {fileID: 1082639116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1505199710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505199702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7094a8d8d9b45edbf6f0591596b85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeStopClip: {fileID: 0}
+  ConstantTimeStopClip: {fileID: 0}
+  TimeRewindClip: {fileID: 0}
+  HeavyMetalThudClip: {fileID: 0}
+  Thud1Clip: {fileID: 0}
+  Thud2Clip: {fileID: 0}
+  Thud3Clip: {fileID: 0}
+  Thud4Clip: {fileID: 0}
+  SoftThudClip: {fileID: 0}
+  Ambience1Clip: {fileID: 0}
+  Ambience2Clip: {fileID: 0}
+  Ambience3Clip: {fileID: 0}
+  RobotMovementClip: {fileID: 0}
+  RobotBeep1Clip: {fileID: 0}
+  RobotBeep2Clip: {fileID: 0}
+  RobotBeep3Clip: {fileID: 0}
+  RobotBeep4Clip: {fileID: 0}
+  audioClip1: {fileID: 0}
+  audioClip2: {fileID: 0}
 --- !u!1 &1510402083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,3 +2411,4 @@ SceneRoots:
   - {fileID: 1569071104}
   - {fileID: 1534325850}
   - {fileID: 1567428987}
+  - {fileID: 1295144515}
