@@ -42,12 +42,12 @@ public class GlowEffect : MonoBehaviour
 
 
 
-    public void PlayAnimation(Collider other)
+    public void PlayAnimation()
     {
         change = true;
     }
 
-    private void CancelAnimation(Collider other)
+    public void CancelAnimation()
     {
         change = false;
     }

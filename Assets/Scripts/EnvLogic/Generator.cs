@@ -5,9 +5,13 @@ using UnityEngine;
 public class Generator : KeyHole, ITimeBody
 {
     [SerializeField] private ControlManager controlManager;
+    [SerializeField] private GlowEffect dissolveAnimation;
+    [SerializeField] private Animator openCloseAnimation;
     private TimeBendingVisual visuals;
     private TwoStatesTimeBendingController timeBendingController;
     private TwoStatesTimeBodyHelper twoStatesTimeBodyHelper;
+    private IEnumerator forwardCoroutine;
+    private IEnumerator backwardCoroutine;
 
     private void Start()
     {
@@ -17,6 +21,9 @@ public class Generator : KeyHole, ITimeBody
 
         timeBendingController.AddOnEnterAction(TimeBodyStates.Rewinding, OnEnterRewind);
         timeBendingController.AddOnEnterAction(TimeBodyStates.Natural, OnEnterNatural);
+
+        forwardCoroutine = ForwardSequence();
+        backwardCoroutine = BackwardSequence();
     }
 
     public void Focus() { twoStatesTimeBodyHelper.Focus(); }
@@ -27,11 +34,8 @@ public class Generator : KeyHole, ITimeBody
 
     public override void Interact()
     {
-        if (isInjected() && !isTriggered && timeBendingController.GetCurrentState() == TimeBodyStates.Natural)
-        {
-            Switch();
-            isTriggered = true;
-        }
+        forwardCoroutine = ForwardSequence();
+        StartCoroutine(forwardCoroutine);
     }
 
     public override void Eject() { if (!isTriggered) base.Eject(); }
@@ -40,30 +44,54 @@ public class Generator : KeyHole, ITimeBody
     public void ToggleFreeze() { return; }
     public void ToggleManualControl() { return; }
     public bool IsInManualMode() { return false; }
+    public TimeBodyStates GetCurrentState() { return timeBendingController.GetCurrentState(); }
 
-    private void delayedSwitch()
+    private void OnEnterRewind()
     {
+        visuals.RewindAnimation();
+        backwardCoroutine = BackwardSequence();
+        StartCoroutine(backwardCoroutine);
+    }
+    private void OnEnterNatural()
+    {
+        visuals.FocusAnimation();
+        StopCoroutine(backwardCoroutine);
+    }
+
+    private IEnumerator ForwardSequence()
+    {
+        bool condition = isInjected() && !isTriggered && timeBendingController.GetCurrentState() == TimeBodyStates.Natural;
+        if (condition)
+        {
+            StopCoroutine(backwardCoroutine);
+            openCloseAnimation.SetBool("IsEnabled", !isTriggered);
+        }
+        yield return new WaitForSeconds(1);
+        if (condition) dissolveAnimation.PlayAnimation();
+        yield return new WaitForSeconds(2);
+        if (condition)
+        {
+            Switch();
+            isTriggered = true;
+        }
+    }
+
+    private IEnumerator BackwardSequence()
+    {
+        if (isTriggered)
+        {
+            StopCoroutine(forwardCoroutine);
+            dissolveAnimation.CancelAnimation();
+        }
+        yield return new WaitForSeconds(2);
+        if (isTriggered) openCloseAnimation.SetBool("IsEnabled", !isTriggered);
+        yield return new WaitForSeconds(1);
+
         if (isTriggered)
         {
             Switch();
             isTriggered = false;
         }
         ToggleRewind();
-    }
-
-    private void OnEnterRewind()
-    {
-        visuals.RewindAnimation();
-        Invoke("delayedSwitch", 2f);
-    }
-    private void OnEnterNatural()
-    {
-        CancelInvoke("delayedSwitch");
-        visuals.FocusAnimation();
-    }
-
-    public TimeBodyStates GetCurrentState()
-    {
-        return timeBendingController.GetCurrentState();
     }
 }
