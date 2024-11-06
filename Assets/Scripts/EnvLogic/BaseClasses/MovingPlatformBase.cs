@@ -9,7 +9,8 @@ public class MovingPlatformBase : MonoBehaviour
 {
     [SerializeField] protected List<float> speed;
     [SerializeField] protected List<Transform> path;
-    [SerializeField] protected Vector3 carryDetectionExtra = new Vector3(0f,0.5f,0f);
+    [SerializeField] protected Vector3 carryDetectionExtra = new Vector3(0f, 0.5f, 0f);
+    [SerializeField] protected bool isLooping = false;
     protected BoxCollider carryDetectionZone;
     protected Rigidbody rb;
     protected int currentTarget = 0;
@@ -52,10 +53,14 @@ public class MovingPlatformBase : MonoBehaviour
         if (Vector3.Distance(rb.position, path[currentTarget].position) < speed[currentTarget] * Time.fixedDeltaTime)
         {
             currentTarget = currentTarget + (isForwardDirection ? 1 : -1);
-            if (currentTarget >= path.Count || currentTarget < 0)
+            if (!isLooping && currentTarget >= path.Count || currentTarget < 0)
             {
                 isForwardDirection = !isForwardDirection;
                 currentTarget = currentTarget + (isForwardDirection ? 1 : -1);
+            }
+            else if (isLooping && currentTarget >= path.Count || currentTarget < 0)
+            {
+                currentTarget = isForwardDirection ? 0 : path.Count - 1;
             }
         }
     }
@@ -63,7 +68,7 @@ public class MovingPlatformBase : MonoBehaviour
     protected virtual void CarryObjects()
     {
         Vector3 detectionZone = (carryDetectionZone.size / 2) + carryDetectionExtra;
-        
+
         Collider[] hitColliders = Physics.OverlapBox(transform.position, detectionZone, rb.rotation);
         for (int i = 0; i < hitColliders.Length; i++)
         {
