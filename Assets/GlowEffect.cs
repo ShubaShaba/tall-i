@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ColorIntensityChanger : MonoBehaviour
+public class GlowEffect : MonoBehaviour
 {
     public Material targetMaterial; // Assign the material in the Inspector
     public Color baseColor = Color.red; // The base color to adjust
@@ -24,29 +24,31 @@ public class ColorIntensityChanger : MonoBehaviour
             }
         }
 
-        if (increasing == false && change == false){
-        
+        if (increasing == false && change == false)
         {
-            intensity -= intensitySpeed * Time.deltaTime;
-            if (intensity <= minIntensity)
-            {
-                intensity = minIntensity;
-                increasing = true;
-            }
-        }}
 
+            {
+                intensity -= intensitySpeed * Time.deltaTime;
+                if (intensity <= minIntensity)
+                {
+                    intensity = minIntensity;
+                    increasing = true;
+                }
+            }
+        }
         // Set the color with adjusted intensity
         targetMaterial.color = baseColor * intensity;
-
     }
-       
-    
 
-private void OnTriggerEnter(Collider other)       { 
-    change = true;  
-    } 
 
-    private void OnTriggerExit(Collider other){
-    change = false;
 
-    }}
+    public void PlayAnimation(Collider other)
+    {
+        change = true;
+    }
+
+    private void CancelAnimation(Collider other)
+    {
+        change = false;
+    }
+}
