@@ -36,15 +36,16 @@ public class Selection : MonoBehaviour
         {
             if (foundObject != null){
                 instructionsText.text = "Pick up: Left Mouse";
-                
                 }else{
                 instructionsText.text = "";
+
                 }   
                 
 
             if (playerUIdata.isCarryingSomething() && isHoldingObject == false){
                 instructionsText.text = "Throw: Right Mouse";
              } else{
+                
              }
 
         if (playerUIdata.isFocusedOnSomethingType2()){
@@ -69,14 +70,7 @@ public class Selection : MonoBehaviour
             } 
         }
 
-        
-
-
-        
-            
-            
-        
-
+    
             
 
             // Remove outline from the previously selected object
@@ -101,6 +95,8 @@ public class Selection : MonoBehaviour
                 {
                     var renderer = selection.GetComponent<Renderer>();
                     if (foundObject == null && playerUIdata.isFocusedOnSomethingType2() == false && playerUIdata.isCarryingSomething() == false){
+                    isHoldingObject = false;
+
                     instructionsText.text = "Focus on Object: F";
                 }
                        
@@ -129,28 +125,32 @@ public class Selection : MonoBehaviour
  
                 }
             } 
-            if (selection.CompareTag(selectableTag2)){
+            if (selection.CompareTag(selectableTag2)  && playerUIdata.isCarryingSomething() == false){
                     instructionsText.text = "Keycard";
+
+                    isHoldingObject = true;
                     }
                     
-            if (playerUIdata.isCarryingSomething()){
+            if (playerUIdata.isCarryingSomething() && isHoldingObject == true){
                             instructionsText.text = "Use in Scanner";
-                            isHoldingObject = true;
                         } else{
-                            isHoldingObject = true;
                         }
 
                   
             if (selection.CompareTag(selectableTag3) && playerUIdata.isCarryingSomething() == false){
                         instructionsText.text = "Keycard Scanner \nLeft Mouse: Uses Key \nRight Mouse: Removes Key";
+                        isHoldingObject = false;
              } 
 
             if (selection.CompareTag(selectableTag5) && playerUIdata.isCarryingSomething() == false && playerUIdata.isFocusedOnSomethingType2() == false){
                         instructionsText.text = "Generator \nFocus: F";
+                        isHoldingObject = false;
              } 
               
             if (selection.CompareTag(selectableTag4) && playerUIdata.isCarryingSomething() == false){
                         instructionsText.text = "Button Plataform: Stand to press";
+                        isHoldingObject = false;
+
              } 
             }
              }                   }                
