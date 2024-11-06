@@ -125,6 +125,11 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
 
     public void Eject()
     {
+        if (currentPicked is ITimeBody && ((ITimeBody)currentPicked) == currentFocus)
+        {
+            currentFocus.UnFocus();
+            currentFocus = null;
+        }
         currentPicked?.Throw(Vector3.zero, true);
     }
 
