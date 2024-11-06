@@ -18,12 +18,14 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
 
     private void PickupObj(InputAction.CallbackContext context)
     {
+        if (currentPicked != null) return;
+
         ICarriable carriableObj = PlayerSelection.GetObjectReference<ICarriable>(maxInteractionDistance, cameraPosition);
+        if (carriableObj == null)
+            carriableObj = PlayerSelection.GetObjectReferenceImproved<ICarriable>(maxInteractionDistance, cameraPosition);
+
         if (carriableObj != null)
-        {
-            currentPicked?.Throw(Vector3.zero, false);
             carriableObj.Pickup(this);
-        }
     }
 
     private void ThrowObj(InputAction.CallbackContext context)

@@ -23,6 +23,7 @@ public class CarriableBase : MonoBehaviour, ICarriable
 
     public void Pickup(ICarrier parent)
     {
+        parent.Eject();
         if (carrier != null)
             carrier.Eject();
         

@@ -13,4 +13,16 @@ public static class PlayerSelection
         }
         return default;
     }
+
+    public static T GetObjectReferenceImproved<T>(float maxDistance, Transform cameraPosition)
+    {
+        RaycastHit[] raycastHit = Physics.SphereCastAll(cameraPosition.position + cameraPosition.forward * maxDistance, maxDistance / 6, cameraPosition.forward, 0);
+        for (int i = 0; i < raycastHit.Length; i++)
+        {
+            // Debug.Log(raycastHit[i].collider.name);
+            if (raycastHit[i].collider.TryGetComponent<T>(out T timeBendableObject))
+                return timeBendableObject;
+        }
+        return default;
+    }
 }
