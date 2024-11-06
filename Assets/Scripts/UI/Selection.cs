@@ -13,6 +13,7 @@ public class Selection : MonoBehaviour
     [SerializeField] private Transform cameraPosition;
     [SerializeField] private GameObject playerRef;
     private IPlayerUI playerUIdata;
+    private bool isHoldingObject;
 
     private Transform _selection;
     public TextMeshProUGUI instructionsText;
@@ -38,12 +39,10 @@ public class Selection : MonoBehaviour
                 instructionsText.text = "";
                 }   
                 
-            if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.Stoped){
-                instructionsText.text = "doidera";
-            } 
 
-            if (playerUIdata.isCarryingSomething()){
+            if (playerUIdata.isCarryingSomething() && isHoldingObject == false){
                 instructionsText.text = "Throw: Right Mouse";
+             } else{
              }
 
         if (playerUIdata.isFocusedOnSomethingType2()){
@@ -123,26 +122,31 @@ public class Selection : MonoBehaviour
                         // Store original material and apply outline
                         originalMaterial = renderer.material;
                         renderer.material = outlineMaterial;
-
-                        
-                    
                     }
                     _selection = selection;
  
                 }
-            } if (selection.CompareTag(selectableTag2)){
-                        instructionsText.text = "Keycard";
-             }     
-            if (selection.CompareTag(selectableTag3)){
-                        instructionsText.text = "Keycard Scanner";
+            } 
+            if (selection.CompareTag(selectableTag2)){
+                    instructionsText.text = "Keycard";
+                    }
+                    
+            if (playerUIdata.isCarryingSomething()){
+                            instructionsText.text = "Use in Scanner";
+                            isHoldingObject = true;
+                        } else{
+                            isHoldingObject = true;
+                        }
+
+                  
+            if (selection.CompareTag(selectableTag3) && playerUIdata.isCarryingSomething() == false){
+                        instructionsText.text = "Keycard Scanner \nLeft Mouse: Uses Key \nRight Mouse: Removes Key";
              } 
               
-            if (selection.CompareTag(selectableTag4)){
-                        instructionsText.text = "Button Plataform";
+            if (selection.CompareTag(selectableTag4) && playerUIdata.isCarryingSomething() == false){
+                        instructionsText.text = "Button Plataform: Stand to press";
              } 
-             
+            }
              }                   }                
-
-        }
-    }
+}
 
