@@ -11,7 +11,6 @@ public class Selection : MonoBehaviour
     private IPlayerUI playerUIdata;
     private Transform _selection;
     public TextMeshProUGUI instructionsText;
-    private string defaultInstructions = "Pick up: Left Mouse \nThrow: Right Mouse";
 
     void Start()
     {
@@ -20,9 +19,34 @@ public class Selection : MonoBehaviour
 
     void Update()
     {
+
+        CarriableTimeObj foundObject = PlayerSelection.GetObjectReference<CarriableTimeObj>(2, cameraPosition);
+        
+        
+
         if (PauseMenu.isPaused == false)
         {
-            instructionsText.text = defaultInstructions;
+            if (foundObject != null){
+                instructionsText.text = "Pick up: Left Mouse";
+                
+                }else{
+                instructionsText.text = "";
+                }   
+                
+                         
+            if (playerUIdata.isCarryingSomething()){
+                instructionsText.text = "Throw: Right Mouse";
+             }
+
+        if (playerUIdata.isFocusedOnSomethingType2()){
+            instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
+        }
+
+            
+            
+        
+
+            
 
             // Remove outline from the previously selected object
             if (_selection != null)
@@ -38,24 +62,46 @@ public class Selection : MonoBehaviour
             // Perform raycast to find selectable object
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
+                
                 if (selection.CompareTag(selectableTag))
                 {
                     var renderer = selection.GetComponent<Renderer>();
+                    if (foundObject == null && playerUIdata.isFocusedOnSomethingType2() == false && playerUIdata.isCarryingSomething() == false){
+                    instructionsText.text = "Focus on Object: F";
+                }
+                       
+
+                
+
+            if (playerUIdata.isFocusedOnSomethingType2()){
+
+                renderer.material = originalMaterial;
+
+            }
+
+             if (playerUIdata.isCarryingSomething()){
+
+                renderer.material = originalMaterial;
+
+            }
+            if (playerUIdata.isCarryingSomething() == false && playerUIdata.isFocusedOnSomethingType2() == false){
                     if (renderer != null)
                     {
                         // Store original material and apply outline
                         originalMaterial = renderer.material;
                         renderer.material = outlineMaterial;
 
-                        instructionsText.text = "Focus: F \nRewind: 1 \nFreeze Object: 2 \nManual Rewind: 3 \nManual Forward: E \nManual Backward: Q";
+                        
+                    
                     }
                     _selection = selection;
+ 
                 }
-            }
+            }    }                
+
         }
     }
 }
