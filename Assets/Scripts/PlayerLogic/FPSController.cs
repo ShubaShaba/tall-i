@@ -21,6 +21,8 @@ public class FPSController : MonoBehaviour
     private float rotationX = 0;
     private bool canMove = true;
 
+
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
