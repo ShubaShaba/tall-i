@@ -1035,6 +1035,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 501759681365235224, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
+      propertyPath: m_TagString
+      value: Plataform
+      objectReference: {fileID: 0}
     - target: {fileID: 5608980868141700693, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
       propertyPath: m_Center.y
       value: 0.15
@@ -1059,6 +1063,10 @@ PrefabInstance:
     - target: {fileID: 5429464688503964712, guid: 4777b1ec3325cd34c9514ea1f921211e, type: 3}
       propertyPath: m_Name
       value: Scanner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429464688503964712, guid: 4777b1ec3325cd34c9514ea1f921211e, type: 3}
+      propertyPath: m_TagString
+      value: Holder
       objectReference: {fileID: 0}
     - target: {fileID: 7320644667083940295, guid: 4777b1ec3325cd34c9514ea1f921211e, type: 3}
       propertyPath: connectedObj
@@ -1120,6 +1128,10 @@ PrefabInstance:
     - target: {fileID: 5429464688503964712, guid: 4777b1ec3325cd34c9514ea1f921211e, type: 3}
       propertyPath: m_Name
       value: Scanner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429464688503964712, guid: 4777b1ec3325cd34c9514ea1f921211e, type: 3}
+      propertyPath: m_TagString
+      value: Holder
       objectReference: {fileID: 0}
     - target: {fileID: 7320644667083940295, guid: 4777b1ec3325cd34c9514ea1f921211e, type: 3}
       propertyPath: connectedObj
@@ -1789,6 +1801,10 @@ PrefabInstance:
     - target: {fileID: 714433767276663465, guid: c66910f8e730fdf42849a9e959bca3d5, type: 3}
       propertyPath: m_Name
       value: KeyCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 714433767276663465, guid: c66910f8e730fdf42849a9e959bca3d5, type: 3}
+      propertyPath: m_TagString
+      value: Keycard
       objectReference: {fileID: 0}
     - target: {fileID: 3375308004676049750, guid: c66910f8e730fdf42849a9e959bca3d5, type: 3}
       propertyPath: respawn

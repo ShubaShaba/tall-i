@@ -4,6 +4,10 @@ using TMPro;
 public class Selection : MonoBehaviour
 {
     [SerializeField] private string selectableTag = "Selectable";
+    [SerializeField] private string selectableTag2 = "Keycard";
+    [SerializeField] private string selectableTag3 = "Holder";
+    [SerializeField] private string selectableTag4 = "Plataform";
+
     [SerializeField] private Material outlineMaterial;
     [SerializeField] private Material originalMaterial;
     [SerializeField] private Transform cameraPosition;
@@ -126,8 +130,19 @@ public class Selection : MonoBehaviour
                     _selection = selection;
  
                 }
-            }    }                
+            } if (selection.CompareTag(selectableTag2)){
+                        instructionsText.text = "Keycard";
+             }     
+            if (selection.CompareTag(selectableTag3)){
+                        instructionsText.text = "Keycard Scanner";
+             } 
+              
+            if (selection.CompareTag(selectableTag4)){
+                        instructionsText.text = "Button Plataform";
+             } 
+             
+             }                   }                
 
         }
     }
-}
+

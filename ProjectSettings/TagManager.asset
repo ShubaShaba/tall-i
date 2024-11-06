@@ -10,6 +10,9 @@ TagManager:
   - manager
   - Oi
   - Selectable
+  - Keycard
+  - Holder
+  - Plataform
   layers:
   - Default
   - TransparentFX
