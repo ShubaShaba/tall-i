@@ -11,7 +11,7 @@ public class Selection : MonoBehaviour
     private IPlayerUI playerUIdata;
     private Transform _selection;
     public TextMeshProUGUI instructionsText;
-    private string defaultInstructions = "Pick up Object: Left Mouse";
+    private string defaultInstructions = "";
 
     void Start()
     {
@@ -20,20 +20,29 @@ public class Selection : MonoBehaviour
 
     void Update()
     {
+
+        CarriableTimeObj foundObject = PlayerSelection.GetObjectReference<CarriableTimeObj>(3, cameraPosition);
+        
+        
+
         if (PauseMenu.isPaused == false)
         {
-            instructionsText.text = defaultInstructions;
-            
-                if (playerUIdata.isCarryingSomething()){
-                            instructionsText.text = "Throw Object: Right Mouse";
-                            }
-                if (playerUIdata.isFocusedOnSomethingType2()){
-                instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
+            if (foundObject != null){
+                instructionsText.text = "Pick up Object: Left Mouse";
+                }else{
+                instructionsText.text = "";
+                }   
+                
+                         
+            if (playerUIdata.isCarryingSomething()){
+                instructionsText.text = "Throw Object: Right Mouse";
+             }
 
-            }
-             if (playerUIdata.isCarryingSomething()){
-                            instructionsText.text = "Throw Object: Right Mouse";
-                            }
+        if (playerUIdata.isFocusedOnSomethingType2()){
+            instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
+        }
+
+            
             
         
 
@@ -53,18 +62,27 @@ public class Selection : MonoBehaviour
             // Perform raycast to find selectable object
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
+                
                 if (selection.CompareTag(selectableTag))
                 {
                     var renderer = selection.GetComponent<Renderer>();
+                    if (foundObject == null){
+                    instructionsText.text = "Focus on Object: F";
+                }
                        
 
                 
 
             if (playerUIdata.isFocusedOnSomethingType2()){
+
+                GetComponent<Renderer>().material = originalMaterial;
+
+            }
+
+             if (playerUIdata.isCarryingSomething()){
 
                 GetComponent<Renderer>().material = originalMaterial;
 
@@ -75,7 +93,7 @@ public class Selection : MonoBehaviour
                         originalMaterial = renderer.material;
                         renderer.material = outlineMaterial;
 
-                        instructionsText.text = "Focus: F";
+                        
                     
                     }
                     _selection = selection;
