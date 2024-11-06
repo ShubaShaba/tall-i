@@ -1,0 +1,27 @@
+public enum Sound
+{
+    TimeStop,
+    ConstantTimeStop,
+    TimeRewind,
+    ManualRewind,
+    HardReset,
+    HeavyMetalImpact,
+    MetalClang,
+    Thud1,
+    Thud2,
+    Thud3,
+    Thud4,
+    SoftThud,
+    StoneImpact,
+    AmbienceHum,
+    AmbienceMoody,
+    AmbienceRumble,
+    RobotMovement,
+    RobotBeep1,
+    RobotBeep2,
+    RobotBeep3,
+    RobotBeep4,
+    StoneScrapingShort,
+    StoneScraping,
+    Generator
+}

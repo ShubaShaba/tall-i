@@ -15,13 +15,12 @@ public class FPSController : MonoBehaviour
     [SerializeField] private float gravity = 20.0f;
     [SerializeField] private float lookSpeed = 2.0f;
     [SerializeField] private float lookXLimit = 45.0f;
+    [SerializeField] private SoundFXManager soundManager;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private bool canMove = true;
-
-
 
     void Start()
     {
@@ -31,6 +30,8 @@ public class FPSController : MonoBehaviour
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundFXManager>();
     }
 
     private void HandleGravity()
@@ -90,6 +91,18 @@ public class FPSController : MonoBehaviour
         }
     }
 
+    private void HandleSound()
+    {
+        if (controlManager.GetInputDirectionNormalized().magnitude > 0)
+        {
+            soundManager.PlaySound(Sound.RobotMovement, true, transform);
+        }
+        else
+        {
+            soundManager.StopSound(Sound.RobotMovement);
+        }
+    }
+
     void Update()
     {
         if (PauseMenu.isPaused == false)
@@ -97,6 +110,7 @@ public class FPSController : MonoBehaviour
             HandleMovement();
             HandleGravity();
             HandleRotation();
+            HandleSound();
         }
     }
 }
