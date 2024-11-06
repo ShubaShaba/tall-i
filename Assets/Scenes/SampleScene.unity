@@ -1206,7 +1206,7 @@ PrefabInstance:
       objectReference: {fileID: 1928338603}
     - target: {fileID: 1532556077352672555, guid: c798f48a301e54744b04097d00084fd3, type: 3}
       propertyPath: deathZoneSensitivity
-      value: 0.8
+      value: 0.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

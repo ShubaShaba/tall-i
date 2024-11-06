@@ -74,6 +74,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
                 timeBendingController.HardReset();
                 transform.position = respawn.position;
                 visuals.RespawnAnimation(false);
+                visuals.FocusAnimation();
                 return;
             }
         }

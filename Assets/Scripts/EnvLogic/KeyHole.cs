@@ -12,7 +12,14 @@ public class KeyHole : SwitcherBase, ICarrier, IInteractable
 
     public Transform GetMountingPointTransform() { return mountingPoint; }
 
-    public virtual void Interact() { if (isInjected()) { Switch(); } }
+    public virtual void Interact()
+    {
+        if (isInjected())
+        {
+            isTriggered = !isTriggered;
+            Switch();
+        }
+    }
 
     public void RemoveCarriable(ICarriable obj) { carriable = null; }
 
