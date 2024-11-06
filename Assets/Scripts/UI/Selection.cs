@@ -7,6 +7,8 @@ public class Selection : MonoBehaviour
     [SerializeField] private string selectableTag2 = "Keycard";
     [SerializeField] private string selectableTag3 = "Holder";
     [SerializeField] private string selectableTag4 = "Plataform";
+    [SerializeField] private string selectableTag5 = "Generator";
+
 
     [SerializeField] private Material outlineMaterial;
     [SerializeField] private Material originalMaterial;
@@ -62,7 +64,7 @@ public class Selection : MonoBehaviour
                 instructionsText.text = "Reverse Object: Q \nForward Object: E";
             } 
 
-          if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.    ControlledReverseRewinding){
+          if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.ControlledReverseRewinding){
                 instructionsText.text = "Reverse Object: Q";
             } 
         }
@@ -141,6 +143,10 @@ public class Selection : MonoBehaviour
                   
             if (selection.CompareTag(selectableTag3) && playerUIdata.isCarryingSomething() == false){
                         instructionsText.text = "Keycard Scanner \nLeft Mouse: Uses Key \nRight Mouse: Removes Key";
+             } 
+
+            if (selection.CompareTag(selectableTag5) && playerUIdata.isCarryingSomething() == false && playerUIdata.isFocusedOnSomethingType2() == false){
+                        instructionsText.text = "Generator \nFocus: F";
              } 
               
             if (selection.CompareTag(selectableTag4) && playerUIdata.isCarryingSomething() == false){

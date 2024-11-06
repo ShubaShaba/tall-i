@@ -230,6 +230,7 @@ MonoBehaviour:
   selectableTag2: Keycard
   selectableTag3: Holder
   selectableTag4: Plataform
+  selectableTag5: Generator
   outlineMaterial: {fileID: 2100000, guid: be76a31c909c346e7bbbf4dffe719e8e, type: 2}
   originalMaterial: {fileID: 2100000, guid: f18daac959c149242b5526e747113348, type: 2}
   cameraPosition: {fileID: 43713254}
@@ -2514,6 +2515,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2761792413232172105, guid: a6f34b7fe284d1548a093ce04510a419, type: 3}
       propertyPath: m_Name
+      value: Generator
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761792413232172105, guid: a6f34b7fe284d1548a093ce04510a419, type: 3}
+      propertyPath: m_TagString
       value: Generator
       objectReference: {fileID: 0}
     - target: {fileID: 3194773669323884276, guid: a6f34b7fe284d1548a093ce04510a419, type: 3}
