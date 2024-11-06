@@ -79,7 +79,6 @@ public class MovingPlatformBase : MonoBehaviour, IPluggedTo
 
     public void Trigger()
     {
-        Debug.Log("AAAAAAAAAAAA");
         isMoving = !isMoving;
     }
 }
