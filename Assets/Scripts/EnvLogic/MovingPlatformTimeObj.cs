@@ -77,5 +77,7 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
 
     private void OnAnyStateExit() { StartCycling(); }
 
+    public TimeBodyStates GetCurrentState() { return timeBendingController.GetCurrentState(); }
+
     // private bool RecordConstraints() { return isMoving; }
 }

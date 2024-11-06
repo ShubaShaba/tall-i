@@ -61,4 +61,9 @@ public class Generator : KeyHole, ITimeBody
         CancelInvoke("delayedSwitch");
         visuals.FocusAnimation();
     }
+
+    public TimeBodyStates GetCurrentState()
+    {
+        return timeBendingController.GetCurrentState();
+    }
 }

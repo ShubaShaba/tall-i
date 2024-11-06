@@ -153,4 +153,9 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
         return currentFocus != null;
     }
 
+    public TimeBodyStates GetCurrentFocusState()
+    {
+        if (currentFocus == null) return TimeBodyStates.Natural;
+        return currentFocus.GetCurrentState();
+    }
 }

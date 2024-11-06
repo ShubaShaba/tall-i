@@ -79,4 +79,6 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
             }
         }
     }
+
+    public TimeBodyStates GetCurrentState() { return timeBendingController.GetCurrentState(); }
 }
