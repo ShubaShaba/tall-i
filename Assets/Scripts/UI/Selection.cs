@@ -9,6 +9,7 @@ public class Selection : MonoBehaviour
     [SerializeField] private Transform cameraPosition;
     [SerializeField] private GameObject playerRef;
     private IPlayerUI playerUIdata;
+
     private Transform _selection;
     public TextMeshProUGUI instructionsText;
 
@@ -33,15 +34,40 @@ public class Selection : MonoBehaviour
                 instructionsText.text = "";
                 }   
                 
-                         
+            if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.Stoped){
+                instructionsText.text = "doidera";
+            } 
+
             if (playerUIdata.isCarryingSomething()){
                 instructionsText.text = "Throw: Right Mouse";
              }
 
         if (playerUIdata.isFocusedOnSomethingType2()){
-            instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
+          instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
+
+          if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.Stoped){
+                instructionsText.text = "Rewind Object: 1 \nManual Rewind: 3";
+            } 
+        if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.Rewinding){
+                instructionsText.text = "Freeze Object: 2 \nManual Rewind: 3";
+            } 
+
+          if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.ControlledRewinding){
+                instructionsText.text = "Forward Object: E";
+            }
+            if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.ControlledStoped){
+                instructionsText.text = "Reverse Object: Q \nForward Object: E";
+            } 
+
+          if (playerUIdata.GetCurrentFocusState() == TimeBodyStates.    ControlledReverseRewinding){
+                instructionsText.text = "Reverse Object: Q";
+            } 
         }
 
+        
+
+
+        
             
             
         
