@@ -21,21 +21,22 @@ public class Selection : MonoBehaviour
     void Update()
     {
 
-        CarriableTimeObj foundObject = PlayerSelection.GetObjectReference<CarriableTimeObj>(3, cameraPosition);
+        CarriableTimeObj foundObject = PlayerSelection.GetObjectReference<CarriableTimeObj>(2, cameraPosition);
         
         
 
         if (PauseMenu.isPaused == false)
         {
             if (foundObject != null){
-                instructionsText.text = "Pick up Object: Left Mouse";
+                instructionsText.text = "Pick up: Left Mouse";
+                
                 }else{
                 instructionsText.text = "";
                 }   
                 
                          
             if (playerUIdata.isCarryingSomething()){
-                instructionsText.text = "Throw Object: Right Mouse";
+                instructionsText.text = "Throw: Right Mouse";
              }
 
         if (playerUIdata.isFocusedOnSomethingType2()){
@@ -69,7 +70,7 @@ public class Selection : MonoBehaviour
                 if (selection.CompareTag(selectableTag))
                 {
                     var renderer = selection.GetComponent<Renderer>();
-                    if (foundObject == null){
+                    if (foundObject == null && playerUIdata.isFocusedOnSomethingType2() == false){
                     instructionsText.text = "Focus on Object: F";
                 }
                        
