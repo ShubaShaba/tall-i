@@ -1308,6 +1308,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1505199702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505199711}
+  - component: {fileID: 1505199710}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1505199710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505199702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7094a8d8d9b45edbf6f0591596b85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Time_Stop_Clip: {fileID: 0}
+  Constant_Time_Stop_Clip: {fileID: 0}
+  Time_Rewind_Clip: {fileID: 0}
+  Manual_Rewind_Clip: {fileID: 0}
+  HardReset_Clip: {fileID: 0}
+  Heavy_Metal_Impact_Clip: {fileID: 0}
+  Metal_Clang_Clip: {fileID: 0}
+  Thud1_Clip: {fileID: 0}
+  Thud2_Clip: {fileID: 0}
+  Thud3_Clip: {fileID: 0}
+  Thud4_Clip: {fileID: 0}
+  Soft_Thud_Clip: {fileID: 0}
+  Stone_Impact_Clip: {fileID: 0}
+  Ambience_hum_Clip: {fileID: 0}
+  Ambience2_moody_Clip: {fileID: 0}
+  Ambience3_rumble_Clip: {fileID: 0}
+  Robot_Movement_Clip: {fileID: 0}
+  Robot_Beep1_Clip: {fileID: 0}
+  Robot_Beep2_Clip: {fileID: 0}
+  Robot_Beep3_Clip: {fileID: 0}
+  Robot_Beep4_Clip: {fileID: 0}
+  Stone_Scraping_Short_Clip: {fileID: 0}
+  Stone_Scraping_Clip: {fileID: 0}
+  Generator_Clip: {fileID: 0}
+--- !u!4 &1505199711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505199702}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1510402083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,6 +2506,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1505199711}
   - {fileID: 705507995}
   - {fileID: 1860275427}
   - {fileID: 1722853135}
