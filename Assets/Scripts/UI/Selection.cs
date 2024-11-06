@@ -23,6 +23,18 @@ public class Selection : MonoBehaviour
         if (PauseMenu.isPaused == false)
         {
             instructionsText.text = defaultInstructions;
+            
+                if (playerUIdata.isCarryingSomething()){
+                            instructionsText.text = "Throw Object: Right Mouse";
+                            }
+                if (playerUIdata.isFocusedOnSomethingType2()){
+                instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
+
+            }
+             if (playerUIdata.isCarryingSomething()){
+                            instructionsText.text = "Throw Object: Right Mouse";
+                            }
+            
         
 
             
@@ -48,12 +60,12 @@ public class Selection : MonoBehaviour
                 if (selection.CompareTag(selectableTag))
                 {
                     var renderer = selection.GetComponent<Renderer>();
-                        if (playerUIdata.isCarryingSomething()){
-                            instructionsText.text = "Throw Object: Right Mouse";
-                            }
+                       
+
+                
 
             if (playerUIdata.isFocusedOnSomethingType2()){
-                instructionsText.text = "Rewind Object: 1 \nFreeze Object: 2 \nManual Rewind: 3";
+
                 GetComponent<Renderer>().material = originalMaterial;
 
             }
