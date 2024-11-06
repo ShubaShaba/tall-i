@@ -19,7 +19,7 @@ public class Video : MonoBehaviour
 
      void doSomethingWhenVideoFinish(VideoPlayer vp)
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainMenu");
     }
 
 
