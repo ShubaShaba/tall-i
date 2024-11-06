@@ -13,6 +13,7 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
     private PhysicalTimeHelper physicalTimeObjHelper;
+    private bool deathZoneStop;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
             timeBendingController.AddOnExitAction(state, OnAnyStateExit);
         }
 
+        deathZoneStop = false;
         // timeBendingController.SetRecordConstraints(RecordConstraints);
     }
 
@@ -64,10 +66,12 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
         if (hitColliders.Length > 1)
         {
             StopCycling();
+            deathZoneStop = true;
         }
-        else
+        else if (deathZoneStop)
         {
             StartCycling();
+            deathZoneStop = false;
         }
     }
 
@@ -76,6 +80,8 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
     private void OnAnyStateEnter() { rb.isKinematic = true; }
 
     private void OnAnyStateExit() { StartCycling(); }
+
+    public TimeBodyStates GetCurrentState() { return timeBendingController.GetCurrentState(); }
 
     // private bool RecordConstraints() { return isMoving; }
 }

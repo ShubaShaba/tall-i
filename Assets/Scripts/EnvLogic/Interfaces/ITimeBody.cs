@@ -12,4 +12,5 @@ public interface ITimeBody
     public void ManualBackward();
     public void ManualForward();
     public bool IsInManualMode();
+    public TimeBodyStates GetCurrentState();
 }
