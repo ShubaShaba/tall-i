@@ -11,7 +11,6 @@ public class Selection : MonoBehaviour
     private IPlayerUI playerUIdata;
     private Transform _selection;
     public TextMeshProUGUI instructionsText;
-    private string defaultInstructions = "";
 
     void Start()
     {
@@ -70,7 +69,7 @@ public class Selection : MonoBehaviour
                 if (selection.CompareTag(selectableTag))
                 {
                     var renderer = selection.GetComponent<Renderer>();
-                    if (foundObject == null && playerUIdata.isFocusedOnSomethingType2() == false){
+                    if (foundObject == null && playerUIdata.isFocusedOnSomethingType2() == false && playerUIdata.isCarryingSomething() == false){
                     instructionsText.text = "Focus on Object: F";
                 }
                        
@@ -79,15 +78,16 @@ public class Selection : MonoBehaviour
 
             if (playerUIdata.isFocusedOnSomethingType2()){
 
-                GetComponent<Renderer>().material = originalMaterial;
+                renderer.material = originalMaterial;
 
             }
 
              if (playerUIdata.isCarryingSomething()){
 
-                GetComponent<Renderer>().material = originalMaterial;
+                renderer.material = originalMaterial;
 
             }
+            if (playerUIdata.isCarryingSomething() == false && playerUIdata.isFocusedOnSomethingType2() == false){
                     if (renderer != null)
                     {
                         // Store original material and apply outline
@@ -100,7 +100,7 @@ public class Selection : MonoBehaviour
                     _selection = selection;
  
                 }
-            }                    
+            }    }                
 
         }
     }
