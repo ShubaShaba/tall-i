@@ -35,6 +35,7 @@ public class SoundFXManager : MonoBehaviour
     private Dictionary<Sound, AudioClip> audioClips;
     private Dictionary<(Sound, Transform), AudioSource> audioSources;
     [SerializeField] private Dictionary<Sound, SoundSettings> soundSettings;
+    [SerializeField] private AudioClip ambientForTheScene = null;
 
     void Start()
     {
@@ -80,14 +81,14 @@ public class SoundFXManager : MonoBehaviour
         { Sound.Thud1, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.Thud2, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.Thud3, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
-        { Sound.Thud4, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
+        { Sound.Thud4, new SoundSettings(audioSourceRef.pitch, 0.7f, audioSourceRef.spatialBlend) },
         { Sound.SoftThud, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.StoneImpact, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.AmbienceHum, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.AmbienceMoody, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
-        { Sound.AmbienceRumble, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
-        { Sound.RobotMovement, new SoundSettings(0.6f, 0.4f, 1f) },
-        { Sound.RobotJump, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
+        { Sound.AmbienceRumble, new SoundSettings(audioSourceRef.pitch, 0.7f, 0.2f) },
+        { Sound.RobotMovement, new SoundSettings(0.6f, audioSourceRef.volume, audioSourceRef.spatialBlend) },
+        { Sound.RobotJump, new SoundSettings(audioSourceRef.pitch, 0.3f, audioSourceRef.spatialBlend) },
         { Sound.RobotBeep1, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.RobotBeep2, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.RobotBeep3, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
@@ -96,8 +97,19 @@ public class SoundFXManager : MonoBehaviour
         { Sound.StoneScraping, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend) },
         { Sound.Generator, new SoundSettings(audioSourceRef.pitch, audioSourceRef.volume, audioSourceRef.spatialBlend)}
     };
+
+        StartAmbient();
     }
 
+    public void StartAmbient()
+    {
+        PlaySound(Sound.AmbienceRumble, true, transform, ambientForTheScene);
+    }
+
+    public void StopAmbient()
+    {
+        StopSound(Sound.AmbienceRumble, transform);
+    }
 
     public void PlaySound(Sound sound, bool _loop, Transform _parent, AudioClip specifyClip = null)
     {
