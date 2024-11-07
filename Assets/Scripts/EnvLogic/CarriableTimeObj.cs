@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CarriableTimeObj : CarriableBase, ITimeBody
+public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
 {
     [SerializeField] private ControlManager controlManager;
     [SerializeField] private float rewindTimeTime = 5;
@@ -16,7 +16,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     private PhysicalTimeBendingController timeBendingController;
     private PhysicalTimeHelper physicalTimeObjHelper;
     private PhysicalTimeBodySound physicalTimeBodySound;
-   
+
 
     private void Start()
     {
@@ -73,17 +73,21 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
         {
             if (!hitColliders[i].isTrigger && hitColliders[i] != GetComponent<Collider>())
             {
-                Debug.Log(hitColliders[i].name);
-                visuals.RespawnAnimation(true);
-                timeBendingController.HardReset();
-                transform.position = respawn.position;
-                visuals.RespawnAnimation(false);
-                visuals.FocusAnimation();
-                physicalTimeBodySound.HardResetSound();
+                Respawn();
                 return;
             }
         }
     }
 
     public TimeBodyStates GetCurrentState() { return timeBendingController.GetCurrentState(); }
+
+    public void Respawn()
+    {
+        visuals.RespawnAnimation(true);
+        timeBendingController.HardReset();
+        transform.position = respawn.position;
+        visuals.RespawnAnimation(false);
+        visuals.FocusAnimation();
+        physicalTimeBodySound.HardResetSound();
+    }
 }

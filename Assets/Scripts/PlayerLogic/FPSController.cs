@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class FPSController : MonoBehaviour
+public class FPSController : MonoBehaviour, IRespawnable
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private ControlManager controlManager;
@@ -16,6 +16,8 @@ public class FPSController : MonoBehaviour
     [SerializeField] private float lookSpeed = 2.0f;
     [SerializeField] private float lookXLimit = 45.0f;
     [SerializeField] private float jumpDelay = 0.2f;
+    [SerializeField] private Transform respawnPoint;
+
     private SoundFXManager soundManager;
 
     private CharacterController characterController;
@@ -34,6 +36,15 @@ public class FPSController : MonoBehaviour
         Cursor.visible = false;
 
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundFXManager>();
+    }
+
+    public void Respawn()
+    {
+        characterController.enabled = false;
+        moveDirection = Vector3.zero;
+        transform.position = respawnPoint.position;
+        soundManager.PlaySound(Sound.HardReset, false, transform);
+        characterController.enabled = true;
     }
 
     private void HandleGravity()
