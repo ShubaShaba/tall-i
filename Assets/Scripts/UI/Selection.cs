@@ -146,7 +146,7 @@ public class Selection : MonoBehaviour
              } 
 
             if (selection.CompareTag(selectableTag5) && playerUIdata.isCarryingSomething() == false && playerUIdata.isFocusedOnSomethingType2() == false){
-                        instructionsText.text = "      Generator \n      Focus: F";
+                        instructionsText.text = "Generator: Needs Battery \nLeft Mouse: Turn On Generator \n      Focus: F \n";
                         isHoldingObject = false;
              } 
               
