@@ -126,29 +126,29 @@ public class Selection : MonoBehaviour
                 }
             } 
             if (selection.CompareTag(selectableTag2)  && playerUIdata.isCarryingSomething() == false){
-                    instructionsText.text = "Keycard";
+                    instructionsText.text = "     Keycard \nPick Up: Left Mouse";
 
                     isHoldingObject = true;
                     }
                     
             if (playerUIdata.isCarryingSomething() && isHoldingObject == true){
-                            instructionsText.text = "Use in Scanner";
+                            instructionsText.text = "   Use in Scanner";
                         } else{
                         }
 
                   
             if (selection.CompareTag(selectableTag3) && playerUIdata.isCarryingSomething() == false){
-                        instructionsText.text = "Keycard Scanner \nLeft Mouse: Uses Key \nRight Mouse: Removes Key";
+                        instructionsText.text = "   Keycard Scanner \nLeft Mouse: Uses Key \nRight Mouse: Removes Key";
                         isHoldingObject = false;
              } 
 
             if (selection.CompareTag(selectableTag5) && playerUIdata.isCarryingSomething() == false && playerUIdata.isFocusedOnSomethingType2() == false){
-                        instructionsText.text = "Generator \nFocus: F";
+                        instructionsText.text = "      Generator \n      Focus: F";
                         isHoldingObject = false;
              } 
               
             if (selection.CompareTag(selectableTag4) && playerUIdata.isCarryingSomething() == false){
-                        instructionsText.text = "Button Plataform: Stand to press";
+                        instructionsText.text = "Button Plataform \n Stand to press";
                         isHoldingObject = false;
 
              } 
