@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 669479891756943328}
   m_Layer: 0
   m_Name: CarriableItemTimeBending
-  m_TagString: canPickUp
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5b05a2161a85a42952778a17ae2ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
 --- !u!1 &918687700501074977
 GameObject:
   m_ObjectHideFlags: 0

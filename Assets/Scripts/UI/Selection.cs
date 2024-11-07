@@ -108,13 +108,13 @@ public class Selection : MonoBehaviour
 
             if (playerUIdata.isFocusedOnSomethingType2()){
 
-                renderer.material = originalMaterial;
+                // renderer.material = originalMaterial;
 
             }
 
              if (playerUIdata.isCarryingSomething()){
 
-                renderer.material = originalMaterial;
+                // renderer.material = originalMaterial;
 
             }
             if (playerUIdata.isCarryingSomething() == false && playerUIdata.isFocusedOnSomethingType2() == false){

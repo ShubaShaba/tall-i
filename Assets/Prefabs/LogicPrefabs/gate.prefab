@@ -200,8 +200,8 @@ GameObject:
   - component: {fileID: 1127174560488757501}
   - component: {fileID: 12449318741363887}
   m_Layer: 0
-  m_Name: Gate
-  m_TagString: Untagged
+  m_Name: gate
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

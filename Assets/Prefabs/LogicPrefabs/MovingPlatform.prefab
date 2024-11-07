@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1565083882852120395}
   m_Layer: 0
   m_Name: MovingPlatform
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +104,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   carryDetectionExtra: {x: 0, y: 0.5, z: 0}
+  isLooping: 0
+  isMoving: 1
   controlManager: {fileID: 0}
   rewindTimeTime: 15
   slowDownCoefficient: 2

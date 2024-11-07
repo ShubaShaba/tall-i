@@ -1391,6 +1391,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44f582875b48bab4da55b16d8ce0e5fe, type: 3}
+--- !u!4 &166463027 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2613699914127326766, guid: 44f582875b48bab4da55b16d8ce0e5fe, type: 3}
+  m_PrefabInstance: {fileID: 166463026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &169711511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,6 +2598,75 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 20, y: 20, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &335098321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6434803368805044555, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: playerRef
+      value: 
+      objectReference: {fileID: 1241479145}
+    - target: {fileID: 6434803368805044555, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: cameraPosition
+      value: 
+      objectReference: {fileID: 166463027}
+    - target: {fileID: 6434803368805044555, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: instructionsText
+      value: 
+      objectReference: {fileID: 39458205}
+    - target: {fileID: 8465691397273392196, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_Name
+      value: SelectionManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964725023072778407, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae3fd6915968206499bc2d91162b3516, type: 3}
 --- !u!1001 &336390139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3129,6 +3203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyCardHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 6194912966959598635, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: m_TagString
+      value: Scanner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3564,6 +3642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyCard
       objectReference: {fileID: 0}
+    - target: {fileID: 714433767276663465, guid: c66910f8e730fdf42849a9e959bca3d5, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8969347722826542114, guid: c66910f8e730fdf42849a9e959bca3d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 71.42312
@@ -3797,6 +3879,10 @@ PrefabInstance:
     - target: {fileID: 286077733750643401, guid: c798f48a301e54744b04097d00084fd3, type: 3}
       propertyPath: m_Name
       value: CarriableItemTimeBending (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 286077733750643401, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 4844239810438706220, guid: c798f48a301e54744b04097d00084fd3, type: 3}
       propertyPath: m_Enabled
@@ -11050,6 +11136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 4484948558712282883, guid: 720a9c2cf14cd1042b8b982ab09a47d3, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 5795337315632943658, guid: 720a9c2cf14cd1042b8b982ab09a47d3, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -11384,6 +11474,10 @@ PrefabInstance:
     - target: {fileID: 286077733750643401, guid: c798f48a301e54744b04097d00084fd3, type: 3}
       propertyPath: m_Name
       value: CarriableItemTimeBending (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 286077733750643401, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 4844239810438706220, guid: c798f48a301e54744b04097d00084fd3, type: 3}
       propertyPath: m_Enabled
@@ -12898,3 +12992,4 @@ SceneRoots:
   - {fileID: 649822615}
   - {fileID: 166463026}
   - {fileID: 1912660055}
+  - {fileID: 335098321}
