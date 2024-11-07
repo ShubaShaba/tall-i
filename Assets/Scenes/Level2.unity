@@ -5305,6 +5305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 4484948558712282883, guid: 720a9c2cf14cd1042b8b982ab09a47d3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5795337315632943658, guid: 720a9c2cf14cd1042b8b982ab09a47d3, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
