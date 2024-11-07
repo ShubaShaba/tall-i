@@ -61,13 +61,13 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
 
     private void InteractWithObj(InputAction.CallbackContext context)
     {
-        IInteractable interactableObj = PlayerSelection.GetObjectReference<IInteractable>(maxInteractionDistance, cameraPosition);
+        IInteractable interactableObj = PlayerSelection.GetObjectReferenceImproved<IInteractable>(maxInteractionDistance / 2, cameraPosition, true);
         interactableObj?.Interact();
     }
 
     private void EjectCarriableFromObject(InputAction.CallbackContext context)
     {
-        ICarrier anotherCarrier = PlayerSelection.GetObjectReference<ICarrier>(maxInteractionDistance, cameraPosition);
+        ICarrier anotherCarrier = PlayerSelection.GetObjectReferenceImproved<ICarrier>(maxInteractionDistance / 2, cameraPosition, true);
         anotherCarrier?.Eject();
     }
 
@@ -141,7 +141,7 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
 
     public bool isFocusedOnSomethingType1()
     {
-        return currentFocus != null;
+        return currentFocus != null && currentFocus is Generator;
     }
 
     public bool isFocusedOnSomethingType2()

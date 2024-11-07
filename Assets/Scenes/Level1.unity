@@ -10785,6 +10785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Keycard
       objectReference: {fileID: 0}
+    - target: {fileID: 6149140711164484305, guid: add5b6e6ccbe8cc469e9b98e28ac549e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
