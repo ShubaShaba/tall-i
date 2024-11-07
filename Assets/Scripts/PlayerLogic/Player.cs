@@ -16,6 +16,32 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
     private ITimeBody currentFocus;
     private ICarriable currentPicked;
 
+    private void Start()
+    {
+        controlManager.AddPlayersAction(PlayersActionType.Focus, FocusOnObject);
+        controlManager.AddPlayersAction(PlayersActionType.Interact, PickupObj);
+        controlManager.AddPlayersAction(PlayersActionType.Interact, InteractWithObj);
+        controlManager.AddPlayersAction(PlayersActionType.Throw, ThrowObj);
+        controlManager.AddPlayersAction(PlayersActionType.Throw, EjectCarriableFromObject);
+        controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
+        controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
+        controlManager.AddPlayersAction(PlayersActionType.ManualRewind, ManualControlAction);
+        controlManager.AddPlayersAction(PlayersActionType.StartManualRewind, ManualBackward);
+        controlManager.AddPlayersAction(PlayersActionType.StartManualReverseRewind, ManualForward);
+    }
+
+    // TODO: fix: control releated stuff is not supposed to be in Player.cs
+    private void Update()
+    {
+        if (!controlManager.PlayerIsHoldingLeftMouse())
+            currentPicked?.Throw(Vector3.zero, false);
+
+        if (currentFocus == null) return;
+
+        if (!controlManager.PlayerIsRewindingBackward() && !controlManager.PlayerIsRewindingForward() && currentFocus.IsInManualMode())
+            currentFocus?.ToggleManualControl();
+    }
+
     private void PickupObj(InputAction.CallbackContext context)
     {
         if (currentPicked != null) return;
@@ -76,36 +102,6 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
     private void ManualForward(InputAction.CallbackContext context)
     {
         currentFocus?.ManualForward();
-    }
-
-    private void Start()
-    {
-        controlManager.AddPlayersAction(PlayersActionType.Focus, FocusOnObject);
-        controlManager.AddPlayersAction(PlayersActionType.Interact, PickupObj);
-        controlManager.AddPlayersAction(PlayersActionType.Interact, InteractWithObj);
-        controlManager.AddPlayersAction(PlayersActionType.Throw, ThrowObj);
-        controlManager.AddPlayersAction(PlayersActionType.Throw, EjectCarriableFromObject);
-        controlManager.AddPlayersAction(PlayersActionType.Rewind, RewindAction);
-        controlManager.AddPlayersAction(PlayersActionType.StopTime, StopTimeAction);
-        controlManager.AddPlayersAction(PlayersActionType.ManualRewind, ManualControlAction);
-        controlManager.AddPlayersAction(PlayersActionType.StartManualRewind, ManualBackward);
-        controlManager.AddPlayersAction(PlayersActionType.StartManualReverseRewind, ManualForward);
-    }
-
-    // TODO: fix: control releated stuff is not supposed to be in Player.cs
-    private void Update()
-    {
-        if (!controlManager.PlayerIsHoldingLeftMouse())
-        {
-            currentPicked?.Throw(Vector3.zero, false);
-        }
-
-        if (currentFocus == null) return;
-
-        if (!controlManager.PlayerIsRewindingBackward() && !controlManager.PlayerIsRewindingForward() && currentFocus.IsInManualMode())
-        {
-            currentFocus?.ToggleManualControl();
-        }
     }
 
     public void AddCarriable(ICarriable obj)
