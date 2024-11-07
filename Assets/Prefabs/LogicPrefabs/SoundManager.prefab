@@ -43,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
@@ -199,3 +199,4 @@ MonoBehaviour:
   Stone_Scraping_Clip: {fileID: 8300000, guid: 2cae909479f764c799d796279aa7733d, type: 3}
   Generator_Clip: {fileID: 8300000, guid: 81bbc5a3ce5834a1796e8c27c4d0d4a2, type: 3}
   audioSourceRef: {fileID: 5066381205748605335}
+  ambientForTheScene: {fileID: 0}

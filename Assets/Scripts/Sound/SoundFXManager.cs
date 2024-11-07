@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-// NOTE: THIS GIGANTIC MAPS WHERE CHATGPT GENERATED, the rest of the code and the idea is original*
 public class SoundFXManager : MonoBehaviour
 {
     [SerializeField] private AudioClip Time_Stop_Clip;
@@ -134,7 +132,8 @@ public class SoundFXManager : MonoBehaviour
             source.volume = settings.volume;
             source.spatialBlend = settings.spatialBlend;
         }
-        source.PlayOneShot(specifyClip == null ? audioClips[sound] : specifyClip);
+        source.clip = specifyClip == null ? audioClips[sound] : specifyClip;
+        source.Play();
     }
 
     public void StopSound(Sound sound, Transform _parent)
