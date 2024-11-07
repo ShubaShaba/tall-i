@@ -33,12 +33,12 @@ public class SoundFXManager : MonoBehaviour
     [SerializeField] private AudioClip Generator_Clip;
     [SerializeField] private AudioSource audioSourceRef;
     private Dictionary<Sound, AudioClip> audioClips;
-    private Dictionary<Sound, AudioSource> audioSources;
+    private Dictionary<(Sound, Transform), AudioSource> audioSources;
     [SerializeField] private Dictionary<Sound, SoundSettings> soundSettings;
 
     void Start()
     {
-        audioSources = new Dictionary<Sound, AudioSource>();
+        audioSources = new Dictionary<(Sound, Transform), AudioSource>();
         audioClips = new Dictionary<Sound, AudioClip>()
     {
         { Sound.TimeStop, Time_Stop_Clip },
@@ -99,20 +99,21 @@ public class SoundFXManager : MonoBehaviour
     }
 
 
-    public void PlaySound(Sound sound, bool _loop, Transform _parent)
+    public void PlaySound(Sound sound, bool _loop, Transform _parent, AudioClip specifyClip = null)
     {
-        if (!audioSources.ContainsKey(sound))
-            audioSources.Add(sound, Instantiate(audioSourceRef, _parent));
+        if (!audioSources.ContainsKey((sound, _parent)))
+            audioSources.Add((sound, _parent), Instantiate(audioSourceRef, _parent));
 
-        AudioSource source = audioSources[sound];
+        AudioSource source = audioSources[(sound, _parent)];
         if (source.transform.parent != _parent)
         {
             source.transform.position = _parent.position;
             source.transform.SetParent(_parent);
         }
 
-        if (source.isPlaying) return;
+        if (source.isPlaying && _loop) return;
         source.loop = _loop;
+        source.Stop();
 
         if (soundSettings.ContainsKey(sound))
         {
@@ -121,13 +122,13 @@ public class SoundFXManager : MonoBehaviour
             source.volume = settings.volume;
             source.spatialBlend = settings.spatialBlend;
         }
-        source.PlayOneShot(audioClips[sound]);
+        source.PlayOneShot(specifyClip == null ? audioClips[sound] : specifyClip);
     }
 
-    public void StopSound(Sound sound)
+    public void StopSound(Sound sound, Transform _parent)
     {
-        if (!audioSources.ContainsKey(sound)) { audioSources.Add(sound, Instantiate(audioSourceRef, transform)); }
-        AudioSource source = audioSources[sound];
+        if (!audioSources.ContainsKey((sound, _parent))) { audioSources.Add((sound, _parent), Instantiate(audioSourceRef, transform)); }
+        AudioSource source = audioSources[(sound, _parent)];
         source.Stop();
     }
 }

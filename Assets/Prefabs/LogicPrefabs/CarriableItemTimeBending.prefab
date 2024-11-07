@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 159377344154033383}
   - component: {fileID: 1532556077352672555}
   - component: {fileID: 6862290238284649337}
+  - component: {fileID: 669479891756943328}
   m_Layer: 0
   m_Name: CarriableItemTimeBending
   m_TagString: canPickUp
@@ -148,10 +149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab627f34a0cb74531b6c618bb2cfb6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyID: 0
   controlManager: {fileID: 0}
   rewindTimeTime: 5
   slowDownCoefficient: 2
-  deathZone: {x: 0.3, y: 0.3, z: 0.3}
+  deathZoneSensitivity: 0.7
   respawn: {fileID: 0}
 --- !u!114 &6862290238284649337
 MonoBehaviour:
@@ -171,6 +173,18 @@ MonoBehaviour:
   controlledFreeze: {fileID: 2115025048791138280}
   controlledRewiding: {fileID: 4813044282701178556}
   respawnAnimation: {fileID: 2667247275289425853}
+--- !u!114 &669479891756943328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286077733750643401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5b05a2161a85a42952778a17ae2ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &918687700501074977
 GameObject:
   m_ObjectHideFlags: 0

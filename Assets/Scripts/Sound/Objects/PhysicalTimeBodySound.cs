@@ -39,21 +39,26 @@ public class PhysicalTimeBodySound
     private void StopTimeSound()
     {
         soundManager.PlaySound(Sound.TimeStop, false, parentTransform);
-        
+
     }
 
     private void StopRewindTimeSound()
     {
-        soundManager.StopSound(Sound.TimeRewind);
+        soundManager.StopSound(Sound.TimeRewind, parentTransform);
     }
 
     private void StopRewindTimeManualSound()
     {
-        soundManager.StopSound(Sound.ManualRewind);
+        soundManager.StopSound(Sound.ManualRewind, parentTransform);
     }
 
     private void StopStopTimeSound()
     {
-        soundManager.StopSound(Sound.TimeStop);
+        soundManager.StopSound(Sound.TimeStop, parentTransform);
+    }
+
+    public void HardResetSound()
+    {
+        soundManager.PlaySound(Sound.HardReset, false, parentTransform);
     }
 }

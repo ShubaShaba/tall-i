@@ -16,7 +16,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] private float lookSpeed = 2.0f;
     [SerializeField] private float lookXLimit = 45.0f;
     [SerializeField] private float jumpDelay = 0.2f;
-    [SerializeField] private SoundFXManager soundManager;
+    private SoundFXManager soundManager;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
@@ -104,7 +104,7 @@ public class FPSController : MonoBehaviour
         }
         else
         {
-            soundManager.StopSound(Sound.RobotMovement);
+            soundManager.StopSound(Sound.RobotMovement, transform);
         }
     }
 

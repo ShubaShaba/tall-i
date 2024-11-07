@@ -79,6 +79,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
                 transform.position = respawn.position;
                 visuals.RespawnAnimation(false);
                 visuals.FocusAnimation();
+                physicalTimeBodySound.HardResetSound();
                 return;
             }
         }
