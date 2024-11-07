@@ -13,6 +13,7 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
     private PhysicalTimeHelper physicalTimeObjHelper;
+    private PhysicalTimeBodySound physicalTimeBodySound;
     private bool deathZoneStop;
 
     private void Start()
@@ -35,6 +36,8 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
 
         deathZoneStop = false;
         // timeBendingController.SetRecordConstraints(RecordConstraints);
+
+        physicalTimeBodySound = new PhysicalTimeBodySound(timeBendingController, transform);
     }
 
     void FixedUpdate()

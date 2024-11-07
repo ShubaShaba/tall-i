@@ -15,7 +15,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
     private PhysicalTimeHelper physicalTimeObjHelper;
-
+    private PhysicalTimeBodySound physicalTimeBodySound;
    
 
     private void Start()
@@ -30,6 +30,8 @@ public class CarriableTimeObj : CarriableBase, ITimeBody
             if (state != TimeBodyStates.Natural)
                 timeBendingController.AddDuringStateActionFixedUpdate(state, DuringAnyStateExceptNatural);
         }
+
+        physicalTimeBodySound = new PhysicalTimeBodySound(timeBendingController, transform);
     }
 
     void FixedUpdate() { timeBendingController.HandleTime(); }

@@ -15,6 +15,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] private float gravity = 20.0f;
     [SerializeField] private float lookSpeed = 2.0f;
     [SerializeField] private float lookXLimit = 45.0f;
+    [SerializeField] private float jumpDelay = 0.2f;
     [SerializeField] private SoundFXManager soundManager;
 
     private CharacterController characterController;
@@ -46,12 +47,15 @@ public class FPSController : MonoBehaviour
         }
     }
 
+    private void DelayedJump()
+    {
+        if (canMove && characterController.isGrounded)
+            moveDirection.y = jumpSpeed;
+    }
     private void HandleJump(InputAction.CallbackContext context)
     {
         if (canMove && characterController.isGrounded)
-        {
-            moveDirection.y = jumpSpeed;
-        }
+            Invoke("DelayedJump", jumpDelay);
     }
 
     private void HandleMovement()
