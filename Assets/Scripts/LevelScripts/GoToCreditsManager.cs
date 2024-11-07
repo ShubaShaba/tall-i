@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class SkipVideo : MonoBehaviour
+public class GoToCreditsManager : MonoBehaviour
 {
 
     // Start is called before the first frame update
@@ -19,8 +18,13 @@ public class SkipVideo : MonoBehaviour
         
     }
 
-    public void Skip(){
-        SceneManager.LoadScene("Level1"); 
-    }
-    }
+    private void OnTriggerEnter(Collider other){
+        if (other.tag == "Player"){
+            SceneManager.LoadScene("CreditScene");
 
+
+        }
+
+
+    }
+}
