@@ -231,6 +231,7 @@ MonoBehaviour:
   selectableTag3: Holder
   selectableTag4: Plataform
   selectableTag5: Generator
+  selectableTag6: Scanner
   outlineMaterial: {fileID: 2100000, guid: be76a31c909c346e7bbbf4dffe719e8e, type: 2}
   originalMaterial: {fileID: 2100000, guid: f18daac959c149242b5526e747113348, type: 2}
   cameraPosition: {fileID: 43713254}
@@ -1165,7 +1166,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c6ef83d71388d47af9a4f3854e036c3b, type: 2}
+  - {fileID: 2100000, guid: 0404a2344170a4531812bb31af62f612, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1895,9 +1896,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 660514596478823653, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: m_TagString
+      value: Scanner
+      objectReference: {fileID: 0}
     - target: {fileID: 1112492905951171590, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Scanner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953785641231993517, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: m_Size.z
+      value: 0.9426728
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953785641231993517, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0000005969512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953785641231993517, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: m_Center.z
+      value: -0.06133583
       objectReference: {fileID: 0}
     - target: {fileID: 5323187675597230837, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: connectedObj
@@ -1949,7 +1966,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6194912966959598635, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_TagString
-      value: Holder
+      value: Scanner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6267005432343120156, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295096228427108582, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

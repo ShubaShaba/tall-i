@@ -14,6 +14,7 @@ TagManager:
   - Holder
   - Plataform
   - Generator
+  - Scanner
   layers:
   - Default
   - TransparentFX

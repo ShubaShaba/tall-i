@@ -8,6 +8,8 @@ public class Selection : MonoBehaviour
     [SerializeField] private string selectableTag3 = "Holder";
     [SerializeField] private string selectableTag4 = "Plataform";
     [SerializeField] private string selectableTag5 = "Generator";
+    [SerializeField] private string selectableTag6 = "Scanner";
+
 
 
     [SerializeField] private Material outlineMaterial;
@@ -29,6 +31,7 @@ public class Selection : MonoBehaviour
     {
 
         CarriableTimeObj foundObject = PlayerSelection.GetObjectReference<CarriableTimeObj>(2, cameraPosition);
+
         
         
 
@@ -138,7 +141,7 @@ public class Selection : MonoBehaviour
 
                   
             if (selection.CompareTag(selectableTag3) && playerUIdata.isCarryingSomething() == false){
-                        instructionsText.text = "   Keycard Scanner \nLeft Mouse: Uses Key \nRight Mouse: Removes Key";
+                        instructionsText.text = "        Button \nLeft Mouse: Press Button \n";
                         isHoldingObject = false;
              } 
 
@@ -149,6 +152,11 @@ public class Selection : MonoBehaviour
               
             if (selection.CompareTag(selectableTag4) && playerUIdata.isCarryingSomething() == false){
                         instructionsText.text = "Button Plataform \n Stand to press";
+                        isHoldingObject = false;
+
+             } 
+             if (selection.CompareTag(selectableTag6) && playerUIdata.isCarryingSomething() == false){
+                        instructionsText.text = "   Keycard Scanner \n Left Mouse: Use Keycard \n Right Mouse: Remove Keycard";
                         isHoldingObject = false;
 
              } 
