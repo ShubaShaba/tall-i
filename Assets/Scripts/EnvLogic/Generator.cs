@@ -22,6 +22,8 @@ public class Generator : KeyHole, ITimeBody
     private IEnumerator forwardCoroutine;
     private IEnumerator backwardCoroutine;
 
+    private bool isCoroutine = false;
+
     private void Start()
     {
         visuals = GetComponent<TimeBendingVisual>();
@@ -44,6 +46,7 @@ public class Generator : KeyHole, ITimeBody
         if (timeBendingController.GetCurrentState() == TimeBodyStates.Natural)
         {
             StopAllCoroutines();
+            isCoroutine = false;
             twoStatesTimeBodyHelper.ToggleState();
         }
     }
@@ -58,7 +61,7 @@ public class Generator : KeyHole, ITimeBody
         }
     }
 
-    public override void Eject() { if (!isTriggered) base.Eject(); }
+    public override void Eject() { if (!isTriggered && !isCoroutine) base.Eject(); }
     public void ManualBackward() { return; }
     public void ManualForward() { return; }
     public void ToggleFreeze() { return; }
@@ -80,6 +83,7 @@ public class Generator : KeyHole, ITimeBody
         {
             CancelInvoke("delayedSwitchForward");
             StopAllCoroutines();
+            isCoroutine = false;
             backwardCoroutine = BackwardSequence();
             StartCoroutine(backwardCoroutine);
         }
@@ -92,12 +96,14 @@ public class Generator : KeyHole, ITimeBody
             Switch();
             CancelInvoke("delayedSwitchBackward");
             StopAllCoroutines();
+            isCoroutine = false;
             openCloseAnimation.SetBool("IsEnabled", true);
             dissolveAnimation.PlayAnimation();
         }
         else
         {
             StopAllCoroutines();
+            isCoroutine = false;
             dissolveAnimation.CancelAnimation();
         }
     }
@@ -122,18 +128,22 @@ public class Generator : KeyHole, ITimeBody
 
     private IEnumerator ForwardSequence()
     {
+        isCoroutine = true;
         openCloseAnimation.SetBool("IsEnabled", true);
         yield return new WaitForSeconds(1);
         dissolveAnimation.PlayAnimation();
         yield return new WaitForSeconds(1);
+        isCoroutine = false;
     }
 
     private IEnumerator BackwardSequence()
     {
+        isCoroutine = true;
         dissolveAnimation.CancelAnimation();
         yield return new WaitForSeconds(1);
         openCloseAnimation.SetBool("IsEnabled", false);
         yield return new WaitForSeconds(1);
         timeBendingController.SetState(TimeBodyStates.Natural);
+        isCoroutine = false;
     }
 }

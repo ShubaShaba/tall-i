@@ -3178,6 +3178,10 @@ PrefabInstance:
       propertyPath: connectedObj
       value: 
       objectReference: {fileID: 1515514459}
+    - target: {fileID: 5323187675597230837, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: oneTimeSwitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6059563003086896371, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3624

@@ -968,15 +968,15 @@ PrefabInstance:
       objectReference: {fileID: 207069375}
     - target: {fileID: 6546731131891148849, guid: 44f582875b48bab4da55b16d8ce0e5fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.46
+      value: 35.6
       objectReference: {fileID: 0}
     - target: {fileID: 6546731131891148849, guid: 44f582875b48bab4da55b16d8ce0e5fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0075998
+      value: 3.02
       objectReference: {fileID: 0}
     - target: {fileID: 6546731131891148849, guid: 44f582875b48bab4da55b16d8ce0e5fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.07
+      value: 49.65
       objectReference: {fileID: 0}
     - target: {fileID: 6546731131891148849, guid: 44f582875b48bab4da55b16d8ce0e5fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6800,6 +6800,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2009879252}
     - target: {fileID: 3194773669323884276, guid: 61003ac44cd7bc643a0091daf18a1471, type: 3}
+      propertyPath: oneTimeSwitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194773669323884276, guid: 61003ac44cd7bc643a0091daf18a1471, type: 3}
       propertyPath: controlManager
       value: 
       objectReference: {fileID: 207069375}
@@ -8992,6 +8996,10 @@ PrefabInstance:
       propertyPath: connectedObj
       value: 
       objectReference: {fileID: 80935872}
+    - target: {fileID: 5323187675597230837, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: oneTimeSwitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6059563003086896371, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3624
@@ -9006,15 +9014,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6059563003086896371, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.99276
+      value: 55.39
       objectReference: {fileID: 0}
     - target: {fileID: 6059563003086896371, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 6059563003086896371, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.89
+      value: -3.63
       objectReference: {fileID: 0}
     - target: {fileID: 6059563003086896371, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9047,6 +9055,14 @@ PrefabInstance:
     - target: {fileID: 6194912966959598635, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_Name
       value: KeyCardHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869162850818836052, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869162850818836052, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.061
       objectReference: {fileID: 0}
     - target: {fileID: 7900287445825167528, guid: 777f9987bf7fded4ebed4c5b25d3469e, type: 3}
       propertyPath: m_LocalPosition.y

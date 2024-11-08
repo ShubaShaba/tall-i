@@ -7,7 +7,7 @@ public class SwitcherBase : MonoBehaviour
     [SerializeField] protected GameObject connectedObj;
     [SerializeField] protected GameObject oneTimeTrigger;
     protected bool isTriggered;
-    private bool oneTimeSwitch;
+    [SerializeField] private bool oneTimeSwitch = false;
 
     private void Awake() { isTriggered = false; }
 
