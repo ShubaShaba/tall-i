@@ -4064,10 +4064,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed:
-  - 3
-  - 3
-  - 3
-  - 3
+  - 30
+  - 30
+  - 30
+  - 30
   path:
   - {fileID: 696058830}
   - {fileID: 1256232076}
@@ -4079,7 +4079,7 @@ MonoBehaviour:
   controlManager: {fileID: 0}
   rewindTimeTime: 15
   slowDownCoefficient: 2
-  deathZoneSensitivity: 0.95
+  deathZoneSensitivity: 0.75
 --- !u!54 &1083631761
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6466,10 +6466,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed:
-  - 3
-  - 3
-  - 3
-  - 3
+  - 5
+  - 5
+  - 5
+  - 5
   path:
   - {fileID: 666571963}
   - {fileID: 2143575075}
