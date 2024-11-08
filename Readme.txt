@@ -1,5 +1,3 @@
-# tall-i
-
 Names of developers: 
 
 Daniel (Danylo) Liashenko
