@@ -66,7 +66,12 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
     {
         Collider[] hitColliders = DeathZone.GetIntesectingColliders(
             rb.position, transform.rotation, deathZone, deathZoneSensitivity);
-        if (hitColliders.Length > 1)
+        
+        int counter = 0;
+        for (int i = 0; i < hitColliders.Length; i++)
+            if (!hitColliders[i].isTrigger && hitColliders[i] != GetComponent<Collider>()) counter++;
+
+        if (counter > 0)
         {
             StopCycling();
             deathZoneStop = true;

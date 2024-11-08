@@ -72,8 +72,8 @@ public class MovingPlatformBase : MonoBehaviour, IPluggedTo
         Collider[] hitColliders = Physics.OverlapBox(transform.position, detectionZone, rb.rotation);
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            if (hitColliders[i].TryGetComponent<Transform>(out Transform childNodeTr) && !hitColliders[i].TryGetComponent<Rigidbody>(out Rigidbody childNodeRb))
-                childNodeTr.position = childNodeTr.position + (rb.position - lastFramePos);
+            if (hitColliders[i].TryGetComponent<Player>(out Player childNodeTr))
+                childNodeTr.transform.position = childNodeTr.transform.position + (rb.position - lastFramePos);
         }
     }
 
