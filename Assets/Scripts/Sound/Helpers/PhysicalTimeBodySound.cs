@@ -19,7 +19,7 @@ public class PhysicalTimeBodySound
         controller.AddOnExitAction(TimeBodyStates.Stoped, StopStopTimeSound);
         controller.AddOnEnterAction(TimeBodyStates.ControlledRewinding, RewindTimeSoundManual);
         controller.AddOnEnterAction(TimeBodyStates.ControlledReverseRewinding, RewindTimeSoundManual);
-        controller.AddOnEnterAction(TimeBodyStates.ControlledStoped, RewindTimeSound);
+        controller.AddOnEnterAction(TimeBodyStates.ControlledStoped, StopTimeSound);
         controller.AddOnExitAction(TimeBodyStates.ControlledRewinding, StopRewindTimeManualSound);
         controller.AddOnExitAction(TimeBodyStates.ControlledReverseRewinding, StopRewindTimeManualSound);
         controller.AddOnExitAction(TimeBodyStates.ControlledStoped, StopStopTimeSound);
