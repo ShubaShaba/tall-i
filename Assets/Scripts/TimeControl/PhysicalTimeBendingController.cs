@@ -14,9 +14,7 @@ public class PhysicalTimeBendingController : StateMachine
 
     private int rewindIndex = 0;
     private int slowDownIndex = 0;
-
-    private StateInTime prevPos;
-
+    private Vector3 rewindSlowedPosition = Vector3.zero;
 
     public PhysicalTimeBendingController(
         float _rememberTime,
@@ -32,11 +30,6 @@ public class PhysicalTimeBendingController : StateMachine
         rigidbodyRef = _rigidbodyRef;
         slowDownC = _slowDownC;
         recordConstraints = () => true;
-
-        prevPos = new StateInTime(
-            transformRef.position, transformRef.rotation,
-            rigidbodyRef.velocity, rigidbodyRef.angularVelocity
-        );
 
         AddOnEnterAction(TimeBodyStates.Rewinding, onEnterRewind);
         AddOnEnterAction(TimeBodyStates.ReverseRewinding, onEnterRewind);
@@ -128,38 +121,10 @@ public class PhysicalTimeBendingController : StateMachine
             statesInTime.RemoveAt(statesInTime.Count - 1);
         }
 
-        if ((transformRef.position - prevPos.position).magnitude > 20 * Time.fixedDeltaTime)
-        {
-            Vector3 middle = (transformRef.position + prevPos.position)/2;
-            Vector3 right = (transformRef.position + middle)/2;
-            Vector3 left = (middle + prevPos.position)/2;
-
-
-            statesInTime.Insert(0, new StateInTime(
-                left, transformRef.rotation,
-                rigidbodyRef.velocity, rigidbodyRef.angularVelocity
-            ));
-
-            statesInTime.Insert(0, new StateInTime(
-                middle, transformRef.rotation,
-                rigidbodyRef.velocity, rigidbodyRef.angularVelocity
-            ));
-
-            statesInTime.Insert(0, new StateInTime(
-                right, transformRef.rotation,
-                rigidbodyRef.velocity, rigidbodyRef.angularVelocity
-            ));
-        }
-
         statesInTime.Insert(0, new StateInTime(
             transformRef.position, transformRef.rotation,
             rigidbodyRef.velocity, rigidbodyRef.angularVelocity
         ));
-
-        prevPos = new StateInTime(
-            transformRef.position, transformRef.rotation,
-            rigidbodyRef.velocity, rigidbodyRef.angularVelocity
-        );
     }
 
     private void Rewind(int slowDownCoefficient = 1)
