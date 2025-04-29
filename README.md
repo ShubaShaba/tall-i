@@ -2,12 +2,12 @@
 
 Names of developers: 
 
-Daniel (Danylo) Liashenko
-Finn Lageveen
-Felipe Carbone Pereira Pinto
+Daniel (Danylo) Liashenko \
+Finn Lageveen \
+Felipe Carbone Pereira Pinto \
 Andreas Aarflot Adli
 
-*Note about control: 
+*Note about control:
 
 - Hold left mouse button for holding objects
 - To throw an object, press right click button, while holding left	
