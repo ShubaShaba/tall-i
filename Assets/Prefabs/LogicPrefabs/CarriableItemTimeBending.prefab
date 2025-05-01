@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1532556077352672555}
   - component: {fileID: 6862290238284649337}
   - component: {fileID: 669479891756943328}
+  - component: {fileID: 8547716403217111834}
   m_Layer: 0
   m_Name: CarriableItemTimeBending
   m_TagString: Selectable
@@ -186,6 +187,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
+--- !u!114 &8547716403217111834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286077733750643401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676bd05eafbf4aa47acc3282cb932493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paleAmount: 0.4
 --- !u!1 &918687700501074977
 GameObject:
   m_ObjectHideFlags: 0
