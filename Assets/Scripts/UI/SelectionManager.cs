@@ -16,9 +16,10 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
-        ISelectable foundObject = PlayerSelection.GetObjectReference<ISelectable>(10, cameraPosition);
+        // Should be equal to max focus distance
+        ISelectable foundObject = PlayerSelection.GetObjectReference<ISelectable>(100, cameraPosition);
 
-        if (PauseMenu.isPaused == false)
+        if (!PauseMenu.isPaused)
         {
             // Remove outline from the previously selected object
             if (foundObject != selection)
@@ -27,20 +28,7 @@ public class SelectionManager : MonoBehaviour
                 selection = foundObject;
             }
 
-            if (playerUIdata.isFocusedOnSomethingType2())
-            {
-
-                // renderer.material = originalMaterial;
-
-            }
-
-            if (playerUIdata.isCarryingSomething())
-            {
-
-                // renderer.material = originalMaterial;
-
-            }
-            if (playerUIdata.isCarryingSomething() == false && playerUIdata.isFocusedOnSomethingType2() == false)
+            if (!playerUIdata.isCarryingSomething())
             {
                 selection?.Highlight();
             }
