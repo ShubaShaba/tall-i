@@ -673,6 +673,10 @@ PrefabInstance:
       propertyPath: controlManager
       value: 
       objectReference: {fileID: 1282290499}
+    - target: {fileID: 8547716403217111834, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: paleAmount
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

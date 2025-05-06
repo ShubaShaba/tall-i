@@ -8,7 +8,7 @@ public class Selectable : MonoBehaviour, ISelectable
     private Color originalColor;
     private MaterialPropertyBlock block;
     private Renderer selectableRenderer;
-    private static readonly int ColorID = Shader.PropertyToID("_Color");
+    private static readonly int EmissionID = Shader.PropertyToID("_EmissionColor");
 
     void Awake()
     {
@@ -18,24 +18,25 @@ public class Selectable : MonoBehaviour, ISelectable
 
         block = new MaterialPropertyBlock();
         selectableRenderer.GetPropertyBlock(block);
+        selectableRenderer.material.EnableKeyword("_EMISSION");
 
-        if (block.HasColor(ColorID))
-            originalColor = block.GetColor(ColorID);
-        else
-            originalColor = selectableRenderer.sharedMaterial.GetColor(ColorID);
+        // if (block.HasColor(EmissionID))
+        //     originalColor = block.GetColor(EmissionID);
+        // else
+        //     originalColor = selectableRenderer.sharedMaterial.GetColor(EmissionID);
     }
     
     public void Highlight()
     {
         if (selectableRenderer == null) return;
-        block.SetColor(ColorID, Color.Lerp(originalColor, Color.white, paleAmount));
+        block.SetColor(EmissionID, Color.white * paleAmount);
         selectableRenderer.SetPropertyBlock(block);
     }
 
     public void ResetColor()
     {
         if (selectableRenderer == null) return;
-        block.SetColor(ColorID, originalColor);
+        block.Clear();
         selectableRenderer.SetPropertyBlock(block);
     }
 }
