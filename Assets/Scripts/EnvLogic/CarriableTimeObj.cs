@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
 {
-    [SerializeField] private ControlManager controlManager;
     [SerializeField] private float rewindTimeTime = 5;
     [SerializeField] private int slowDownCoefficient = 2;
     [SerializeField] private float deathZoneSensitivity = 0.6f;

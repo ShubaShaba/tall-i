@@ -13,6 +13,7 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
 
     [SerializeField] private ControlManager controlManager;
     [SerializeField] private Transform mountingPoint;
+    [SerializeField] private Transform interactionPoint;
     private ITimeBody currentFocus;
     private ICarriable currentPicked;
 
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
 
     private void InteractWithObj(InputAction.CallbackContext context)
     {
-        IInteractable interactableObj = PlayerSelection.GetObjectReferenceImproved<IInteractable>(maxInteractionDistance / 2, cameraPosition, true);
+        IInteractable interactableObj = PlayerSelection.GetObjectReferenceImproved<IInteractable>(maxInteractionDistance / 2, interactionPoint, true);
         interactableObj?.Interact();
     }
 
