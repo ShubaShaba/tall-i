@@ -5,7 +5,6 @@ using UnityEngine;
 public class Selectable : MonoBehaviour, ISelectable
 {
     [SerializeField, Range(0, 1)] private float paleAmount = 0.4f;
-    private Color originalColor;
     private MaterialPropertyBlock block;
     private Renderer selectableRenderer;
     private static readonly int EmissionID = Shader.PropertyToID("_EmissionColor");
@@ -19,11 +18,6 @@ public class Selectable : MonoBehaviour, ISelectable
         block = new MaterialPropertyBlock();
         selectableRenderer.GetPropertyBlock(block);
         selectableRenderer.material.EnableKeyword("_EMISSION");
-
-        // if (block.HasColor(EmissionID))
-        //     originalColor = block.GetColor(EmissionID);
-        // else
-        //     originalColor = selectableRenderer.sharedMaterial.GetColor(EmissionID);
     }
     
     public void Highlight()

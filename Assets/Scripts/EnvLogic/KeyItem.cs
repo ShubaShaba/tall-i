@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class KeyItem : MonoBehaviour, IInteractable
 {
+    [SerializeField] private GameObject keyHoleObj;
+    private KeyHole keyHole;
+
+    void Start()
+    {
+        keyHole = keyHoleObj.GetComponent<KeyHole>();
+    }
+
     public void Interact()
     {
-        Debug.Log("TEST");
+        keyHole.GrantClearance();
         Destroy(gameObject);
     }
 }

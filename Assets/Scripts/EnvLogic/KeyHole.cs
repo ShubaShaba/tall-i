@@ -2,48 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyHole : SwitcherBase, ICarrier, IInteractable
+public class KeyHole : SwitcherBase, IInteractable
 {
-    [SerializeField] protected int keyID = 0;
-    [SerializeField] protected Transform mountingPoint;
-    protected ICarriable carriable;
+    private bool hasClearance;
 
-    public void AddCarriable(ICarriable obj) { carriable = obj; }
-
-    public Transform GetMountingPointTransform() { return mountingPoint; }
+    void Start()
+    {
+        hasClearance = false;
+    }
 
     public virtual void Interact()
     {
-        if (isInjected())
-        {
-            isTriggered = !isTriggered;
-            Switch();
-        }
+        if (hasClearance) Switch();
     }
 
-    public void RemoveCarriable(ICarriable obj) { carriable = null; }
-
-    protected bool isInjected() { return carriable != null; }
-    void Start() { carriable = null; }
-
-    void OnTriggerEnter(Collider insertion)
+    public void GrantClearance()
     {
-        if (insertion.TryGetComponent<ICarrier>(out ICarrier obj) &&
-            obj.GetCarriable() != null && obj.GetCarriable().GetKeyID() == keyID)
-        {
-            obj.GetCarriable().Pickup(this);
-        }
+        hasClearance = true;
     }
-
-    public virtual void Eject()
-    {
-        if (isTriggered)
-        {
-            Switch();
-            isTriggered = false;
-        }
-        carriable?.Throw(transform.forward * -2, true);
-    }
-
-    public ICarriable GetCarriable() { return carriable; }
 }

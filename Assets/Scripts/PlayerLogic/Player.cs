@@ -142,7 +142,7 @@ public class Player : MonoBehaviour, ICarrier, IPlayerUI
 
     public bool isFocusedOnSomethingType1()
     {
-        return currentFocus != null && currentFocus is Generator;
+        return false;
     }
 
     public bool isFocusedOnSomethingType2()
