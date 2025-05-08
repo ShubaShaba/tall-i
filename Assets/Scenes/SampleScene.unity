@@ -1127,7 +1127,7 @@ PrefabInstance:
       objectReference: {fileID: 1441838070}
     - target: {fileID: 8702582229390103397, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
       propertyPath: oneTimeSwitch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

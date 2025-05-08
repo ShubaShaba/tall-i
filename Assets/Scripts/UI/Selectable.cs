@@ -11,13 +11,12 @@ public class Selectable : MonoBehaviour, ISelectable
 
     void Awake()
     {
-        // Saving original color
         selectableRenderer = GetComponent<Renderer>();
         if (selectableRenderer == null) return;
 
         block = new MaterialPropertyBlock();
-        selectableRenderer.GetPropertyBlock(block);
-        selectableRenderer.material.EnableKeyword("_EMISSION");
+        foreach (Material material in selectableRenderer.materials)
+            material.EnableKeyword("_EMISSION");
     }
     
     public void Highlight()
