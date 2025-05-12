@@ -10,6 +10,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
     [SerializeField] private int slowDownCoefficient = 2;
     [SerializeField] private float deathZoneSensitivity = 0.6f;
     [SerializeField] private Transform respawn;
+    [SerializeField] private bool recordOnlyInMotion = false;
     private Collider deathZone;
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
@@ -30,6 +31,12 @@ public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
                 timeBendingController.AddDuringStateActionFixedUpdate(state, DuringAnyStateExceptNatural);
         }
 
+        if (recordOnlyInMotion)
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            timeBendingController.SetRecordConstraints(() => !rb.IsSleeping());
+        }
+        
         physicalTimeBodySound = new PhysicalTimeBodySound(timeBendingController, transform);
     }
 

@@ -5551,6 +5551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarriableItemTimeBending
       objectReference: {fileID: 0}
+    - target: {fileID: 1532556077352672555, guid: c798f48a301e54744b04097d00084fd3, type: 3}
+      propertyPath: recordOnlyInMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
