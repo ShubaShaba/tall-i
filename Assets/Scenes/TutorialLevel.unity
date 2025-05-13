@@ -249,13 +249,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16123601}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.63, z: 0}
+  m_LocalRotation: {x: 0.40128508, y: -0, z: -0, w: 0.91595316}
+  m_LocalPosition: {x: 0, y: 1.6300001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 714632079}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 47.317, y: 0, z: 0}
 --- !u!108 &16123603
 Light:
   m_ObjectHideFlags: 0
@@ -307,7 +307,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 2
@@ -383,6 +383,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -513,6 +521,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -673,6 +685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spot Light (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16
@@ -783,6 +799,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -929,6 +953,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -954,6 +986,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1068,6 +1104,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1150,6 +1194,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1175,6 +1227,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1286,6 +1342,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1417,6 +1481,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1499,6 +1571,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1529,6 +1609,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1705,8 +1789,16 @@ PrefabInstance:
       value: ButtonPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 501759681365235224, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 501759681365235224, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7803969955576242932, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7803969955576242932, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1793,6 +1885,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1872,6 +1972,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2155,6 +2263,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -2237,6 +2353,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -2262,6 +2386,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2376,6 +2504,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -2455,6 +2591,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2611,6 +2755,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -2741,6 +2893,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spot Light (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2854,6 +3010,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -2958,6 +3122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spot Light (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3014,6 +3182,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3276,6 +3448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spot Light (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3386,6 +3562,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3532,6 +3716,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -3611,6 +3803,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3696,6 +3896,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -3775,6 +3983,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3886,6 +4102,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4035,6 +4255,10 @@ PrefabInstance:
     - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
       propertyPath: m_Name
       value: CeillingChunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4327,6 +4551,8 @@ Transform:
   - {fileID: 1451211189}
   - {fileID: 703785043}
   - {fileID: 2144048541}
+  - {fileID: 1694858992}
+  - {fileID: 724825048}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &724070024 stripped
@@ -4334,6 +4560,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
   m_PrefabInstance: {fileID: 2017984726}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &724825047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724825048}
+  - component: {fileID: 724825049}
+  m_Layer: 0
+  m_Name: Point Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &724825048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724825047}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071072, y: -0, z: -0, w: 0.7071065}
+  m_LocalPosition: {x: 16, y: 1.0000191, z: -16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 714632079}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &724825049
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724825047}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 100
+  m_SpotAngle: 160
+  m_InnerSpotAngle: 1
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &758214638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4669,7 +4989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3715410672642992127, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 127
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3777144666722670030, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4694,6 +5014,10 @@ PrefabInstance:
     - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
       propertyPath: m_Name
       value: CeillingChunk (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4948,6 +5272,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -5032,6 +5364,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -5122,6 +5462,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -5147,6 +5495,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5210,6 +5562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spot Light (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16
@@ -5271,6 +5627,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5461,6 +5821,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -5486,6 +5854,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5607,6 +5979,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -5870,6 +6250,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -5895,6 +6283,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6006,6 +6398,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -6245,6 +6645,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6558,6 +6962,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -6980,6 +7392,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -7128,6 +7548,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -7221,6 +7649,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -7246,6 +7682,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7660,6 +8100,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -7902,6 +8350,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -7989,6 +8445,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -8051,6 +8515,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8189,6 +8657,100 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad7d66b985339cc46a0ee90effb23384, type: 3}
+--- !u!1 &1694858991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694858992}
+  - component: {fileID: 1694858993}
+  m_Layer: 0
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1694858992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694858991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071072, y: -0, z: -0, w: 0.7071065}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 714632079}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &1694858993
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694858991}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 100
+  m_SpotAngle: 160
+  m_InnerSpotAngle: 1
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1701922833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8242,8 +8804,16 @@ PrefabInstance:
       value: ButtonPlatform (1)
       objectReference: {fileID: 0}
     - target: {fileID: 501759681365235224, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 501759681365235224, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7803969955576242932, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7803969955576242932, guid: e5c1a48dcb7be4d49863c27eb1c3c38f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8559,6 +9129,10 @@ PrefabInstance:
       value: CeillingChunk (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -8815,6 +9389,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -8897,6 +9479,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -8976,6 +9566,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5773225083524636860, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -9104,6 +9702,10 @@ PrefabInstance:
     - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
       propertyPath: m_Name
       value: CeillingChunk (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4377093091201957512, guid: 16e28b03c9feb674fa70185f8058bc3a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9422,7 +10024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1828057936
 Transform:
   m_ObjectHideFlags: 0
@@ -9432,7 +10034,7 @@ Transform:
   m_GameObject: {fileID: 1828057935}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.98, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9491,8 +10093,8 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 55, y: 50}
-  m_BounceIntensity: 3
+  m_AreaSize: {x: 45, y: 45}
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -9675,6 +10277,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -9766,6 +10376,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9982,6 +10596,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -10170,6 +10792,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6420538883045067337, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384706131631612508, guid: ea734075d7e7273429adceb552f342d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8668895968395284421, guid: ea734075d7e7273429adceb552f342d6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -10199,6 +10829,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10365,6 +10999,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10796,6 +11434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spot Light (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16
@@ -10979,6 +11621,10 @@ PrefabInstance:
     - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_Name
       value: Spot Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047450793333087258, guid: a923a63411f996f4da53d2a817e39167, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4213764319787771491, guid: a923a63411f996f4da53d2a817e39167, type: 3}
       propertyPath: m_LocalPosition.x
