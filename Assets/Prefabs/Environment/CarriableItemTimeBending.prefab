@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -776777436723707912, guid: 95058e4d62a05614985a45c922789df0, type: 3}
+  - {fileID: 2100000, guid: 075505a7adc73da4fbea7720adf9e926, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,11 +151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyID: 0
-  controlManager: {fileID: 0}
   rewindTimeTime: 5
   slowDownCoefficient: 2
   deathZoneSensitivity: 0.7
   respawn: {fileID: 0}
+  recordOnlyInMotion: 0
+  resetOnPickUp: 1
 --- !u!114 &6862290238284649337
 MonoBehaviour:
   m_ObjectHideFlags: 0
