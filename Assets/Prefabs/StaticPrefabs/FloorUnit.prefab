@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates (8)
@@ -180,6 +184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates (3)
@@ -272,6 +280,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates
@@ -364,6 +376,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates (5)
@@ -456,6 +472,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates (1)
@@ -548,6 +568,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates (2)
@@ -640,6 +664,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates (7)
@@ -732,6 +760,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates (4)
@@ -824,6 +856,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: f771e9fc15030124fb7d9c5245cb0b3a, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates (6)
