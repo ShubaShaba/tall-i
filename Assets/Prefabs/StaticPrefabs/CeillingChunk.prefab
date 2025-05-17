@@ -130,6 +130,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (1)
@@ -192,6 +196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (5)
@@ -254,6 +262,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (26)
@@ -316,6 +328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (1)
@@ -378,6 +394,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (13)
@@ -440,6 +460,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (17)
@@ -502,6 +526,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e288f9977048b9b48ac684ce3b47d472, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: e288f9977048b9b48ac684ce3b47d472, type: 3}
       propertyPath: m_Name
       value: Platform_Metal2 (1)
@@ -630,6 +658,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (22)
@@ -758,6 +790,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (18)
@@ -886,6 +922,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (4)
@@ -948,6 +988,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (23)
@@ -1010,6 +1054,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (7)
@@ -1072,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (14)
@@ -1134,6 +1186,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (29)
@@ -1196,6 +1252,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e288f9977048b9b48ac684ce3b47d472, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: e288f9977048b9b48ac684ce3b47d472, type: 3}
       propertyPath: m_Name
       value: Platform_Metal2 (2)
@@ -1258,6 +1318,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (6)
@@ -1320,6 +1384,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (2)
@@ -1448,6 +1516,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d75022db0b77ae44b1e91307db8fed1, type: 2}
     - target: {fileID: 919132149155446097, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
       propertyPath: m_Name
       value: ShortWall_Triangles_Straight (3)
@@ -1576,6 +1648,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d75022db0b77ae44b1e91307db8fed1, type: 2}
     - target: {fileID: 919132149155446097, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
       propertyPath: m_Name
       value: ShortWall_Triangles_Straight (2)
@@ -1638,6 +1714,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (7)
@@ -1700,6 +1780,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (19)
@@ -1762,6 +1846,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d75022db0b77ae44b1e91307db8fed1, type: 2}
     - target: {fileID: 919132149155446097, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
       propertyPath: m_Name
       value: ShortWall_Triangles_Straight (4)
@@ -1824,6 +1912,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (10)
@@ -1886,6 +1978,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (15)
@@ -1948,6 +2044,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (2)
@@ -2010,6 +2110,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (8)
@@ -2072,6 +2176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (27)
@@ -2134,6 +2242,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (5)
@@ -2196,6 +2308,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (3)
@@ -2258,6 +2374,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal
@@ -2320,6 +2440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (12)
@@ -2382,6 +2506,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (3)
@@ -2444,6 +2572,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (21)
@@ -2506,6 +2638,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (8)
@@ -2568,6 +2704,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (4)
@@ -2630,6 +2770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (6)
@@ -2692,6 +2836,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d75022db0b77ae44b1e91307db8fed1, type: 2}
     - target: {fileID: 919132149155446097, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
       propertyPath: m_Name
       value: ShortWall_Triangles_Straight
@@ -2754,6 +2902,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (25)
@@ -2816,6 +2968,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e288f9977048b9b48ac684ce3b47d472, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: e288f9977048b9b48ac684ce3b47d472, type: 3}
       propertyPath: m_Name
       value: Platform_Metal2 (3)
@@ -2878,6 +3034,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates (16)
@@ -2940,6 +3100,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: f82423f72b036694a96f1225dc6eaa52, type: 3}
       propertyPath: m_Name
       value: Platform_3Plates
@@ -3068,6 +3232,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d75022db0b77ae44b1e91307db8fed1, type: 2}
     - target: {fileID: 919132149155446097, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
       propertyPath: m_Name
       value: ShortWall_Triangles_Straight (5)
@@ -3130,6 +3298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d75022db0b77ae44b1e91307db8fed1, type: 2}
     - target: {fileID: 919132149155446097, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
       propertyPath: m_Name
       value: ShortWall_Triangles_Straight (1)
@@ -3192,6 +3364,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (9)
@@ -3254,6 +3430,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d99b62588c084204e866bbf0008152f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: d99b62588c084204e866bbf0008152f8, type: 3}
       propertyPath: m_Name
       value: Platform_Metal (11)

@@ -2092,6 +2092,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: efe34ab56f53e6a42ad9b76023246c73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: efe34ab56f53e6a42ad9b76023246c73, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates_Curves
@@ -2609,6 +2613,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0496ec6525a8cdd45b45d11e952600bb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: 0496ec6525a8cdd45b45d11e952600bb, type: 3}
       propertyPath: m_Name
       value: ShortWall_Simple2_Straight
@@ -4740,6 +4748,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e65ae8264f20b42448f8fc4567f27952, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
+    - target: {fileID: -7511558181221131132, guid: e65ae8264f20b42448f8fc4567f27952, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+    - target: {fileID: -7511558181221131132, guid: e65ae8264f20b42448f8fc4567f27952, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 137f55f5829df5842a41262306e63619, type: 2}
     - target: {fileID: 919132149155446097, guid: e65ae8264f20b42448f8fc4567f27952, type: 3}
       propertyPath: m_Name
       value: TopCables_Straight (1)
@@ -6381,6 +6401,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 137f55f5829df5842a41262306e63619, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2c7356c9e5786e4395519fbfcc63eb9, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
       propertyPath: m_Name
       value: Column_Large_Straight
@@ -7238,6 +7274,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: efe34ab56f53e6a42ad9b76023246c73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: efe34ab56f53e6a42ad9b76023246c73, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates_Curves
@@ -10241,6 +10281,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 137f55f5829df5842a41262306e63619, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2c7356c9e5786e4395519fbfcc63eb9, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: 662c52071032f4a4fa87f84b1d868ad1, type: 3}
       propertyPath: m_Name
       value: Column_Large_Straight (1)
@@ -10684,6 +10740,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: efe34ab56f53e6a42ad9b76023246c73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: efe34ab56f53e6a42ad9b76023246c73, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates_Curves (1)
@@ -11045,6 +11105,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: efe34ab56f53e6a42ad9b76023246c73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: 919132149155446097, guid: efe34ab56f53e6a42ad9b76023246c73, type: 3}
       propertyPath: m_Name
       value: Platform_DarkPlates_Curves (1)

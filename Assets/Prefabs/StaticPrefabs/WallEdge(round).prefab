@@ -83,6 +83,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 36bd09ab4ca36cb42b98acf14fadec41, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 36bd09ab4ca36cb42b98acf14fadec41, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 36bd09ab4ca36cb42b98acf14fadec41, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: dce6da398b3ce47478be6037495adf50, type: 2}
     - target: {fileID: 919132149155446097, guid: 36bd09ab4ca36cb42b98acf14fadec41, type: 3}
       propertyPath: m_Name
       value: WallBand_Corner_Round_Inner
@@ -175,6 +187,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1894513a6eca2e6458d23e201287423f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 1894513a6eca2e6458d23e201287423f, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 1894513a6eca2e6458d23e201287423f, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 137f55f5829df5842a41262306e63619, type: 2}
     - target: {fileID: 919132149155446097, guid: 1894513a6eca2e6458d23e201287423f, type: 3}
       propertyPath: m_Name
       value: TopCables_Corner_Round_Inner
@@ -271,6 +295,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4be8e35330121c043a7b9568055574c3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: 4be8e35330121c043a7b9568055574c3, type: 3}
       propertyPath: m_Name
       value: ShortWall_Triangles_Corner_Inner
@@ -363,6 +391,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b7a3d4dd700260347a429d1038f900d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: b7a3d4dd700260347a429d1038f900d7, type: 3}
       propertyPath: m_Name
       value: TopSimple_Corner_Round_Inner

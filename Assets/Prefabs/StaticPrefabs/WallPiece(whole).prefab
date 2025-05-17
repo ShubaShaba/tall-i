@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
     - target: {fileID: 919132149155446097, guid: 9003e8fb1bfe2424cb18b90a6e65ed84, type: 3}
       propertyPath: m_Name
       value: ShortWall_Triangles_Straight
@@ -183,6 +187,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c2c1f7c3ff60ef24fa6329c282d61db8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
     - target: {fileID: 919132149155446097, guid: c2c1f7c3ff60ef24fa6329c282d61db8, type: 3}
       propertyPath: m_Name
       value: TopSimple_Straight
@@ -279,6 +287,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f3ad072813be3084d9e2f71e7fa1bea8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f3ad072813be3084d9e2f71e7fa1bea8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f3ad072813be3084d9e2f71e7fa1bea8, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: dce6da398b3ce47478be6037495adf50, type: 2}
     - target: {fileID: 919132149155446097, guid: f3ad072813be3084d9e2f71e7fa1bea8, type: 3}
       propertyPath: m_Name
       value: WallBand_Straight
@@ -371,6 +391,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e65ae8264f20b42448f8fc4567f27952, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
+    - target: {fileID: -7511558181221131132, guid: e65ae8264f20b42448f8fc4567f27952, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+    - target: {fileID: -7511558181221131132, guid: e65ae8264f20b42448f8fc4567f27952, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 137f55f5829df5842a41262306e63619, type: 2}
     - target: {fileID: 919132149155446097, guid: e65ae8264f20b42448f8fc4567f27952, type: 3}
       propertyPath: m_Name
       value: TopCables_Straight
