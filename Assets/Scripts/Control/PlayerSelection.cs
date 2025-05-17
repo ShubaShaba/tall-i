@@ -29,23 +29,4 @@ public static class PlayerSelection
         }
         return default;
     }
-
-    // TEMP:
-
-    public static Transform GetObjectReferenceImprovedTransform<T>(float maxDistance, Transform cameraPosition, bool isProximity = false)
-    {
-        RaycastHit[] raycastHit;
-
-        if (isProximity)
-            raycastHit = Physics.SphereCastAll(cameraPosition.position, maxDistance, cameraPosition.forward, 0);
-        else
-            raycastHit = Physics.SphereCastAll(cameraPosition.position + cameraPosition.forward * maxDistance, maxDistance / 6, cameraPosition.forward, 0);
-
-        for (int i = 0; i < raycastHit.Length; i++)
-        {
-            if (raycastHit[i].collider.TryGetComponent<T>(out T timeBendableObject))
-                return raycastHit[i].transform;
-        }
-        return default;
-    }
 }

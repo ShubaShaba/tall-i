@@ -18,7 +18,7 @@ public class GlobalDeathZone : MonoBehaviour
                 affectedEntititesTimes[entity] = 0;
             return;
         }
-
+        
         if (self) return;
         transform.position = new Vector3(0, -150, 0);
         BoxCollider myCollider = GetComponent<BoxCollider>();

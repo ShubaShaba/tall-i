@@ -6,11 +6,12 @@ using UnityEngine.InputSystem;
 
 public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
 {
-    [SerializeField] private ControlManager controlManager;
     [SerializeField] private float rewindTimeTime = 5;
     [SerializeField] private int slowDownCoefficient = 2;
     [SerializeField] private float deathZoneSensitivity = 0.6f;
     [SerializeField] private Transform respawn;
+    [SerializeField] private bool recordOnlyInMotion = false;
+    [SerializeField] private bool resetOnPickUp = true;
     private Collider deathZone;
     private TimeBendingVisual visuals;
     private PhysicalTimeBendingController timeBendingController;
@@ -29,6 +30,12 @@ public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
         {
             if (state != TimeBodyStates.Natural)
                 timeBendingController.AddDuringStateActionFixedUpdate(state, DuringAnyStateExceptNatural);
+        }
+
+        if (recordOnlyInMotion)
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            timeBendingController.SetRecordConstraints(() => !rb.IsSleeping());
         }
 
         physicalTimeBodySound = new PhysicalTimeBodySound(timeBendingController, transform);
@@ -64,7 +71,11 @@ public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
 
     public bool IsInManualMode() { return physicalTimeObjHelper.IsInManualMode(); }
 
-    protected override void OnPickup() { timeBendingController.ForceQuite(); }
+    protected override void OnPickup()
+    {
+        timeBendingController.ForceQuite();
+        if (resetOnPickUp) timeBendingController.HardReset();
+    }
 
     private void DuringAnyStateExceptNatural()
     {

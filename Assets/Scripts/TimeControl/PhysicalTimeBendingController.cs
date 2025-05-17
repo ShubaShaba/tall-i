@@ -14,7 +14,7 @@ public class PhysicalTimeBendingController : StateMachine
 
     private int rewindIndex = 0;
     private int slowDownIndex = 0;
-
+    private Vector3 rewindSlowedPosition = Vector3.zero;
 
     public PhysicalTimeBendingController(
         float _rememberTime,
@@ -120,6 +120,7 @@ public class PhysicalTimeBendingController : StateMachine
         {
             statesInTime.RemoveAt(statesInTime.Count - 1);
         }
+
         statesInTime.Insert(0, new StateInTime(
             transformRef.position, transformRef.rotation,
             rigidbodyRef.velocity, rigidbodyRef.angularVelocity
