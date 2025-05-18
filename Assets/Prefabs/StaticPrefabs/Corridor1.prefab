@@ -103,11 +103,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: b56a97c4107ab474d9ba60abe0e8a5aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: -7511558181221131132, guid: b56a97c4107ab474d9ba60abe0e8a5aa, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
+      objectReference: {fileID: 2100000, guid: 93351d67e48ac79488e5cb2248616750, type: 2}
     - target: {fileID: 919132149155446097, guid: b56a97c4107ab474d9ba60abe0e8a5aa, type: 3}
       propertyPath: m_Name
       value: Platform_CenterPlate (2)
@@ -203,11 +203,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: b56a97c4107ab474d9ba60abe0e8a5aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: -7511558181221131132, guid: b56a97c4107ab474d9ba60abe0e8a5aa, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
+      objectReference: {fileID: 2100000, guid: 93351d67e48ac79488e5cb2248616750, type: 2}
     - target: {fileID: 919132149155446097, guid: b56a97c4107ab474d9ba60abe0e8a5aa, type: 3}
       propertyPath: m_Name
       value: Platform_CenterPlate
@@ -1215,11 +1215,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: b56a97c4107ab474d9ba60abe0e8a5aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2d310cd62ba52a849b130969fe295a03, type: 2}
+      objectReference: {fileID: 2100000, guid: b07d621add340484d9111ec0c747c159, type: 2}
     - target: {fileID: -7511558181221131132, guid: b56a97c4107ab474d9ba60abe0e8a5aa, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: fa4e5a293264498409a68ef5903a0b81, type: 2}
+      objectReference: {fileID: 2100000, guid: 93351d67e48ac79488e5cb2248616750, type: 2}
     - target: {fileID: 919132149155446097, guid: b56a97c4107ab474d9ba60abe0e8a5aa, type: 3}
       propertyPath: m_Name
       value: Platform_CenterPlate (1)
