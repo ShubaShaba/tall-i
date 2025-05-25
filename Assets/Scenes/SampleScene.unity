@@ -1205,6 +1205,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2052629615995908523, guid: add5b6e6ccbe8cc469e9b98e28ac549e, type: 3}
+      propertyPath: isOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2475601607892731148, guid: add5b6e6ccbe8cc469e9b98e28ac549e, type: 3}
       propertyPath: m_Name
       value: Gate (1)

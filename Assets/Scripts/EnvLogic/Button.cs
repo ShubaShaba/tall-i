@@ -12,7 +12,7 @@ public class Button : SwitcherBase, IInteractable
         Switch();
         if (timeBeforeSwitchBack > 0.0f) {
             ignoreInteract = true;
-            Invoke(nameof(SwitchBack), timeBeforeSwitchBack);   
+            Invoke(nameof(SwitchBack), timeBeforeSwitchBack);
         }
     }
 
