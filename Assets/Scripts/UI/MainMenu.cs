@@ -5,12 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame(){
-        SceneManager.LoadScene("TutorialLevel");
+    [SerializeField] GameObject ContinueButton;
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("TutorialChamber1");
     }
 
-    public void QuitGame(){
-        Application.Quit();    
+    public void ContinueGame()
+    {
+        Debug.Log(LevelManager.Instance.lastPlayedLevelName);
+        SceneManager.LoadScene(LevelManager.Instance.lastPlayedLevelName);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (LevelManager.Instance.lastPlayedLevelName != "")
+            ContinueButton.SetActive(true);
+    }
 }

@@ -21,7 +21,6 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
-
             if (isPaused)
             {
                 ResumeGame();
@@ -30,11 +29,8 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 PauseGame();
-
             }
-
         }
-
     }
 
     public void PauseGame()
@@ -61,6 +57,5 @@ public class PauseMenu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
-
     }
 }
