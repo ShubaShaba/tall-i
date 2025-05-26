@@ -1,6 +1,6 @@
 # TALL-I
 
-Originally started as an educational project at University of Twente, TALL-I is a small puzzle-solving game with core gameplay feature to move objects backwards in time (sort of like portals in Portal 1/2). The game is in early development stage, my goal is to have 10 complete levels, that explore challenges based on kinetic object behavior and spatial reasoning. 
+TALL-I is a small puzzle-solving game originally developed as an educational project at the University of Twente. Its core gameplay mechanic revolves around moving objects backwards in time (sort of like portals in Portal 1/2). The game is in early development stage. My goal is to have 10 complete levels, that explore challenges based on kinetic object behavior and spatial reasoning. 
 
 ![Alt text](/Screenshots/{5699C62C-5232-4AEB-9219-D548E810A213}.png "First chamber: cube and a pressure plate")
 
