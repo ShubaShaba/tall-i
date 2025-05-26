@@ -6,12 +6,13 @@ public class Door : MonoBehaviour, IPluggedTo
 {
     [SerializeField] private Animator animator;
     private Collider doorCollider;
-    private bool isOpen;
+    [SerializeField] private bool isOpen = false;
 
     private void Start()
     {
         doorCollider = GetComponent<Collider>();
-        isOpen = false;
+        doorCollider.enabled = !isOpen;
+        animator.SetBool("isOpen", isOpen);
     }
 
     public void Trigger()

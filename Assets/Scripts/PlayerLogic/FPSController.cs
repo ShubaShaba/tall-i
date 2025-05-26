@@ -66,7 +66,7 @@ public class FPSController : MonoBehaviour, IRespawnable
     private void HandleJump(InputAction.CallbackContext context)
     {
         if (canMove && characterController.isGrounded)
-            Invoke("DelayedJump", jumpDelay);
+            Invoke(nameof(DelayedJump), jumpDelay);
     }
 
     private void HandleMovement()

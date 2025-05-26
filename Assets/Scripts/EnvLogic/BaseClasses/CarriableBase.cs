@@ -8,11 +8,16 @@ using UnityEngine;
 */
 public class CarriableBase : MonoBehaviour, ICarriable
 {
-    [SerializeField] protected int keyID;
+    [SerializeField] protected Vector3 startImpulse = new Vector3(0, 0, 0);
+    [SerializeField] protected Vector3 startTorque = new Vector3(0, 0, 0);
     private ICarrier carrier;
     protected Rigidbody rb;
 
-    private void Awake() { rb = GetComponent<Rigidbody>(); }
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        Invoke(nameof(StartImpulse), 0.5f);
+    }
 
     private void TogglePhysics(bool enable)
     {
@@ -26,7 +31,7 @@ public class CarriableBase : MonoBehaviour, ICarriable
         parent.Eject();
         if (carrier != null)
             carrier.Eject();
-        
+
         OnPickup();
         if (!CanPick()) return;
 
@@ -56,7 +61,11 @@ public class CarriableBase : MonoBehaviour, ICarriable
 
     protected virtual void OnPickup() { }
 
-    public virtual int GetKeyID() { return keyID; }
-
     public bool IsPicked() { return carrier != null; }
+
+    private void StartImpulse()
+    {
+        rb.AddForce(startImpulse, ForceMode.Impulse);
+        rb.AddTorque(startTorque, ForceMode.Impulse);
+    }
 }
