@@ -27,6 +27,7 @@ Once the game mechanics are polished and assembled into a few levels, the next s
 - UI: cuurently it is very basic and requires a lot of work later.
 - Sound: currently only main character movement, single room ambient and physical cube have sound effects.
 - Simple save system: currently if you exit the prototype, the next time you start from the beginning.
+- Graphics: currently has a very simple graphics and only 1 style of chambers; the plan is to improve lightning in exsisting chambers, and add 2-3 other styles for levels.
 
 ### Control shematic 
 
