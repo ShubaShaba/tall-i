@@ -22,7 +22,7 @@ The current focus is to polish the afromentioed mechanics and complete tutorial 
 
 ## 🚩 What's Next
 Once the game mechanics are polished and assembled into a few levels, the next steps are:
-- UI: cuurently it is very basic and requires a lot of work later.
+- UI: currently it is very basic and requires a lot of work later.
 - Sound: currently only main character movement, single room ambient and physical cube have sound effects.
 - Simple save system: currently if you exit the prototype, the next time you start from the beginning.
 - Graphics: currently has a very simple graphics and only 1 style of chambers; the plan is to improve lightning in exsisting chambers, and add 2-3 other styles for levels.
@@ -39,7 +39,7 @@ Once the game mechanics are polished and assembled into a few levels, the next s
 		- ```2``` for freezing object in time. 
 		- ```3``` for manual control, similar to ```1```, but now you need to hold ```q``` for moving object in time, you can stop at any moment and hold ```e``` to move it forward in time.
 
-### 📦 Running the Game (Pre-built Releases)
+## 📦 Running the Game (Pre-built Releases)
 
 Grab the latest binaries from the **[Releases](https://github.com/ShubaShaba/tall-i/releases)** page of this repository.
 
