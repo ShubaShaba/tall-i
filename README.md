@@ -4,7 +4,7 @@ TALL-I is a small puzzle-solving game originally developed as an educational pro
 
 ![Alt text](/Screenshots/{5699C62C-5232-4AEB-9219-D548E810A213}.png "First chamber: cube and a pressure plate")
 
-### 📄 Current Focus and Completions
+## 📄 Current Focus and Completions
 
 - The core time-reversal mechanic is fully implemented and operational. It currently supports carriable physical objects and moving platforms.
 
@@ -20,14 +20,14 @@ The current focus is to polish the afromentioed mechanics and complete tutorial 
 
 ![Alt text](/Screenshots/{F86140D5-00FA-4B11-A096-4554D5488178}.png "Time bending mechnaic: a cube is frozen in time")
 
-### 🚩 What's Next
+## 🚩 What's Next
 Once the game mechanics are polished and assembled into a few levels, the next steps are:
 - UI: cuurently it is very basic and requires a lot of work later.
 - Sound: currently only main character movement, single room ambient and physical cube have sound effects.
 - Simple save system: currently if you exit the prototype, the next time you start from the beginning.
 - Graphics: currently has a very simple graphics and only 1 style of chambers; the plan is to improve lightning in exsisting chambers, and add 2-3 other styles for levels.
 
-### 🎮 Control shematic 
+## 🎮 Control shematic 
 
 - Hold ```left mouse button``` for holding objects.
 - To throw an object, press ```right click button```, while holding ```left click button```.	
@@ -59,18 +59,6 @@ Grab the latest binaries from the **[Releases](https://github.com/ShubaShaba/tal
 
        ./tall-i.x86_64
 
-#### 🍎 macOS  
-> **Gatekeeper warning**: the app is unsigned, so macOS may block it.
-
-1. Download the macOS `.zip` and extract it.
-2. Right-click the `.app`, choose **Open**, then click **Open** again.
-3. If that still fails, run:
-
-       chmod -R +x tall-i.app
-       open tall-i.app
-
----
-
 ## 🛠️ Building the Project Yourself
 
 ### 🧰 Requirements
@@ -97,8 +85,6 @@ Grab the latest binaries from the **[Releases](https://github.com/ShubaShaba/tal
    5. Choose an output folder **and type a file name** (e.g., `MyBuild`).
 
 4. Unity places the finished build inside the folder you picked.
-
----
 
 ## 🙌 Credits
 
