@@ -8,5 +8,4 @@ public interface ICarriable
     public void Throw(Vector3 direction, bool ignoreCollision);
     public bool CanPick();
     public bool IsPicked();
-    public int GetKeyID();
 }
