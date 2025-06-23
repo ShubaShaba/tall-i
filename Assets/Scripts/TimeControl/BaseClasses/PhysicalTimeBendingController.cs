@@ -90,7 +90,12 @@ public class PhysicalTimeBendingController : StateMachine
         SetState(TimeBodyStates.Natural);
     }
 
-    public void HardReset()
+
+    public StateInTime GetCurrentStateInTime() { return statesInTime[rewindIndex]; }
+
+    public void SetRecordConstraints(Func<bool> action) { recordConstraints = action; }
+
+    public void Reset()
     {
         statesInTime.Clear();
         slowDownIndex = 0;
@@ -100,10 +105,6 @@ public class PhysicalTimeBendingController : StateMachine
         rigidbodyRef.rotation = Quaternion.identity;
         transformRef.rotation = Quaternion.identity;
     }
-
-    public StateInTime GetCurrentStateInTime() { return statesInTime[rewindIndex]; }
-
-    public void SetRecordConstraints(Func<bool> action) { recordConstraints = action; }
 
     private void SetPreviousPhysicalState()
     {
