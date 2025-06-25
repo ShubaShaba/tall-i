@@ -14,16 +14,16 @@ public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
     [SerializeField] private bool resetOnPickUp = true;
     private Collider deathZone;
     private TimeBendingVisual visuals;
-    private PhysicalTimeBendingController timeBendingController;
-    private PhysicalTimeHelper physicalTimeObjHelper;
+    private PhysicalTimeBendingEntityController timeBendingController;
     private PhysicalTimeBodySound physicalTimeBodySound;
 
 
     private void Start()
     {
         visuals = GetComponent<TimeBendingVisual>();
-        timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
-        physicalTimeObjHelper = new PhysicalTimeHelper(visuals, timeBendingController);
+        physicalTimeBodySound = new PhysicalTimeBodySound(transform);
+        timeBendingController = new PhysicalTimeBendingEntityController(
+            rewindTimeTime, transform, rb, visuals, physicalTimeBodySound, slowDownCoefficient);
         deathZone = GetComponent<Collider>();
 
         foreach (TimeBodyStates state in Enum.GetValues(typeof(TimeBodyStates)))
@@ -38,43 +38,42 @@ public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
             timeBendingController.SetRecordConstraints(() => !rb.IsSleeping());
         }
 
-        physicalTimeBodySound = new PhysicalTimeBodySound(timeBendingController, transform);
     }
 
     void FixedUpdate() { timeBendingController.HandleTime(); }
 
-    public void Focus() { physicalTimeObjHelper.Focus(); }
+    public void Focus() { timeBendingController.Focus(); }
 
-    public void UnFocus() { physicalTimeObjHelper.UnFocus(); }
+    public void UnFocus() { timeBendingController.UnFocus(); }
 
     public void ToggleRewind()
     {
         Throw(Vector3.zero, false);
-        physicalTimeObjHelper.ToggleState(TimeBodyStates.Rewinding);
+        timeBendingController.ToggleState(TimeBodyStates.Rewinding);
     }
 
     public void ToggleFreeze()
     {
         Throw(Vector3.zero, false);
-        physicalTimeObjHelper.ToggleState(TimeBodyStates.Stoped);
+        timeBendingController.ToggleState(TimeBodyStates.Stoped);
     }
 
     public void ToggleManualControl()
     {
         Throw(Vector3.zero, false);
-        physicalTimeObjHelper.ToggleState(TimeBodyStates.ControlledStoped);
+        timeBendingController.ToggleState(TimeBodyStates.ControlledStoped);
     }
 
-    public void ManualBackward() { physicalTimeObjHelper.ManualBackward(); }
+    public void ManualBackward() { timeBendingController.ManualBackward(); }
 
-    public void ManualForward() { physicalTimeObjHelper.ManualForward(); }
+    public void ManualForward() { timeBendingController.ManualForward(); }
 
-    public bool IsInManualMode() { return physicalTimeObjHelper.IsInManualMode(); }
+    public bool IsInManualMode() { return timeBendingController.IsInManualMode(); }
 
     protected override void OnPickup()
     {
         timeBendingController.ForceQuite();
-        if (resetOnPickUp) timeBendingController.HardReset();
+        if (resetOnPickUp) timeBendingController.Reset();
     }
 
     private void DuringAnyStateExceptNatural()
@@ -95,7 +94,7 @@ public class CarriableTimeObj : CarriableBase, ITimeBody, IRespawnable
     public void Respawn()
     {
         visuals.RespawnAnimation(true);
-        timeBendingController.HardReset();
+        timeBendingController.Reset();
         transform.position = respawn.position;
         visuals.RespawnAnimation(false);
         // visuals.FocusAnimation();

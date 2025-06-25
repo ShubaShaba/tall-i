@@ -11,16 +11,16 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
     [SerializeField] private float deathZoneSensitivity = 0.95f;
     private Collider deathZone;
     private TimeBendingVisual visuals;
-    private PhysicalTimeBendingController timeBendingController;
-    private PhysicalTimeHelper physicalTimeObjHelper;
+    private PhysicalTimeBendingEntityController timeBendingController;
     private PhysicalTimeBodySound physicalTimeBodySound;
     private bool deathZoneStop;
 
     private void Start()
     {
         visuals = GetComponent<TimeBendingVisual>();
-        timeBendingController = new PhysicalTimeBendingController(rewindTimeTime, transform, rb, slowDownCoefficient);
-        physicalTimeObjHelper = new PhysicalTimeHelper(visuals, timeBendingController);
+        physicalTimeBodySound = new PhysicalTimeBodySound(transform);
+        timeBendingController = new PhysicalTimeBendingEntityController(
+            rewindTimeTime, transform, rb, visuals, physicalTimeBodySound, slowDownCoefficient);
         deathZone = GetComponent<Collider>();
 
         timeBendingController.AddDuringStateActionFixedUpdate(TimeBodyStates.Natural, DuringNaturalState);
@@ -36,8 +36,6 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
 
         deathZoneStop = false;
         // timeBendingController.SetRecordConstraints(RecordConstraints);
-
-        physicalTimeBodySound = new PhysicalTimeBodySound(timeBendingController, transform);
     }
 
     void FixedUpdate()
@@ -46,21 +44,21 @@ public class MovingPlatformTimeObj : MovingPlatformBase, ITimeBody
         MoveInFixedUpdate();
     }
 
-    public void Focus() { physicalTimeObjHelper.Focus(); }
+    public void Focus() { timeBendingController.Focus(); }
 
-    public void UnFocus() { physicalTimeObjHelper.UnFocus(); }
+    public void UnFocus() { timeBendingController.UnFocus(); }
 
-    public bool IsInManualMode() { return physicalTimeObjHelper.IsInManualMode(); }
+    public bool IsInManualMode() { return timeBendingController.IsInManualMode(); }
 
-    public void ManualBackward() { physicalTimeObjHelper.ManualBackward(); }
+    public void ManualBackward() { timeBendingController.ManualBackward(); }
 
-    public void ManualForward() { physicalTimeObjHelper.ManualForward(); }
+    public void ManualForward() { timeBendingController.ManualForward(); }
 
-    public void ToggleFreeze() { physicalTimeObjHelper.ToggleState(TimeBodyStates.Stoped); }
+    public void ToggleFreeze() { timeBendingController.ToggleState(TimeBodyStates.Stoped); }
 
-    public void ToggleManualControl() { physicalTimeObjHelper.ToggleState(TimeBodyStates.ControlledStoped); }
+    public void ToggleManualControl() { timeBendingController.ToggleState(TimeBodyStates.ControlledStoped); }
 
-    public void ToggleRewind() { physicalTimeObjHelper.ToggleState(TimeBodyStates.Rewinding); }
+    public void ToggleRewind() { timeBendingController.ToggleState(TimeBodyStates.Rewinding); }
 
     private void DuringNaturalState()
     {

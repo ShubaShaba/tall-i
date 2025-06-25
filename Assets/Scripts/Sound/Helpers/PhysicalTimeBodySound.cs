@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class PhysicalTimeBodySound
 {
-    SoundFXManager soundManager;
-    StateMachine controller;
+    private SoundFXManager soundManager;
 
     Transform parentTransform;
-    public PhysicalTimeBodySound(StateMachine _controller, Transform _parentTransform)
+    public PhysicalTimeBodySound(Transform _parentTransform)
     {
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundFXManager>();
         parentTransform = _parentTransform;
-        controller = _controller;
-        controller.AddOnEnterAction(TimeBodyStates.Rewinding, RewindTimeSound);
-        controller.AddOnEnterAction(TimeBodyStates.Stoped, StopTimeSound);
-        controller.AddOnExitAction(TimeBodyStates.Rewinding, StopRewindTimeSound);
-        controller.AddOnExitAction(TimeBodyStates.Stoped, StopStopTimeSound);
-        controller.AddOnEnterAction(TimeBodyStates.ControlledRewinding, RewindTimeSoundManual);
-        controller.AddOnEnterAction(TimeBodyStates.ControlledReverseRewinding, RewindTimeSoundManual);
-        controller.AddOnEnterAction(TimeBodyStates.ControlledStoped, StopTimeSound);
-        controller.AddOnExitAction(TimeBodyStates.ControlledRewinding, StopRewindTimeManualSound);
-        controller.AddOnExitAction(TimeBodyStates.ControlledReverseRewinding, StopRewindTimeManualSound);
-        controller.AddOnExitAction(TimeBodyStates.ControlledStoped, StopStopTimeSound);
     }
 
+    public void ConnectSound(StateMachine _timeBendingController)
+    { 
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.Rewinding, RewindTimeSound);
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.Stoped, StopTimeSound);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.Rewinding, StopRewindTimeSound);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.Stoped, StopStopTimeSound);
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.ControlledRewinding, RewindTimeSoundManual);
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.ControlledReverseRewinding, RewindTimeSoundManual);
+        _timeBendingController.AddOnEnterAction(TimeBodyStates.ControlledStoped, StopTimeSound);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.ControlledRewinding, StopRewindTimeManualSound);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.ControlledReverseRewinding, StopRewindTimeManualSound);
+        _timeBendingController.AddOnExitAction(TimeBodyStates.ControlledStoped, StopStopTimeSound);
+    }
 
     private void RewindTimeSound()
     {

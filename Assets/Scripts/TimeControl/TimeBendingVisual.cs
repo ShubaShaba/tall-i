@@ -20,7 +20,7 @@ public class TimeBendingVisual : MonoBehaviour
         respawnAnimation.GetComponent<ParticleSystem>().Clear();
     }
 
-    public void InitializeVisuals(StateMachine _timeBendingController)
+    public void ConnectVisuals(StateMachine _timeBendingController)
     {
         _timeBendingController.AddOnEnterAction(TimeBodyStates.Rewinding, RewindAnimation);
         _timeBendingController.AddOnEnterAction(TimeBodyStates.Stoped, FreezeAnimation);
